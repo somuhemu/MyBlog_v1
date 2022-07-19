@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h5>What is Spring</h5>
+<p>Spring is a dependency injection framework,it compliments the existing javaEE standards by making them easier for us the developers to use.</p>
+<p>dependency injection, when we develop sw applications we organize our code across components in case of java these are classes. eg class A depends on class B to get its work done,so these components(classes) typically use each other.Instead of we creating the obj of class B in class A ,we delegate this responsibility to frameworks like spring. spring at runtime dynamically create an object an obj of class B and it will inject in into class A, we as a developer can simply focus on our business logic instead of worrying about the object creation.This process of moving the control of object creation from the application code to a external framework(like spring) is called inversion of control , it is a design pattern .</p>
+<p>where does di apply incase of javaEE application is? - any javaEE application if you take it, it will be typically organized into layers Ui layer,services/business layer,data access layer,db. Each of these layers use the services provided by the layer below. </p>
+<p>eg: the ui layer we have orderController which uses an orderService, this in turn uses the services provided by the orderDAO, This is where spring dependency injection will come in , spring will automatically careate the orderDAO ,it will inject in into the orderService,it will automatically create the orderService and inject it into the orderController, these is where Di comes in javaEE app.</p>
+<p>Along with di spring makes it very easy for us the developers to use the existing apis and frameworks eg; spring provides spring jdbc ,thus we can execute sql stmts in one single line. thus it will take away all the repeated code in jdbc.</p>
+<p>Also spring makes our life easier by providing  spring orm using spring orm we'll be able to use orm tools like hibernet in a simple way and in ui layer it provides integration with struts/java server faces to develop beautiful faces in simple steps.</p>
+<p>we also do spring mvc,spring also provides services like transactions,security management which we can simply configure and ready to use.</p>
+<p>PASTE 18</p>
+<P>PASTE 19</P>
+<P>PASTE 20</P>
+<p>paste 21</p>
+<p>paste 22</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

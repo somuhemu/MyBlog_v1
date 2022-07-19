@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>MySQL</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">MySQL</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <h3>Introduction</h3>
+            <p>A database is an application that stores the organized collection of records. It can be accessed and
+                manage by the user very easily. It allows us to organize data into tables, rows, columns, and indexes to
+                find the relevant information very quickly. Each database contains distinct API for performing database
+                operations such as creating, managing, accessing, and searching the data it stores. Today, many
+                databases available like MySQL, Sybase, Oracle, MongoDB, PostgreSQL, SQL Server, etc.</p>
+            <p>MySQL is currently the most popular database management system software used for managing the relational
+                database.</p>
+            <div class="sub-contents">
+                <h4>Data Types</h4>
+                <p>Data types of mysql include numeric, date and time, string types, spatial types, and JSON data types.
+                </p>
+                <dl class="row overflow-auto">
+                    <dt class="col-sm-3">Numeric</dt>
+                    <dd class="col-sm-9 ">
+                        TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT,FLOAT(m,d),DOUBLE(m,d),DECIMAL(m,d),BIT(m),BOOL,BOOLEAN
+                    </dd>
+                    <dt class="col-sm-3">Date & Time</dt>
+                    <dd class="col-sm-9 ">YEAR,DATE,TIME,DATETIME,TIMESTAMP(m)</dd>
+                    <dt class="col-sm-3">String</dt>
+                    <dd class="col-sm-9 ">
+                        CHAR(size),VARCHAR(size),TINYTEXT(size),TEXT(size),MEDIUMTEXT(size),LONGTEXT(size),BINARY(size),VARBINARY(size),ENUM,SET
+                    </dd>
+                    <dt class="col-sm-3">Binary Large Object (BLOB)</dt>
+                    <dd class="col-sm-9 ">TINYBLOB,BLOB(size),MEDIUMBLOB,LONGBLOB</dd>
+                    <dt class="col-sm-3">Spatial</dt>
+                    <dd class="col-sm-9 ">
+                        GEOMETRY,POINT,POLYGON,LINESTRING,GEOMETRYCOLLECTION,MULTILINESTRING,MULTIPOINT,MULTIPLYGON</dd>
+                </dl>
+                <h4>MySQL Commands</h4>
+                <strong>create</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+CREATE TABLE employee_table(  
+    id int NOT NULL AUTO_INCREMENT,  
+    name varchar(45) NOT NULL,  
+    occupation varchar(35) NOT NULL,  
+    age int NOT NULL,  
+    PRIMARY KEY (id)  
+); 
+</pre>
+                    </div>
+                </div>
+
+                <strong>alter</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body ">
+                        <pre>
+ALTER TABLE cus_tbl ADD cus_age varchar(40) NOT NULL; 
+ALTER TABLE Test ADD COLUMN City VARCHAR(30) NOT NULL;  
+ALTER TABLE cus_tbl MODIFY cus_surname varchar(50) NULL;  
+ALTER TABLE cus_tbl DROP COLUMN cus_address;  
+ALTER TABLE cus_tbl CHANGE COLUMN cus_surname cus_title varchar(20) NOT NULL;  
+ALTER TABLE cus_tbl RENAME TO cus_table;  
+ALTER TABLE customer RENAME COLUMN account to account_no;
+ALTER TABLE customer CHANGE id cust_id int,CHANGE customer_name cust_name varchar(45); 
+</pre>
+                    </div>
+                </div>
+
+                <strong>show/list tables & describe</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SHOW TABLES;  
+SHOW TABLES FROM mystudentdb; 
+SHOW TABLES IN mystudentdb;
+
+DESCRIBE customer;  
+</pre>
+                    </div>
+                </div>
+                <strong>rename table</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+RENAME old_table TO new_table;  
+RENAME TABLE old_tab1 TO new_tab1,old_tab2 TO new_tab2, old_tab3 TO new_tab3;  
+</pre>
+                    </div>
+                </div>
+                <strong>truncate</strong>
+                <ul>
+                    <li>Removes the complete data without removing its structure.</li>
+                    <li>truncate command is more efficient as compared to the delete command because it removes and
+                        recreates the table instead of deleting single records one at a time. Since this command
+                        internally drops the table and recreates it, the number of rows affected by the truncate
+                        statement is zero, unlike the delete statement that returns the number of deleted rows.</li>
+                    <li>we cannot use the WHERE clause with this command so that filtering of records is not possible.
+                    </li>
+                    <li>we cannot rollback the deleted data after executing this command because the log is not
+                        maintained while performing this operation.</li>
+                    <li>we cannot use the truncate statement when a table is referenced by a foreign key or participates
+                        in an indexed view.</li>
+                </ul>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+TRUNCATE TABLE customer;
+</pre>
+                    </div>
+                </div>
+                <strong>drop</strong>
+                <p>This statement removes the complete data of a table along with the whole structure or definition
+                    permanently from the database.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+DROP TABLE  orders;    
+</pre>
+                    </div>
+                </div>
+                <strong>show columns</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SHOW COLUMNS FROM student_info;
+SHOW COLUMNS FROM student_info LIKE 's%'; 
+SHOW FULL COLUMNS FROM student_info;  
+</pre>
+                    </div>
+                </div>
+                <strong>insert</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+INSERT INTO People (id, name, occupation, age) VALUES (101, 'Peter', 'Engineer', 32);  
+INSERT INTO People VALUES  
+(102, 'Joseph', 'Developer', 30),  
+(103, 'Mike', 'Leader', 28),  
+(104, 'Stephen', 'Scientist', 45);  
+
+INSERT INTO People (name, occupation)   
+VALUES ('Stephen', 'Scientist'), ('Bob', 'Actor'); 
+
+INSERT INTO person_info (person_name, email, city)  
+SELECT name, email, city  
+FROM person  
+WHERE city = 'Texas';  
+
+INSERT INTO person_info Table person;
+</pre>
+                    </div>
+                </div>
+                <strong>update</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+UPDATE trainer SET email = 'mike@tutorialandexamples.com' WHERE course_name = 'Java'; 
+UPDATE People SET name = 'Mary', occupation = 'Content Writer' WHERE id = 105;  
+</pre>
+                    </div>
+                </div>
+
+                <strong>delete</strong>
+                <p>Deletes a full row from the table and produces the count of deleted rows.Once we delete the records
+                    using this query, we cannot recover it.</p>
+                <p>limit clause is used to limit the number of rows to be deleted from the table. </p>
+                <p>It is to note that the order of rows in a MySQL table is unspecified. Therefore, we should always use
+                    the ORDER BY clause while using the LIMIT clause.
+                </p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+DELETE FROM Employees WHERE emp_id=107;  
+DELETE FROM Employees ORDER BY name LIMIT 3;
+
+DELETE Employees, Payment FROM Employees   
+INNER JOIN Payment      
+ON Employees.emp_id = Payment.emp_id      
+WHERE Employees.emp_id = 102;  
+</pre>
+                    </div>
+                </div>
+
+                <strong>select</strong>
+                <p>To fetch data from one or more tables.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT Name FROM employee_detail;  
+SELECT Name, Email, City FROM employee_detail; 
+SELECT * FROM employee_detail;  
+SELECT Name, City, SUM(working_hours) AS "Total working hours" FROM employee_detail GROUP BY Name HAVING SUM(working_hours) > 5;   
+SELECT cust_name, city, order_num, order_date FROM customer INNER JOIN orders ON customer.cust_id = orders.order_id WHERE order_date &lt '2020-04-30' ORDER BY cust_name;  
+
+</pre>
+                    </div>
+                </div>
+                <strong>constraints</strong>
+                <p>Used to specify the rule that allows or restricts what values/data will be stored in the table.</p>
+                <ol>
+                    <li>Column Level Constraints: These constraints are applied only to the single column that limits
+                        the type of particular column data.</li>
+                    <li>Table Level Constraints: These constraints are applied to the entire table that limits the type
+                        of data for the whole table.</li>
+                </ol>
+                <p>Common constraints used ar ,CHECK,DEFAULT,PRIMARY KEY,AUTO_INCREMENT,UNIQUE,INDEX,ENUM,FOREIGN KEY
+                </p>
+                <ul>
+                    <li>NOT NULL: That column cannot have NULL or empty values.</li>
+                    <li>UNIQUE: Values inserted into the colunmn will be unique,cann't store duplicate values.we can
+                        have more than one column with unique constraint in a table.</li>
+                    <li>CHECK: Inserted values must satisfy with the given condition.</li>
+                    <li>DEFAULT: To set default value for a column where we have not specified any value.It means the
+                        column must contain a value, including NULL. </li>
+                    <li>PRIMARY KEY: It is used to identify each record in a table uniquely.A table has only one pk.That
+                        column cannot be null or empty.Contains unique value into a column.</li>
+                    <li>AUTO_INCREMENT: Generates a unique number whenever we insert a new record into the table.
+                        Generally, we use this constraint for the primary key field in a table. </li>
+                    <li>ENUM: A string object that column may have one of the specified possible values.</li>
+                    <li>FOREIGN KEY/REFERENCING KEY: Used to link two tables together.A foreign key field in one table
+                        refers to the primary key field of another table.</li>
+                </ul>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+CREATE TABLE Student(Id INTEGER, LastName TEXT NOT NULL, FirstName TEXT NOT NULL, City VARCHAR(35)); 
+CREATE TABLE ShirtBrands(Id INTEGER, BrandName VARCHAR(40) UNIQUE, Size VARCHAR(30));
+CREATE TABLE Persons (ID int NOT NULL,Name varchar(45) NOT NULL,Age int CHECK (Age>=18));  
+CREATE TABLE Persons (ID int NOT NULL,Name varchar(45) NOT NULL,Age int,City varchar(25) DEFAULT 'New York'); 
+CREATE TABLE Persons (ID int NOT NULL PRIMARY KEY,Name varchar(45) NOT NULL,Age int,City varchar(25)); 
+CREATE TABLE Animals(id int NOT NULL AUTO_INCREMENT,name CHAR(30) NOT NULL,PRIMARY KEY (id));  
+CREATE TABLE Shirts (id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(35),size ENUM('small', 'medium', 'large', 'x-large'));  
+
+CREATE TABLE Persons (Person_ID int NOT NULL PRIMARY KEY,Name varchar(45) NOT NULL,Age int,City varchar(25)); 
+CREATE TABLE Orders (  
+    Order_ID int NOT NULL PRIMARY KEY,  
+    Order_Num int NOT NULL,  
+    Person_ID int,  
+    FOREIGN KEY (Person_ID) REFERENCES Persons(Person_ID) 
+</pre>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sub-contents">
+                <h4>Mysql clauses</h4>
+                <strong>where</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT * FROM officers WHERE address = 'Mau'; 
+SELECT * FROM officers WHERE address = 'Lucknow' AND officer_id &lt 5;  
+SELECT * FROM officers WHERE address = 'Lucknow' OR address = 'Mau';  
+
+SELECT *  
+FROM officers 
+WHERE (address = 'Mau' AND officer_name = 'Ajeet') OR (officer_id &lt 5);
+</pre>
+                    </div>
+                </div>
+                <strong>distinct</strong>
+                <p>Used to remove duplicate records from the table and fetch only the unique records. The DISTINCT
+                    clause is only used with the SELECT statement.</p>
+                <p>In MySQL, the DISTINCT clause doesn't ignore NULL values. So if you are using the DISTINCT clause in
+                    your SQL statement, your result set will include NULL as a distinct value.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT DISTINCT address FROM officers;    
+SELECT DISTINCT officer_name, address FROM officers;  
+</pre>
+                    </div>
+                </div>
+                <strong>from</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT * FROM officers WHERE officer_id &lt= 3;  
+
+SELECT officers.officer_id, students.student_name  
+FROM officers  
+LEFT OUTER JOIN students  
+ON officers.officer_id = students.student_id; 
+</pre>
+                    </div>
+                </div>
+                <strong>order by</strong>
+                <p>Used to sort the records in ascending or descending order.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT * FROM officers WHERE address = 'Lucknow' ORDER BY officer_name; 
+SELECT * FROM officers  
+WHERE address = 'Lucknow'  
+ORDER BY officer_name DESC; 
+
+SELECT officer_name, address  
+FROM officers  
+WHERE officer_id &lt 5  
+ORDER BY officer_name DESC, address ASC;  
+</pre>
+                    </div>
+                </div>
+                <strong>group by</strong>
+                <p>Collect data from multiple records and group the result by one or more column.</p>
+                <p>expression1, expression2, ... expression_n: It specifies the expressions that are not encapsulated
+                    within an aggregate function and must be included in the GROUP BY clause.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT expression1, expression2, ... expression_n,   
+aggregate_function (expression)  
+FROM tables  
+[WHERE conditions]  
+GROUP BY expression1, expression2, ... expression_n;  
+
+SELECT address, COUNT(*)  
+FROM   officers   
+GROUP BY address; 
+
+SELECT emp_name, SUM(working_hours) AS "Total working hours"  
+FROM employees  
+GROUP BY emp_name;  
+
+SELECT emp_name, MIN(working_hours) AS "Minimum working hour"  
+FROM employees  
+GROUP BY emp_name; 
+</pre>
+                    </div>
+                </div>
+                <strong>having</strong>
+                <p>Used with GROUP BY clause.It is used to restrict the groups of returned rows.It always returns the
+                    rows where condition is TRUE.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT expression1, expression2, ... expression_n,   
+aggregate_function (expression)  
+FROM tables  
+[WHERE conditions]  
+GROUP BY expression1, expression2, ... expression_n  
+HAVING condition;  
+
+SELECT emp_name, SUM(working_hours) AS "Total working hours"  
+FROM employees  
+GROUP BY emp_name  
+HAVING SUM(working_hours) > 5;  
+</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-contents">
+                <h4>Mysql Conditions</h4>
+                <strong>and</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM cus_tbl  
+WHERE cus_firstname = 'Ajeet'  
+AND cus_id > 3;  
+</pre>
+                    </div>
+                </div>
+
+                <strong>or</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM cus_tbl  
+WHERE cus_firstname = 'Ajeet'  
+OR cus_id > 100; 
+</pre>
+                    </div>
+                </div>
+
+                <strong>and or</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM students  
+WHERE (course_name = 'Java' AND student_name = 'Aryan')
+OR (student_id &lt 2);  
+</pre>
+                    </div>
+                </div>
+
+                <strong>boolean</strong>
+                <p>mysql considers value zero as false and non-zero value as true</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+Select TRUE, FALSE, true, false, True, False;  
+
+CREATE TABLE student (  
+    studentid INT PRIMARY KEY AUTO_INCREMENT,  
+    name VARCHAR(40) NOT NULL,  
+    age VARCHAR(3),  
+    pass BOOLEAN  
+);  
+INSERT INTO student(name, pass) VALUES('Peter',true), ('John',false);  
+SELECT  studentid, name, pass FROM student;  
+INSERT INTO student(name, pass) VALUES('Miller',2);
+SELECT  studentid, name, IF(pass, 'true', 'false') completed FROM student1; 
+SELECT studentid, name, pass FROM student1 WHERE pass = TRUE;
+#use below for above
+SELECT studentid, name, pass FROM student1 WHERE pass is TRUE;  
+SELECT studentid, name, pass FROM student1 WHERE pass IS FALSE; 
+SELECT studentid, name, pass FROM student1 WHERE pass IS NOT TRUE;  
+</pre>
+                    </div>
+                </div>
+
+                <strong>like</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT officer_name  
+FROM officers  
+WHERE address LIKE 'Luck%';  
+
+SELECT officer_name  
+FROM officers  
+WHERE address LIKE 'Luc_now';  
+
+SELECT officer_name  
+FROM officers  
+WHERE address NOT LIKE 'Luck%'; 
+</pre>
+                    </div>
+                </div>
+
+                <strong>in</strong>
+                <p>used to reduce the use of multiple OR conditions</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM officers  
+WHERE officer_name = 'Ajeet'  
+OR officer_name = 'Vimal'  
+OR officer_name = 'Deepika'; 
+
+SELECT *  
+FROM officers  
+WHERE officer_name IN ('Ajeet', 'Vimal', 'Deepika');
+
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>any</strong>
+                <p>returns the boolean value TRUE if the comparison is TRUE for ANY of the subquery condition.The ANY
+                    keyword must follow the comparison operator.</p>
+                <p>comparision operators:= > &lt >= &lt= &lt> != </p>
+                <p>The IN keyword in MySQL is an alias for = ANY when used with a subquery in the statement.</p>
+                <p>But we cannot say that IN and = ANY were synonyms when we used it with an expression list. It is
+                    because IN can take a list of expressions, but = ANY cannot.</p>
+                <p>Also, NOT IN cannot be an alias for &lt> ANY operator, but it can be used for &lt> ALL.</p>
+                <p>The word SOME in MySQL can be an alias for ANY. Therefore, these two SQL statements are equivalent:
+                </p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT colm1 FROM table1 WHERE colm1 > ANY (SELECT colm1 FROM table2);  
+SELECT num_value FROM table1   
+WHERE num_value > ANY (SELECT num_val FROM table2);  
+
+SELECT colm1 FROM table1 WHERE colm1 = ANY (SELECT colm1 FROM table2);  
+SELECT colm1 FROM table1 WHERE colm1 IN (SELECT colm1 FROM table2);  
+
+SELECT colm1 FROM table1 WHERE colm1 &lt>ANY (SELECT colm1 FROM table2); 
+SELECT colm1 FROM table1 WHERE colm1 &lt> SOME (SELECT colm1 FROM table2);
+</pre>
+                    </div>
+                </div>
+
+                <strong>exists</strong>
+                <p> It is used in combination with a subquery and checks the existence of data in a subquery. It means
+                    if a subquery returns any record, this operator returns true. Otherwise, it will return false. The
+                    true value is always represented numeric value 1, and the false value represents 0.</p>
+                <p>It cannot use for comparing NULL values.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+#who has placed atleast one order.
+SELECT name, occupation FROM customer  
+WHERE EXISTS (SELECT * FROM Orders   
+WHERE customer.cust_id = Orders.cust_id);  
+
+#who have not placed an order
+SELECT name, occupation FROM customer  
+WHERE NOT EXISTS (SELECT * FROM Orders   
+WHERE customer.cust_id = Orders.cust_id);  
+
+DELETE FROM Orders WHERE EXISTS (  
+SELECT * FROM customer   
+WHERE order_id=3);  
+
+#check whether a row exists in a table or not
+SELECT EXISTS(SELECT * from customer WHERE cust_id=104) AS Result;  
+</pre>
+                    </div>
+                </div>
+
+                <strong>not</strong>
+                <p>NOT condition is opposite of MySQL IN condition.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM officers  
+WHERE officer_name NOT IN ('Ajeet','Vimal','Deepika');  
+
+SELECT *  
+FROM officers  
+WHERE officer_name IS NOT NULL;  
+
+SELECT *  
+FROM officers  
+WHERE officer_name NOT LIKE 'A%'; 
+
+SELECT *  
+FROM officers  
+WHERE officer_id NOT BETWEEN 3 AND 5;  
+</pre>
+                    </div>
+                </div>
+
+                <strong>not equal</strong>
+                <p> (&lt >) and (! =) But they always give the same result.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT * FROM students WHERE city &lt> "England"; 
+SELECT * FROM students WHERE city != "England"; 
+SELECT * FROM customers Where income>40000 and occupation&lt>"Developer"; 
+
+SELECT * FROM customers  
+JOIN contacts ON customer_id = contact_id   
+WHERE cellphone &lt> "Null"  
+GROUP BY income; 
+
+SELECT * FROM customers  
+JOIN contacts ON customer_id = contact_id   
+WHERE cellphone != "Null;  
+</pre>
+                    </div>
+                </div>
+                <strong>is null</strong>
+                <p>used to check if there is a NULL value in the expression.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM officers  
+WHERE officer_name IS NULL;  
+</pre>
+                    </div>
+                </div>
+                <strong>is not null</strong>
+                <p> used to check the NOT NULL value in the expression.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM officers  
+WHERE officer_name IS NOT NULL;  
+</pre>
+                    </div>
+                </div>
+                <strong>between</strong>
+                <p>to retrieve values from an expression within a specific range.(inclusive)</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT *  
+FROM officers  
+WHERE officer_id BETWEEN 1 AND 3; 
+
+SELECT *  
+FROM employees  
+WHERE working_date BETWEEN CAST ('2015-01-24' AS DATE) AND 
+CAST ('2015-01-25' AS DATE); 
+</pre>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="sub-contents">
+                <h4>Joins</h4>
+                <p>used to retrieve data from multiple tables.</p>
+                <img src="img/sql0.png" class="img-thumbnail img-fluid d-block img-size" alt="">
+                <strong>inner join</strong>
+                <p>returns only those results from the tables that match the specified condition and hides other rows and columns.
+                </p>
+                <p>Sometimes, the name of the columns is the same in both the tables. In that case, we can use a USING keyword to access the records.</p>
+               
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT students.stud_fname, students.stud_lname, students.city, technologies.technology    
+FROM students   
+INNER JOIN technologies    
+ON students.student_id = technologies.tech_id GROUP BY inst_name;
+
+SELECT student_id, inst_name, city, technology    
+FROM students   
+INNER JOIN technologies    
+USING (student_id); 
+
+SELECT tech_id, inst_name, city, technology    
+FROM students   
+INNER JOIN technologies    
+USING (student_id) WHERE technology = "Java";  
+
+SELECT student_id, inst_name, city, technology, cellphone  
+FROM students   
+INNER JOIN technologies USING (student_id)  
+INNER JOIN contact ORDER BY student_id; 
+
+SELECT emp_id, designation, income, qualification  
+FROM employee  
+INNER JOIN customer  
+ WHERE income>20000 and  income &lt 80000;  
+</pre>
+                    </div>
+                </div>
+
+                <strong>left join</strong>
+                <p>returns all the rows from the left table and matched records from the right table or returns Null if no matching record found.</p>
+<p>The LEFT JOIN is such a join which specifies that all records be fetched from the table on the left side of the join statement. If a record returned from the left table has no matching record in the table on the right side of the join, it is still returned, and the corresponding column from the right table returns a NULL value.</p>
+               
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT * FROM table_A  
+LEFT JOIN table_B
+ON table_A.A=table_B.A;            
+</pre>
+                    </div>
+                </div>
+<img src="img/sql3.png" class="img-thumbnail img-fluid d-block img-size" alt="">
+                <strong>right join</strong>
+                <p>The RIGHT JOIN is such a join which specifies that all records be fetched from the table on the right side of the join statement, even if the table on the left has no matching record. In this case, the columns from the left table return NULL values.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT * FROM table_A  
+RIGHT JOIN table_B
+ON table_A.A=table_B.A;                            
+</pre>
+                    </div>
+                </div>
+<img src="img/sql4.png" class="img-thumbnail img-fluid d-block img-size" alt="">
+                <strong>cross join</strong><p>A CROSS JOIN is such a join which specifies the complete cross product of two tables. For each record in the first table, all the records in the second table are joined, creating a potentially huge result set.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+SELECT * FROM table_A  
+CROSS JOIN table_B;                            
+</pre>
+                    </div>
+                </div>
+<img src="img/sql5.png" class="img-thumbnail img-fluid d-block img-size" alt="">
+                <strong>self join</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>equii join</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>natural join</strong><p>A NATURAL JOIN is such a join that performs the same task as an INNER or LEFT JOIN, in which the ON or USING clause refers to all columns that the tables to be joined have in common.</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>delete join</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>update join</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="sub-contents">
+                <h4>Aggregate Functions</h4>
+                <strong>count</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+                <strong>sum</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+                <strong>avg</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+                <strong>min</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+                <strong>max</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+                <strong>group_concat()</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+                <strong>first</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+                <strong>last</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+                        <pre>
+
+</pre>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="sub-contents">
+                <h4>String Functions</h4>
+                <strong>ascii</strong>
+                <p>Returns the ASCII value for the specific character</p>
+                <p>If more than one character is entered, it will only return the value for the first character</p>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+SELECT CustomerName, ASCII(CustomerName) AS NumCodeOfFirstChar
+FROM Customers;
+</pre>
+                    </div>
+                </div>
+
+                <strong>length</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+                <strong>concat</strong>
+                <div class="card mb-3 mt-2">
+                    <div class="card-body">
+<pre>
+
+</pre>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sub-contents">
+                <h4>Date Functions</h4>
+            </div>
+
+            <div class="sub-contents">
+                <h4>Comparision Functions</h4>
+            </div>
+
+            <div class="sub-contents">
+                <h4>Math Functions</h4>
+            </div>
+
+            <div class="sub-contents">
+                <h4>Subqueries</h4>
+            </div>
+
+            <div class="sub-contents">
+                <h4>Set operators</h4>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card mb-3 mt-2">
+        <div class="card-body">
+            <pre>
+
+</pre>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>SQL</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">SQL</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <h3>Introduction</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus inventore modi deleniti vitae
+                repudiandae architecto eaque? Non, rerum veniam nisi rem temporibus, quasi quibusdam nostrum unde
+                asperiores odio dignissimos nihil hic. Dicta, sequi. Est, vero?</p>
+
+            <div class="sub-contents">
+                <h4>Sub head</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque maiores rem eligendi
+                    suscipit ab?</p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html> -->

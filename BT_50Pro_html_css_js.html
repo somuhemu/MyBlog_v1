@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>React Front To Back 2022</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">React Front To Back 2022</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+
+                <p>For codes refer the github link below...</p>
+                <p>
+                    <a href="https://github.com/bradtraversy/50projects50days">Project codes GitHub Link</a>
+                </p>
+                <p>if flexbox is a column then, the Align Items is going to pertain to alignment horizontally,if row it
+                    would pertain to vetical.</p>
+                <p>with overflow hidden, i don't want scroll bars .</p>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            2) Expanding Cards
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <p>background-size:cover; - so as to see the whole image ok.</p>
+                            <p>.panel has pos:relative, so that .panel h3{} set ro restive absolute ,left,bottom ok</p>
+                            <p>.panel h3 - opactiy 0 makes the text invisible ok and later if it is active then we can
+                                set to one ok.</p>
+                            <p>for small screen only 3 cards ok with media query.</p>
+                            <p>panel active - will have flex 5 ok so 5 * 1.for showing the image bigger.</p>
+                            <p>note here trasition is applied for events right, like discussed for hover, here no hover
+                                but when that/any event happens the transition on the respective property gets applied
+                                ok som.</p>
+
+                            <p>js</p>
+                            <p>easy understandable.</p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <h5>2)Progress Steps</h5>
+                <p>can see in forms,shopping sites,a progress bar that starts at 1 and goes to 4,pre,next ok</p>
+                <p>.progress- zindex -1 so line is behind.trasition is there so that when nxt/pre is clicked it takes
+                    time to move.</p>
+                <p>.progrss container line is grey with width 100%.initial progress width 0%.so on click it increases ok
+                </p>
+                <p>even for .circle, has display flex and align item,justify content to make the number center. even
+                    though circle doesn't have any child elemets ok. just to make the content center.</p>
+                <p>with btnactive when button clicked we will actually have that little effect.</p>
+                <p>js</p>
+                <p>understandable.</p>
+
+
+                <h5>3)Rotating Navigation</h5>
+                <p>overflow-x : here hides scroll bar only on the x axis.</p>
+                <p>origin of ratation will be midddle so here we changed it to top left..</p>
+                <p>we add trasition ,when we don't want sth to happen quickly ok</p>
+                <p>here so to get half circle we added -ve values ok</p>
+                <p>Note for which ever element/class, you need that movement/animation you add the trasition property so
+                    to make the smooth changes from initial to end style.you know that with transition you set on the
+                    animation through properties of styles which you need to change either few/all.</p>
+
+
+                <h5>4)Hidden Search Widget</h5>
+                <p>Be careful with position ok.think of for which i.e from which reference it is absolute for.Here btn
+                    is absolue to search(a container) and takes top,bottom,left,right reference from the search
+                    container okk</p>
+                <p>try to read as like: .search.buttom .btn{} : when search has a class on it then we take the button
+                    and set the respective styles.</p>
+                <p>toggle basically to add and remove okk.like here click1 added,nxt click2 remove,nxt click3 added,nxt
+                    click4 removeed okk like wise..toggling.</p>
+                <p>IMP: so its all just putting specific classes through JS through events ,clicking,hovering,making an
+                    event fire off etc.</p>
+
+
+
+                <h5>5)Blurry Loading</h5>
+                <p>more pixels in blur more blur ok 0 means no blur ok.</p>
+                <p>setInterval(blurring,30) - so run this blurring for every 30 ms.</p>
+                <p>clearInterval(int) - so here in if when it gets to 100 it stops ok with out this it will keep onn
+                    increasing the load++ . </p>
+                <p>map a range of numbers to another range of numbers.</p>
+                <p>sllr to blur strat blur form 30 and go to 0 </p>
+                <p>i.e blur goes from 30 to 0 to the same amout of time the load goe to 0 to 100 that the explanation.
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+
+                        </button>
+                    </h2>
+                    <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                            Components, Props & State
+                        </button>
+                    </h2>
+                    <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                            Forms, Validation & Simple Animation
+                        </button>
+                    </h2>
+                    <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                            Creating Routes & Links
+                        </button>
+                    </h2>
+                    <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                            Context API, useContext Hook & Deployment
+                        </button>
+                    </h2>
+                    <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                            APIs & HTTP Requests
+                        </button>
+                    </h2>
+                    <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                            GitHub Finder Project Start
+                        </button>
+                    </h2>
+                    <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                            Working with The GitHub API
+                        </button>
+                    </h2>
+                    <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                            User Profile & Alerts
+                        </button>
+                    </h2>
+                    <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc11" aria-expanded="false" aria-controls="fc11">
+                            Refactoring Context & Action
+                        </button>
+                    </h2>
+                    <div id="fc11" class="accordion-collapse collapse" aria-labelledby="fh11"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc12" aria-expanded="false" aria-controls="fc12">
+                            More Advanced React Hooks
+                        </button>
+                    </h2>
+                    <div id="fc12" class="accordion-collapse collapse" aria-labelledby="fh12"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc13" aria-expanded="false" aria-controls="fc13">
+                            House MarketPlace Project Start
+                        </button>
+                    </h2>
+                    <div id="fc13" class="accordion-collapse collapse" aria-labelledby="fh13"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc14" aria-expanded="false" aria-controls="fc14">
+                            Firebase Authentication & profile
+                        </button>
+                    </h2>
+                    <div id="fc14" class="accordion-collapse collapse" aria-labelledby="fh14"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh15">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc15" aria-expanded="false" aria-controls="fc15">
+                            Get & Create Listings
+                        </button>
+                    </h2>
+                    <div id="fc15" class="accordion-collapse collapse" aria-labelledby="fh15"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh16">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc16" aria-expanded="false" aria-controls="fc16">
+                            Single Listings, Map, Sliders & Edit
+                        </button>
+                    </h2>
+                    <div id="fc16" class="accordion-collapse collapse" aria-labelledby="fh16"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh17">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc17" aria-expanded="false" aria-controls="fc17">
+                            MERN Project Start, API & Backend Authentication
+                        </button>
+                    </h2>
+                    <div id="fc17" class="accordion-collapse collapse" aria-labelledby="fh17"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh18">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc18" aria-expanded="false" aria-controls="fc18">
+                            Frontend Authentication
+                        </button>
+                    </h2>
+                    <div id="fc18" class="accordion-collapse collapse" aria-labelledby="fh18"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh19">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc19" aria-expanded="false" aria-controls="fc19">
+                            Tickets Functionality
+                        </button>
+                    </h2>
+                    <div id="fc19" class="accordion-collapse collapse" aria-labelledby="fh19"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh20">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc20" aria-expanded="false" aria-controls="fc20">
+                            Notes Functionality & Deploy
+                        </button>
+                    </h2>
+                    <div id="fc20" class="accordion-collapse collapse" aria-labelledby="fh20"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--accordioin end div-->
+        </div>
+        <!--maincontent end div -->
+    </div>
+    <!--continer end div -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

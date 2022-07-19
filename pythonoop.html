@@ -1,0 +1,4003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>OPP using python</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">Object Oriented Programming using Python</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            OOP Introduction
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Introduction</h3>
+                            <p>In Programming fundamentals you have been coding in Python using procedural oriented
+                                programming, and are
+                                familiar with its syntax. You have written small programs using functions. What if you
+                                have to write a real
+                                world complex application like an online shopping app? How would you go about doing it
+                                and where will you start?
+                            </p>
+                            <p>In this course, you are going to learn how to build complex real world applications using
+                                a technique known as
+                                object oriented programming.</p>
+                            <p>Procedural , Modular programming are not suitable to slove the real world problems</p>
+                            <p>we quickly run into complications trying to simulate real world scenarios,</p>
+                            <p>The problem arises due to the fact that in real life everything has some
+                                data/characteristic associated with it
+                                and some behavior associated with it and we are not able to replicate this in a code.
+                                For example:</p>
+                            <ul>
+                                <li>All mobiles have price and brand as its data and purchase and return as its
+                                    behavior.
+                                </li>
+                                <li>All shoes have price and material as its data and purchase and return as its
+                                    behavior.</li>
+                            </ul>
+                            <p>We need a way of programming which allows to club together the data and behavior so that
+                                it becomes easier to
+                                code real world scenarios.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                            OOP Basics
+                        </button>
+                    </h2>
+                    <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>OOP</h3>
+                            <p>Object Oriented Programming(OOP) is an approach to problem solving where computations are
+                                carried out using
+                                objects. OOP allows us to represent data as real-world objects.</p>
+
+                            <h3>OPP Approach</h3>
+                            <p>Object oriented programming approach allows us to club together the data and behavior so
+                                that it becomes easier
+                                to code real world scenarios.</p>
+                            <p>Consider the following example, where Mobile and Shoe clubs characteristics as data &
+                                purchase(), return() as
+                                it's behavior.</p>
+                            <img src="img/opp1.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Templating</h4>
+                            <p>Once we have a template of the data and the related behavior we can use that template to
+                                create many copies.</p>
+                            <img src="img/oop2.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>This style of programming where we create a template and create copies from that template
+                                is called object
+                                oriented programming. This style allows us to code for scenarios closely linked with
+                                real life.</p>
+                            <p>The template we create is called a Class and the copies we create out of it is called an
+                                object.</p>
+
+
+                            <h3>Class & Object</h3>
+                            <p>Objects are real world entities. Anything you can describe in this world is an object.
+                                Classes on the other hand
+                                are not real. They are just a concept. Class is a short form of Classification. A class
+                                is a classification of
+                                certain objects and it is just a description of the properties and behavior all objects
+                                of that classification
+                                should possess.</p>
+                            <p>Class is a like a recipe and the object is like the cupcake we bake using it. All
+                                cupcakes created from a recipe
+                                share similar characteristics like shape, sweetness, etc. But they are all unique as
+                                well. One cupcake may have
+                                strawberry frosting while another might have vanilla. Similarly, objects of a class
+                                share similar
+                                characteristics but they differ in their values for those characteristics. </p>
+                            <p>What does a recipe contain? It contains list of ingredients which make up the cake and
+                                the directions. Similarly,
+                                a class contains the properties/attributes of the object and the operations/behavior
+                                that can be performed on an
+                                object.</p>
+                            <img src="img/oop4.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/oop6.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/oop5.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <p>Thus we can say that this object is an example of or instance of the Mobile
+                                classification. Under this
+                                classification, there can be many objects and the object shown above is an instance of
+                                mobile
+                                classification/class or example of it.</p>
+
+                            <h4>How to define a class?</h4>
+                            <p>A class is defined using the class keyword in python. For example, the below code creates
+                                a class called Mobile
+                                without any attributes or behavior.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i1" aria-expanded="false" aria-controls="i1">
+                                Code
+                            </button>
+                            <div class="collapse" id="i1">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+
+class Mobile:
+    pass
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>How to create objects?</h4>
+                            <p>To create an object, we need a class. The syntax for creating an object is
+                                "&ltclassname>()", where &ltclassname>
+                                is the name of the class.
+                                For example, the below code creates three Mobile objects:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i2" aria-expanded="false" aria-controls="i2">
+                                Code
+                            </button>
+                            <div class="collapse" id="i2">
+                                <div class="card card-body">
+                                    <pre><code>
+
+Mobile()
+Mobile()
+Mobile()
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Accessing objects</h4>
+                            <p>Just like we need variables to access and use values, we need variables to access and
+                                reuse the objects that we
+                                create. Such variables that are used to access objects are called reference variables
+                                .In the below code, we are
+                                creating three objects, each with its own reference variable</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i3" aria-expanded="false" aria-controls="i3">
+                                Code
+                            </button>
+                            <div class="collapse" id="i3">
+                                <div class="card card-body">
+                                    <pre><code>
+
+mob1=Mobile()
+mob2=Mobile()
+mob3=Mobile() 
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Look alike Object </h4>
+                            <p>If two objects look the same and have the same values, can we treat it as a single
+                                object?</p>
+                            <p>Each object is unique and independent of other object. Just like every person, including
+                                twins, are unique, so is
+                                every object.</p>
+                            <p>All objects have an internal unique id (just like aadhar or green card number). We can
+                                check this using the
+                                inbuilt id(). The below code will display the unique number associated with the object.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i4" aria-expanded="false" aria-controls="i4">
+                                Code
+                            </button>
+                            <div class="collapse" id="i4">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    pass
+
+mob1=Mobile()
+mob2=Mobile()
+
+print(id(mob1))
+print(id(mob2))
+O/P:
+139812270217760
+139812269546464
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Attributes of an object
+                            </h4>
+
+                            <p>How can we create attributes and values for those objects? This can be done by using the
+                                . (dot) operator. The
+                                syntax for creating attribute and value for that is as below:</p>
+                            <p>reference_variable.attribute_name=value.</p>
+                            <p>For example, in the below code we are creating two attributes price and brand, and
+                                assigning them to the two
+                                objects we had created.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i5" aria-expanded="false" aria-controls="i5">
+                                Code
+                            </button>
+                            <div class="collapse" id="i5">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    pass
+
+mob1=Mobile()
+mob2=Mobile()
+
+mob1.price=20000
+mob1.brand="Apple"
+
+mob2.price=3000
+mob2.brand="Samsung"
+                        
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Accessing attributes </h4>
+                            <p>We can access the attribute values using the dot operator itself. The syntax is as shown
+                                below:</p>
+                            <p>reference_variable.attribute_name</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i6" aria-expanded="false" aria-controls="i6">
+                                Code
+                            </button>
+                            <div class="collapse" id="i6">
+                                <div class="card card-body">
+                                    <pre><code>
+
+print (mob1.brand)
+print (mob2.brand)
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Additional attributes</h4>
+                            <p>In python, we can create attributes for a specific object alone. In the below example,
+                                the mob1 object has an ios
+                                version which mob2 does not have.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i7" aria-expanded="false" aria-controls="i7">
+                                Code
+                            </button>
+                            <div class="collapse" id="i7">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    pass
+
+mob1=Mobile()
+mob2=Mobile()
+
+mob1.price=20000
+mob1.brand="Apple"
+mob1.ios_version=10
+
+mob2.price=3000
+mob2.brand="Samsung"
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Assigning vs Updating </h4>
+                            <p>We can update the value of an existing attribute using the dot operator. For example, the
+                                below code will change
+                                the ios_version of mob1 object, since the mob1 object already has that attribute.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i8" aria-expanded="false" aria-controls="i8">
+                                Code
+                            </button>
+                            <div class="collapse" id="i8">
+                                <div class="card card-body">
+                                    <pre><code>
+
+mob1.ios_version=11
+
+</code></pre>
+                                </div>
+                            </div>
+                            <p>In python, if we assign a value to a non-existent attribute, it will create that
+                                attribute for that object alone.
+                                For example, the below code will create an attribute for mob2 object alone.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i9" aria-expanded="false" aria-controls="i9">
+                                Code
+                            </button>
+                            <div class="collapse" id="i9">
+                                <div class="card card-body">
+                                    <pre><code>
+
+mob2.android_version="Marshmallow"
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Accessing a non-existing attribute</h4>
+                            <p>If we try to access a non-existing attribute, we will get an Attribute Error.</p>
+                            <h4>Variable vs Attribute</h4>
+                            <p>The rules for a class attribute are very similar to a variable. You just have to treat
+                                reference_variable.attribute_name as a variable.
+
+                            </p>
+                            <img src="img/oop31.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/oop32.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Tip:</h4>
+                            <p>The best practice is to ensure all objects of a class have the same set of attributes.
+                                Very rarely should we
+                                create separate set of attributes for different objects. Also, languages like Java, C#
+                                etc do not allow us to
+                                create different set of attributes for different objects like python does.</p>
+
+
+                            <h3>Creating Common Attributes:</h3>
+                            <p>We have already seen the problem arising out of human error in creating attributes
+                                individually for objects.
+                                Apart from this problem we also have to deal with the problem of lack of reuse. For
+                                example if an object has 10
+                                attributes and we have 10 objects, then we have to write 100 lines of code! There is no
+                                reuse at all.</p>
+
+                            <p>We need a way to mention the attributes of all the objects of a class in one place so
+                                that we can create and
+                                initialize the attributes. Let us see how to do this.</p>
+                            <h4>How do we create attributes in a class?</h4>
+                            <p>Attributes can be added to a class through a special function called __init__(). </p>
+                            <img src="img/oop7.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In the code, brand and price are the attributes. All objects of this class will now have
+                                these attributes
+                                automatically. Here mob1 is assigned “Apple” and 20000 as values for the attributes
+                                brand and price
+                                respectively.</p>
+                            <p>Note:The parameter names and attribute names need not match</p>
+
+
+                            <h3>Constructor</h3>
+                            <p>When we create an object, the special __init__() method inside the class of that object
+                                is invoked automatically.
+                                This special function is called as a constructor.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i10" aria-expanded="false" aria-controls="i10">
+                                Code
+                            </button>
+                            <div class="collapse" id="i10">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self):
+        print("Inside constructor")
+mob1=Mobile()
+
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>self</h4>
+                            <p>self is not a keyword. self refers to the current object being executed.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i11" aria-expanded="false" aria-controls="i11">
+                                Code
+                            </button>
+                            <div class="collapse" id="i11">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self):
+        print("Id of self in constructor", id(self))
+mob1=Mobile()
+
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Parameterless constructor</h4>
+                            <p>You can create a constructor without parameters. But this is rarely useful.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i12" aria-expanded="false" aria-controls="i12">
+                                Code
+                            </button>
+                            <div class="collapse" id="i12">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self):
+        print("Inside constructor")
+        
+
+mob1=Mobile()
+mob2=Mobile()
+
+O/P:
+Inside constructor
+Inside constructor
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Parameterized constructor</h4>
+                            <p>If a constructor takes parameters then it would be called as parameterized constructor.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i13" aria-expanded="false" aria-controls="i13">
+                                Code
+                            </button>
+                            <div class="collapse" id="i13">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, brand, price):
+        print("Inside constructor")
+        self.brand = brand
+        self.price = price
+
+mob1=Mobile("Apple", 20000)
+print("Mobile 1 has brand", mob1.brand, "and price", mob1.price)
+O/P:
+Inside constructor
+Mobile 1 has brand Apple and price 20000
+
+</code></pre>
+                                </div>
+                            </div>
+                            <p>If a constructor takes parameters and if we invoke it with a different number of
+                                parameters, the error message
+                                will indicate how many parameters were missed out or exceeded.</p>
+
+                            <h4>Attribute creation using self</h4>
+                            <p>By using self.attribute_name and assigning a value we are creating attributes to the
+                                current object. The best
+                                practice is to create attributes inside the constructor.</p>
+                            <img src="img/oop8.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i14" aria-expanded="false" aria-controls="i14">
+                                Code
+                            </button>
+                            <div class="collapse" id="i14">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, price, brand):
+        print("Id of self in constructor", id(self))
+        self.price = price
+        self.brand = brand
+
+mob1=Mobile(1000, "Apple")
+print("Id of mob1 in driver code", id(mob1))
+O/P:
+Id of self in constructor 140650723511544
+Id of mob1 in driver code 140650723511544
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Attribute vs Local Variable
+                            </h4>
+                            <p>Attributes can be created only by using the self variable and the dot operator. Without
+                                self we are only creating
+                                a local variable and not an attribute.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i15" aria-expanded="false" aria-controls="i15">
+                                Code
+                            </button>
+                            <div class="collapse" id="i15">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self):
+        print ("Inside the Mobile constructor")
+        self.brand = None
+        brand = "Apple" #This is a local variable.
+        #Variables without self are local and they dont
+        #affect the attributes.
+
+        #Local varaibles cannot be accessed outside the init
+        #Using self creates attributes which are
+        #accessible in other methods as well
+
+mob1=Mobile()
+print(mob1.brand)#This does not print Apple
+#This prints None because brand=Apple creates
+#a local variable and it does not affect the attribute
+
+O/P:
+Inside the Mobile constructor
+None
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Creating behaviors </h4>
+                            <p>We can create behavior in a class by adding functions in a class. However, such functions
+                                should have a special
+                                parameter called self as the first parameter. </p>
+                            <p>Such functions which describe the behavior are also called as methods. We can invoke the
+                                methods using the dot
+                                operator as shown.</p>
+                            <p>Even though purchase() is accepting a parameter called self, we need not pass it when we
+                                invoke it.</p>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i16" aria-expanded="false" aria-controls="i16">
+                                Code
+                            </button>
+                            <div class="collapse" id="i16">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self):
+        print("Inside constructor")
+
+    def purchase (self):
+        print("Purchasing a mobile")
+
+mob1=Mobile()
+mob1.purchase()
+    
+O/P:
+Inside constructor
+Purchasing a mobile           
+
+</code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Method accessing attributes</h4>
+                            <p>We can access an attribute in a method by using self. Value of the attribute accessed
+                                inside the method is
+                                determined by the object used to invoke the method.</p>
+                            <p>For example, in the code below when we invoke purchase using mob1, attribute values
+                                (Apple and 20000) of mob1 are
+                                accessed.</p>
+                            <p>Similarly, when mob2 is used to invoke purchase, attribute values (Samsung and 3000) of
+                                mob2 are accessed in
+                                purchase().</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i17" aria-expanded="false" aria-controls="i17">
+                                Code
+                            </button>
+                            <div class="collapse" id="i17">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, brand, price):
+        print("Inside constructor")
+        self.brand = brand
+        self.price = price
+        
+    def purchase(self):
+        print("Purchasing a mobile")
+        print("This mobile has brand", self.brand, "and price", self.price)
+        
+print("Mobile-1")
+mob1=Mobile("Apple", 20000)
+mob1.purchase()
+
+print("Mobile-2")
+mob2=Mobile("Samsung",3000)
+mob2.purchase()
+O/P:
+Mobile-1
+Inside constructor
+Purchasing a mobile
+This mobile has brand Apple and price 20000
+Mobile-2
+Inside constructor
+Purchasing a mobile
+This mobile has brand Samsung and price 3000
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Invoking methods </h4>
+                            <p>We can also invoke one method from another using self.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i18" aria-expanded="false" aria-controls="i18">
+                                Code
+                            </button>
+                            <div class="collapse" id="i18">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def display(self):
+        print("Displaying details")
+
+    def purchase(self):
+        self.display()
+        print("Calculating price")
+
+Mobile().purchase()
+O/P:
+Displaying details
+Calculating price
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Identify invoking object </h4>
+                            <p>In the below code, how does return_product() method know which mobile object we are
+                                using?</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i19" aria-expanded="false" aria-controls="i19">
+                                Code
+                            </button>
+                            <div class="collapse" id="i19">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self,price,brand):
+        print (id(self))
+        self.price = price
+        self.brand = brand
+
+    def return_product(self):
+        print (id(self))
+        print ("Brand being returned is ",self.brand," and price is ",self.price)
+
+mob1 = Mobile(1000, "Apple")
+print ("Mobile 1 has id", id(mob1))
+
+mob2=Mobile(2000, "Samsung")
+print ("Mobile 2 has id", id(mob2))
+
+mob2.return_product()
+Mobile.return_product(mob2)
+O/P:
+140376949480752
+Mobile 1 has id 140376949480752
+140376949480808
+Mobile 2 has id 140376949480808
+140376949480808
+Brand being returned is Samsung and price is 2000
+140376949480808
+Brand being returned is Samsung and price is 2000
+
+</code></pre>
+                                </div>
+                            </div>
+                            <p>mob2.return_product() can also be invoked as Mobile.return_product(mob2).</p>
+                            <p>Thus self now refers to mob2. For simplicity sake and for better readability we use
+                                mob2.return_product() instead
+                                of Mobile.return_product(mob2). </p>
+
+                            <h4>Deep Dive Into self & Methods</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Method invocation</th>
+                                        <th>Method definition</th>
+                                        <th>Explanation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>mob1.display()</td>
+                                        <td>
+                                            def display(self):
+                                            print(self.discount)
+                                        </td>
+                                        <td>Here, 'self' is the first parameter. Hence it refers to mob1.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>mob1.display()</td>
+                                        <td>
+                                            def display(mob_obj):
+                                            print(mob_obj.discount)
+
+                                        </td>
+                                        <td>Here, ‘mob_obj' is the first parameter. Hence it refers to ‘mob1'.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>mob1.purchase(2)</td>
+                                        <td>
+                                            def purchase(self,qty):
+                                            print("Total is ",self.price*qty)
+                                        </td>
+                                        <td>Here, 'self' is the first parameter. Hence it refers to ‘mob1'.The second
+                                            parameter is ‘qty' which
+                                            stores 2 passed during invocation.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>mob1.purchase(2)</td>
+                                        <td>
+                                            def purchase(qty,self):
+                                            print("Total is ", qty.price*self)
+                                        </td>
+                                        <td>Here, ‘qty' is the first parameter. Hence it refers to ‘mob1'. The second
+                                            parameter is 'self' which
+                                            stores 2 passed during invocation.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>mob1.display()</td>
+                                        <td>
+                                            def display():
+                                            print(self.discount)
+                                        </td>
+                                        <td>This is an error, since the first parameter of a method is always a
+                                            reference to the object used.
+                                            Hence it should have AT LEAST one parameter.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>In python, everything is an object. Thus everything would have either attributes or
+                                behavior or both. That means
+                                even numbers, strings, list, set, dictionary, etc are all treated as objects in python.
+                                For example, </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Example</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>(12.5).is_integer()</td>
+                                        <td>Here we are invoking a method is_integer() on a numerical value. That means
+                                            numerical values are all
+                                            objects</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"hello".upper()</td>
+                                        <td>Here we are invoking upper() method on a string object.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>[1,2,3].reverse()</td>
+                                        <td>Here we are invoking the reverse method on a list object</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Difference between Function and Method:</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Function</th>
+                                        <th>Method</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Is a block of code with a name</td>
+                                        <td>Is part of an object and represents the behavior of the object</td>
+                                    </tr>
+                                    <tr>
+                                        <td>It can be invoked using the name of the function and passing parameters</td>
+                                        <td>Can be invoked only on an object, using dot operator. Without an object we
+                                            cannot invoke a method
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Example: len([1,2,3])</td>
+                                        <td>Example: [1,2,3].reverse()</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Parameters are optional in a function</td>
+                                        <td>A method must have at least one parameter : self</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <h3>Reference Variable</h3>
+                            <p>What happens to a balloon without the ribbon connecting it to the ground? Well, it
+                                escapes and becomes unusable.
+                            </p>
+                            <h4>Understanding references</h4>
+                            <p>An object is like a balloon and the reference variable is like the ribbon connecting it
+                                to the ground.</p>
+                            <img src="img/oop9.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i20" aria-expanded="false" aria-controls="i20">
+                                Code
+                            </button>
+                            <div class="collapse" id="i20">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+
+mob1=Mobile(1000, "Apple")
+print(mob1.price)
+#We are able to access the object
+#in subsequent lines because we
+#have a reference variable. This is
+#like holding a balloon with a ribbon
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Object without a reference</h4>
+                            <p>Just like a balloon without a ribbon, an object without a reference variable cannot be
+                                used later.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i21" aria-expanded="false" aria-controls="i21">
+                                Code
+                            </button>
+                            <div class="collapse" id="i21">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+
+Mobile(1000, "Apple")
+#After the above line the Mobile
+# object created is lost and unusable
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Multiple References</h4>
+                            <p>Can one balloon have multiple ribbons?</p>
+                            <img src="img/oop10.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Just like a balloon can have multiple ribbons, an object can also have multiple reference
+                                variables. Both the
+                                references are referring to the same object. When you assign an already created object
+                                to a variable, a new
+                                object is not created.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i22" aria-expanded="false" aria-controls="i22">
+                                Code
+                            </button>
+                            <div class="collapse" id="i22">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, price, brand):
+        print ("Inside constructor")
+        self.price = price
+        self.brand = brand
+
+mob1=Mobile(1000, "Apple")
+mob2=mob1
+print ("Id of object referred by mob1 reference variable is :", id(mob1))
+print ("Id of object referred by mob2 reference variable is :", id(mob2))
+#mob1 and mob2 are reference variables to the same object
+O/P:
+Inside constructor
+Id of object referred by mob1 reference variable is : 139626361807256
+Id of object referred by mob2 reference variable is : 139626361807256
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Multiple references - Updating object</h4>
+                            <p>Let's say a balloon has three ribbons connecting it. If I change the color of the balloon
+                                tied to ribbon 1, what
+                                will be the color of the balloon tied to ribbons 2 and 3?
+                            </p>
+                            <img src="img/oop11.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Just like the balloon with multiple ribbons, if we change the attribute of an object
+                                through one reference
+                                variable, it immediately reflects in other reference variable as there is only one
+                                balloon ultimately!</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i23" aria-expanded="false" aria-controls="i23">
+                                Code
+                            </button>
+                            <div class="collapse" id="i23">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+
+mob1=Mobile(1000, "Apple")
+print("Price of mobile 1 :", mob1.price)
+
+mob2=mob1
+mob2.price=3000
+
+print("Price of mobile 1 :", mob1.price)
+print("Price of mobile 2 :", mob2.price)
+O/P:
+Price of mobile 1 : 1000
+Price of mobile 1 : 3000
+Price of mobile 2 : 3000
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Dereferencing & assigning</h4>
+                            <p>Can we take one of the multiple ribbons of balloon 1 and tie it to another balloon?
+                                What will happen to the first balloon? Will it be lost?</p>
+                            <img src="img/oop112.png" style="height: 100px;width: auto;" alt=""
+                                class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/oop10.png" style="height: 100px;width: auto;" alt=""
+                                class="img-thumbnail img-fluid d-block img-size">
+                            <p>Just like the balloons and ribbons, we can make one reference variable refer to another
+                                object. Now any change
+                                made through this reference variable will not affect the old object.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i24" aria-expanded="false" aria-controls="i24">
+                                Code
+                            </button>
+                            <div class="collapse" id="i24">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+
+mob1=Mobile(1000, "Apple")
+
+mob2=mob1
+mob2=Mobile(2000," Samsung")
+mob2.price=3000
+
+print("Mobile", "Id","Price")
+print("mob1", id(mob1), mob1.price)
+print("mob2", id(mob2), mob2.price)
+O/P:
+Mobile Id Price
+mob1 140356972548048 1000
+mob2 140356972580936 3000
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Reference variable - Summary</h4>
+                            <ul>
+                                <li>Reference variables hold the objects</li>
+                                <li>We can create objects without reference variable as well</li>
+                                <li>An object can have multiple reference variables</li>
+                                <li>Assigning a new reference variable to an existing object does not create a new
+                                    object</li>
+                            </ul>
+                            <h4>Printing an object</h4>
+                            <p>What would be the output if we print the reference variable? Since it is an object,
+                                printing it will display the
+                                internal hex representation of it. How can we get a more readable output for this?</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i25" aria-expanded="false" aria-controls="i25">
+                                Code
+                            </button>
+                            <div class="collapse" id="i25">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Shoe:
+    def __init__(self, price, material):
+        self.price = price
+        self.material = material
+
+s1=Shoe(1000, "Canvas")
+print(s1)
+O/P:
+&lt_main__.Shoe object at 0x7f4d9be5dba8>&lt/__main__.Shoe>
+
+    </code></pre>
+                                </div>
+                            </div>
+                            <h4>__str__</h4>
+                            <p>For a more readable output when printing an object we can use the inbuilt special __str__
+                                method. This method
+                                MUST return a string and this string will be used when the object is printed. This is
+                                useful in debugging as we
+                                can print the values of the attributes.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i26" aria-expanded="false" aria-controls="i26">
+                                Code
+                            </button>
+                            <div class="collapse" id="i26">
+                                <div class="card card-body">
+                                    <pre><code>
+
+class Shoe:
+    def __init__(self, price, material):
+        self.price = price
+        self.material = material
+
+    def __str__(self):
+        return "Shoe with price: " + str(self.price) + " and material: " + self.material
+
+s1=Shoe(1000, "Canvas")
+print(s1)
+O/P:
+Shoe with price: 1000 and material: Canvas
+
+</code></pre>
+                                </div>
+                            </div>
+                            <h4>Coding Standards</h4>
+                            <p>All variable names and method names are in snake_case and all class names should be in
+                                PascalCase ( It is similar
+                                to camelCase but the first character is also Capitalized ). For example:</p>
+                            <p>Classes:
+                                Mobile,
+                                RegularCustomer</p>
+                            <p>Methods:
+                                change_password(),
+                                display_details()</p>
+                            <p>Variables:
+                                price = 1000,
+                                brand = "Samsung"</p>
+                            <h4>OOP Basics-suummary</h4>
+                            <ul>
+                                <li>OOP is a style of programming which allows us to club data and behavior together.
+                                </li>
+                                <li>This is more suited for coding real life scenarios.</li>
+                                <li>Objects are real world entities</li>
+                                <li>Class is just a classification. It is just a concept.</li>
+                                <li>Class is a description of attributes and behavior that objects of that
+                                    classification should possess.</li>
+                                <li>Attributes are created in a special function called __init__ and behaviors are
+                                    created using functions
+                                    called methods.</li>
+                                <li>Objects can be created using ClassName() or using object literals for some of the
+                                    built in classes</li>
+                                <li>Attributes are created using reference_variable.attribute_name = value syntax.</li>
+                                <li>Behavior is created by defining a function inside the class having a special
+                                    parameter called self.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                            Abstraction & Encapsulation
+                        </button>
+                    </h2>
+                    <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Abstraction & Encapsulation</h3>
+                            <p>Consider the below given code:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i27" aria-expanded="false" aria-controls="i27">
+                                Code
+                            </button>
+                            <div class="collapse" id="i27">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                def __init__(self, brand, price):
+                    print("Inside constructor")
+                    self.brand = brand
+                    self.price = price
+                def purchase(self):
+                    print("Purchasing a mobile")
+                    print("This mobile has brand", self.brand, "and price", self.price)
+            print("Mobile-1")
+            mob1=Mobile("Apple", 20000)
+            mob1.purchase()
+            print("Mobile-2")
+            mob2=Mobile("Samsung",3000)
+            mob2.purchase()
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>When we invoke the purchase() on a mobile object, we don’t have to know the details of
+                                the method to
+                                invoke it.
+                            </p>
+                            <p>This ability to use something without having to know the details of how it is working is
+                                called as
+                                abstraction.
+                            </p>
+
+                            <h4>Public data access </h4>
+                            <p>But with the way currently it is coded, the data can be accidentally changed by directly
+                                assigning a
+                                incorrect
+                                value to it as shown below:
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i28" aria-expanded="false" aria-controls="i28">
+                                Code
+                            </button>
+                            <div class="collapse" id="i28">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, cust_id, name, age, wallet_balance):
+                    self.cust_id = cust_id
+                    self.name = name
+                    self.age = age
+                    self.wallet_balance = wallet_balance
+            
+                def update_balance(self, amount):
+                    if amount &lt 1000 and amount > 0:
+                        self.wallet_balance += amount
+            
+                def show_balance(self):
+                    print ("The balance is ",self.wallet_balance)
+            
+            c1=Customer(100, "Gopal", 24, 1000)
+            c1.wallet_balance = 10000000000
+            c1.show_balance()
+            O/P:
+            The balance is 10000000000
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Private data access</h4>
+                            <p>We can put a lock on that data by adding a double underscore in front of it, as shown in
+                                below code.
+                            </p>
+                            <p>Adding a double underscore makes the attribute a private attribute. Private attributes
+                                are those
+                                which are
+                                accessible only inside the class. This method of restricting access to our data is
+                                called
+                                encapsulation.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i29" aria-expanded="false" aria-controls="i29">
+                                Code
+                            </button>
+                            <div class="collapse" id="i29">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, cust_id, name, age, wallet_balance):
+                    self.cust_id = cust_id
+                    self.name = name
+                    self.age = age
+                    self.__wallet_balance = wallet_balance
+            
+                def update_balance(self, amount):
+                    if amount &lt 1000 and amount > 0:
+                        self.__wallet_balance += amount
+            
+                def show_balance(self):
+                    print ("The balance is ",self.__wallet_balance)
+            
+            c1=Customer(100, "Gopal", 24, 1000)
+            print(c1.__wallet_balance)
+            O/P:
+            Runtime Exception
+            print(c1.__wallet_balance)
+            AttributeError: 'Customer' object has no attribute '__wallet_balance'
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>How does encapsulation work?</h4>
+                            <p>When we put a double underscore in front of the attribute name, python will internally
+                                change its
+                                name to
+                                _Classname__attribute.</p>
+                            <p>This is why we get an error when we try to access a private attribute. </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i30" aria-expanded="false" aria-controls="i30">
+                                Code
+                            </button>
+                            <div class="collapse" id="i30">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, cust_id, name, age, wallet_balance):
+                    self.cust_id = cust_id
+                    self.name = name
+                    self.age = age
+                    self.__wallet_balance = wallet_balance
+            
+                def update_balance(self,amount):
+                    if amount &lt 1000 and amount > 0:
+                        self.__wallet_balance += amount
+            
+                def show_balance(self):
+                    print("The balance is ",self.__wallet_balance)
+            
+            c1=Customer(100, "Gopal", 24, 1000)
+            print(c1.__wallet_balance)
+                    
+            OP:
+            Runtime Exception
+            Traceback (most recent call last):
+            File "file.py", line 16, in &ltmodule>
+            print(c1.__wallet_balance)
+            AttributeError: 'Customer' object has no attribute '__wallet_balance'
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Private Data Update - Caution !</h4>
+                            <p>If we try to assign a value to a private variable, we end up creating a new attribute in
+                                python. Thus
+                                this code
+                                does not give an error, but it is logically flawed and does not produce the intended
+                                result.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i31" aria-expanded="false" aria-controls="i31">
+                                Code
+                            </button>
+                            <div class="collapse" id="i31">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, cust_id, name, age, wallet_balance):
+                    self.cust_id = cust_id
+                    self.name = name
+                    self.age = age
+                    self.__wallet_balance = wallet_balance
+            
+                def update_balance(self, amount):
+                    if amount &lt 1000 and amount > 0:
+                        self.__wallet_balance += amount
+            
+                def show_balance(self):
+                    print ("The balance is ",self.__wallet_balance)
+            
+            c1=Customer(100, "Gopal", 24, 1000)
+            c1.__wallet_balance = 10000000000
+            c1.show_balance()
+            O/P:
+            The balance is 1000
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Accessing Private Variables </h4>
+                            <p>Since we know that the name of the variable changes when we make it private, we can
+                                access it using
+                                its modified
+                                name as shown in below code.</p>
+                            <p>So, if private variable can be accessed outside the class and can be modified, then what
+                                is the
+                                advantage of
+                                making it private?</p>
+                            <p>Note: Languages like Java, C#, etc do not allow access of private variable outside the
+                                class</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i32" aria-expanded="false" aria-controls="i32">
+                                Code
+                            </button>
+                            <div class="collapse" id="i32">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, cust_id, name, age,wallet_balance):
+                    self.cust_id = cust_id
+                    self.name = name
+                    self.age = age
+                    self.__wallet_balance = wallet_balance
+            
+                def update_balance(self, amount):
+                    if amount &lt 1000 and amount> 0:
+                        self.__wallet_balance += amount
+            
+                def show_balance(self):
+                    print ("The balance is ",self.__wallet_balance)
+            
+            c1=Customer(100, "Gopal", 24, 1000)
+            c1._Customer__wallet_balance = 10000000000
+            c1.show_balance()
+            O/P:
+            The balance is 10000000000
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Encapsulation - Just a caution sign !</h4>
+                            <p>Any lock can be broken by a determined thief. Similarly, just because you make your code
+                                private,
+                                does not mean
+                                it is not accessible to other developers. When a developer sees a private variable, it’s
+                                a
+                                gentleman's agreement
+                                not to access it directly. It is used to only prevent accidental access.</p>
+                            <p>Thus in python encapsulation is more like a caution sign than a lock. A caution sign is
+                                there so that
+                                you don’t
+                                accidentally break a rule. But if you still want to break it you can, with consequence
+                                ;)</p>
+                            <img src="img/oop13.jpg" style="height: 100px;width: auto;" alt=""
+                                class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Getters & setters </h4>
+                            <p>To have a error free way of accessing and updating private variables, we create specific
+                                methods for
+                                this.</p>
+                            <ul>
+                                <li>The methods which are meant to set a value to a private variable are called setter
+                                    methods</li>
+                                <li>The methods meant to access private variable values are called getter methods</li>
+                            </ul>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i33" aria-expanded="false" aria-controls="i33">
+                                Code
+                            </button>
+                            <div class="collapse" id="i33">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, id, name, age, wallet_balance):
+                    self.id = id
+                    self.name = name
+                    self.age = age
+                    self.__wallet_balance = wallet_balance
+            
+                def set_wallet_balance(self, amount):
+                    if amount &lt 1000 and amount > 0:
+                        self.__wallet_balance = amount
+            
+                def get_wallet_balance(self):
+                    return self.__wallet_balance
+            
+            c1=Customer(100, "Gopal", 24, 1000)
+            c1.set_wallet_balance(120)
+            print(c1.get_wallet_balance())
+            O/P:
+            120
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Class Diagram</h4>
+                            <p>A lot of things can go wrong in communication.</p>
+                            <p>To ensure that programmers all over understand each other properly, we need a common way
+                                of
+                                representing a class.
+                                This is called as a class diagram. This is similar to a circuit diagram or a plan or
+                                machine diagram
+                                which
+                                allows engineers to understand each others' ideas clearly.</p>
+                            <p>Unlike the complex engineering diagrams, a class diagram is quite simple. It has four
+                                parts: the name
+                                of the
+                                class, the list of attributes, the list of methods and access specifiers.</p>
+                            <img src="img/oop14.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In a class diagram, a – sign indicates private access and + indicates public access.</p>
+                            <p>Note: We can create private methods by adding a double underscore in front of it, just
+                                like private
+                                variables.
+                                Also, if a method has both leading and trailing double underscores ( like __init__,
+                                __str__, etc) it
+                                indicates
+                                that it is a special built-in method. As per coding convention, we are not supposed to
+                                create our
+                                own methods
+                                with both leading and trailing underscores.</p>
+
+                            <h4>Getters & setters - Way to code !</h4>
+                            <p>All setter methods must accept the value to be updated as a parameter and all getter
+                                methods must not
+                                have any
+                                parameter and they must return the value.</p>
+                            <p>Setter methods are called as mutator methods ( as they change or mutate the value ) and
+                                the getter
+                                methods are
+                                called accessor methods ( as they access the values )</p>
+                            <h4>Abstraction & Encapsulation - Summary
+                            </h4>
+                            <ul>
+                                <li>Encapsulation is preventing access to a data outside the class</li>
+                                <li>Adding a __ in front of a attribute makes it private</li>
+                                <li>In python, adding a __ changes the name of the attribute to _Classname__attribute
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                            Pass by Reference
+                        </button>
+                    </h2>
+                    <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Pass by reference
+                            </h3>
+                            <p>What happens when we pass an object as a parameter to a function? In the below code, what
+                                will be the
+                                output?</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i34" aria-expanded="false" aria-controls="i34">
+                                Code
+                            </button>
+                            <div class="collapse" id="i34">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+            def change_price(mobile_obj):
+                mobile_obj.price = 3000
+            
+            mob1=Mobile(1000, "Apple")
+            change_price(mob1)
+            print (mob1.price)
+            O/P:
+            3000
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Understanding pass by reference</h4>
+                            <p>When we pass an object to a parameter, the parameter name becomes a reference variable.
+                            </p>
+                            <p>Recollecting the balloon example, it is like creating one more ribbon to the same
+                                balloon. Thus there
+                                is one
+                                object with two reference variable, one the formal parameter and the actual parameter.
+                                Thus any
+                                change made
+                                through one reference variable will affect the other as well.</p>
+                            <img src="img/oop15.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i35" aria-expanded="false" aria-controls="i35">
+                                Code
+                            </button>
+                            <div class="collapse" id="i35">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+                def change_price(mobile_obj):
+                    print ("Id of object inside function", id(mobile_obj))
+                    mobile_obj.price = 3000
+            
+            mob1=Mobile(1000, "Apple")
+            print ("Id of object in driver code", id(mob1))
+            
+            mob1.change_price()
+            print ("Price of mob1 ", mob1.price)
+            OP:
+            Id of object in driver code 140376454642712
+            Id of object inside function 140376454642712
+            Price of mob1 3000
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                            Collection of Objects
+                        </button>
+                    </h2>
+                    <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Collection of Objects</h3>
+                            <h4>List of objects</h4>
+                            <p>We can store a number of objects inside a list or a dictionary.</p>
+                            <p>The below example, we have a list of mobile objects and we are iterating over the list
+                                and printing
+                                the values.
+                            </p>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i36" aria-expanded="false" aria-controls="i36">
+                                Code
+                            </button>
+                            <div class="collapse" id="i36">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                def __init__(self, brand, price):
+                    self.brand = brand
+                    self.price = price
+            
+            mob1=Mobile("Apple", 1000)
+            mob2=Mobile("Samsung", 2000)
+            mob3=Mobile("Apple", 3000)
+            mob4=Mobile("Samsung", 4000)
+            mob5=Mobile("Apple", 5000)
+            
+            list_of_mobiles=[mob1, mob2, mob3, mob4, mob5]
+            
+            for mobile in list_of_mobiles:
+                print (mobile.brand,mobile.price)
+            
+            OP:
+            Apple 1000
+            Samsung 2000
+            Apple 3000
+            Samsung 4000
+            Apple 5000
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Dictionary of objects</h4>
+                            <p>We can also store objects in a dictionary. For example, in the below code we are storing
+                                all the
+                                mobile objects
+                                in a dictionary and printing only those mobiles whose price is greater than 3000.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i37" aria-expanded="false" aria-controls="i37">
+                                Code
+                            </button>
+                            <div class="collapse" id="i37">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                def __init__(self,brand,price):
+                    self.brand = brand
+                    self.price = price
+            
+            mob1=Mobile("Apple", 1000)
+            mob2=Mobile("Samsung", 5000)
+            mob3=Mobile("Apple", 3000)
+            
+            mob_dict={
+                        "m1":mob1,
+                        "m2":mob2,
+                        "m3":mob3
+                        }
+            
+            for key,value in mob_dict.items():
+                if value.price > 3000:
+                    print (value.brand,value.price)
+            OP:
+            Samsung 5000
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Dictionary of list of objects </h4>
+                            <p>We have a list of customer objects. Complete the code so that we have a dictionary of
+                                customer
+                                objects based on
+                                location.</p>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i38" aria-expanded="false" aria-controls="i38">
+                                Code
+                            </button>
+                            <div class="collapse" id="i38">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, cust_id, cust_name, location):
+                    self.cust_id = cust_id
+                    self.cust_name = cust_name
+                    self.location = location
+            
+            list_of_customers = [Customer(101, 'Mark', 'US'),
+                                    Customer(102, 'Jane', 'Japan'),
+                                    Customer(103, 'Kumar', 'India')]
+            
+            dict_of_customer = {}
+            for customer in list_of_customers:
+                dict_of_customer[customer.location] = customer
+            
+            print ("Customer name in India is "+dict_of_customer["India"].cust_name)
+            
+            for key,value in dict_of_customer.items():
+                print ("Location: "+key+", Name: "+value.cust_name+", Id: "+(str(value.cust_id)))
+            
+            OP:
+            Customer name in India is Kumar
+            Location: Japan, Name: Jane, Id: 102
+            Location: US, Name: Mark, Id: 101
+            Location: India, Name: Kumar, Id: 103
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                            Static
+                        </button>
+                    </h2>
+                    <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h3>Static</h3>
+                            <h4>Need for Static Variables</h4>
+                            <p>However, the solution of hardcoding the value in the attribute is not a good one. For
+                                example, since
+                                this is a
+                                limited time discount we should be able to programmatically enable and disable the
+                                discount using
+                                functions like
+                                this:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i39" aria-expanded="false" aria-controls="i39">
+                                Code
+                            </button>
+                            <div class="collapse" id="i39">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+                    self.discount = 0
+                def purchase(self):
+                    total = self.price - self.price * self.discount / 100
+                    print (self.brand, "mobile with price", self.price, "is available after discount at", total)
+            def enable_discount(list_of_mobiles):
+                for mobile in list_of_mobiles:
+                    mobile.discount=50
+            def disable_discount(list_of_mobiles):
+                for mobile in list_of_mobiles:
+                    mobile.discount=0
+            mob1=Mobile(20000, "Apple")
+            mob2=Mobile(30000, "Apple")
+            mob3=Mobile(5000, "Samsung")
+            mob4=Mobile(6000, "Samsung")
+            list_of_mobiles=[mob1,mob2,mob3,mob4]
+            mob1.purchase()
+            enable_discount(list_of_mobiles)
+            mob2.purchase()
+            mob3.purchase()
+            disable_discount(list_of_mobiles)
+            mob4.purchase()
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>However, in our current approach, each object has discount as an attribute. If we change
+                                the value
+                                for one
+                                object, it does not affect the other object. If we have to change, we have to change for
+                                all the
+                                objects, one by
+                                one.</p>
+                            <h4>Shared attributes</h4>
+                            <p>What we need is a way to make an attribute shared across objects. The data is shared by
+                                all objects,
+                                not owned by
+                                each object. Thus, by making a single change, it should reflect in all objects at one
+                                go.</p>
+                            <img src="img/oop16.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4>Static variables - Introduction</h4>
+                            <p>We can create shared attributes by placing them directly inside the class and not inside
+                                the
+                                constructor. And
+                                since this attribute is not owned by any one object, we don’t need the self to create
+                                this
+                                attribute. Such
+                                variables which are created at a class level are called static variables. Here discount
+                                is a static
+                                value.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i40" aria-expanded="false" aria-controls="i40">
+                                Code
+                            </button>
+                            <div class="collapse" id="i40">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                discount = 50
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Accessing static variables</h4>
+                            <p>Now that we have created static variables, we can access them using the Class name
+                                itself. Static
+                                variable belong
+                                to the class and not an object. Hence we don’t need self to access static variables.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i41" aria-expanded="false" aria-controls="i41">
+                                Code
+                            </button>
+                            <div class="collapse" id="i41">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                discount = 50
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+                def purchase(self):
+                    total = self.price - self.price * Mobile.discount / 100
+                    print (self.brand, "mobile with price", self.price, "is available after discount at", total)
+            
+            mob1=Mobile(20000, "Apple")
+            mob2=Mobile(30000, "Apple")
+            mob3=Mobile(5000, "Samsung")
+            
+            mob1.purchase()
+            mob2.purchase()
+            mob3.purchase()
+            OP:
+            Apple mobile with price 20000 is available after discount at 10000.0
+            Apple mobile with price 30000 is available after discount at 15000.0
+            Samsung mobile with price 5000 is available after discount at 2500.0
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Updating static variables</h4>
+                            <p>We can update the static value using the class name.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i42" aria-expanded="false" aria-controls="i42">
+                                Code
+                            </button>
+                            <div class="collapse" id="i42">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                discount = 50
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+                def purchase(self):
+                    total = self.price - self.price * Mobile.discount / 100
+                    print (self.brand, "mobile with price", self.price, "is available after discount at", total)
+            
+            def enable_discount():
+                Mobile.discount = 50
+            
+            def disable_discount():
+                Mobile.discount = 0
+            
+            mob1=Mobile(20000, "Apple")
+            mob2=Mobile(30000, "Apple")
+            mob3=Mobile(5000, "Samsung")
+            
+            enable_discount()
+            mob1.purchase()
+            mob2.purchase()
+            disable_discount()
+            mob3.purchase()
+            
+            OP:
+            Apple mobile with price 20000 is available after discount at 10000.0
+            Apple mobile with price 30000 is available after discount at 15000.0
+            Samsung mobile with price 5000 is available after discount at 5000.0
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Static vs reference variables</h4>
+                            <p>Static variables belong to the class and hence it is incorrect to access them or update
+                                them using
+                                the reference
+                                variable or self. Doing so may cause unexpected consequences in the code and should be
+                                refrained
+                                from.</p>
+                            <h4>Static variables & encapsulation</h4>
+                            <p>We can make our static variable as a private variable by adding a double underscore in
+                                front of it.
+                                We can also
+                                create getter and setter methods to access or modify it.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i43" aria-expanded="false" aria-controls="i43">
+                                Code
+                            </button>
+                            <div class="collapse" id="i43">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                __discount = 50
+            
+                def get_discount(self):
+                    return Mobile.__discount
+            
+                def set_discount(self,discount):
+                    Mobile.__discount = discount
+            
+            m1=Mobile()
+            print(m1.get_discount())
+            OP:
+            50
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Need for Static Methods </h4>
+                            <p>In the below code we are invoking the getter method using a reference variable. But the
+                                self is not
+                                used inside
+                                the method at all.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i44" aria-expanded="false" aria-controls="i1">
+                                Code
+                            </button>
+                            <div class="collapse" id="i44">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                __discount = 50
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+                def purchase(self):
+                    total = self.price - self.price * Mobile.__discount / 100
+                    print ("Total is ",total)
+            
+                def get_discount(self):
+                    return Mobile.__discount
+            
+                def set_discount(self,discount):
+                    Mobile.__discount = discount
+            
+            mob1=Mobile(20000, "Apple")
+            mob2=Mobile(30000, "Apple")
+            mob3=Mobile(5000, "Samsung")
+            
+            print(mob1.get_discount())
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Static Methods - Introduction</h4>
+                            <p>Since static variable is object independent, we need a way to access the getter setter
+                                methods
+                                without an object.
+                                This is possible by creating static methods. Static methods are those methods which can
+                                be accessed
+                                without an
+                                object. They are accessed using the class name.</p>
+
+                            <p>There are two rules in creating such static methods:</p>
+                            <ul>
+                                <li>The methods should not have self</li>
+                                <li>@staticmethod must be written on top of it</li>
+                            </ul>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i45" aria-expanded="false" aria-controls="i45">
+                                Code
+                            </button>
+                            <div class="collapse" id="i45">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            @staticmethod
+            def get_discount():
+                return Mobile.__discount
+            @staticmethod
+            def set_discount(discount):
+                Mobile.__discount=discount
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Accessing static methods</h4>
+                            <p>We can access static methods directly using the class name, even without creating
+                                objects.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i46" aria-expanded="false" aria-controls="i46">
+                                Code
+                            </button>
+                            <div class="collapse" id="i46">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                __discount = 50
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+                def purchase(self):
+                    total = self.price - self.price * Mobile.__discount / 100
+                    print ("Total is ",total)
+            
+                @staticmethod
+                def get_discount():
+                    return Mobile.__discount
+            
+                @staticmethod
+                def set_discount(discount):
+                    Mobile.__discount = discount
+            
+            print (Mobile.get_discount())
+            OP:
+            50
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>MegaSale solution</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i47" aria-expanded="false" aria-controls="i47">
+                                Code
+                            </button>
+                            <div class="collapse" id="i47">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                __discount = 50
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+            
+                def purchase(self):
+                    total = self.price - self.price * Mobile.__discount / 100
+                    print (self.brand, "mobile with price", self.price, "is available after discount at", total)
+            
+                @staticmethod
+                def enable_discount():
+                    Mobile.set_discount(50)
+            
+                @staticmethod
+                def disable_discount():
+                    Mobile.set_discount(0)
+            
+                @staticmethod
+                def get_discount():
+                    return Mobile.__discount
+            
+                @staticmethod
+                def set_discount(discount):
+                    Mobile.__discount = discount
+            
+            mob1=Mobile(20000, "Apple")
+            mob2=Mobile(30000, "Apple")
+            mob3=Mobile(5000, "Samsung")
+            
+            Mobile.disable_discount()
+            
+            mob1.purchase()
+            
+            Mobile.enable_discount()
+            
+            mob2.purchase()
+            
+            Mobile.disable_discount()
+            
+            mob3.purchase()
+            OP:
+            Apple mobile with price 20000 is available after discount at 20000.0
+            Apple mobile with price 30000 is available after discount at 15000.0
+            Samsung mobile with price 5000 is available after discount at 5000.0                                               
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Static counter</h4>
+                            <p>Let us say we want to assign a unique number to each mobile object. The first object
+                                should be given
+                                a number
+                                1000 and subsequent objects should have that value increased by 1. We can accomplish
+                                this by using a
+                                combination
+                                of static and instance variables as shown below:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i48" aria-expanded="false" aria-controls="i48">
+                                Code
+                            </button>
+                            <div class="collapse" id="i48">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Mobile:
+                counter = 1000
+                def __init__(self, price, brand):
+                    self.price = price
+                    self.brand = brand
+                    self.mobile_id = Mobile.counter
+                    Mobile.counter += 1
+            
+            mob1=Mobile(20000, "Apple")
+            mob2=Mobile(30000, "Apple")
+            mob3=Mobile(5000, "Samsung")
+            
+            print("mobile_id for mob1 is", mob1.mobile_id)
+            print("mobile_id for mob2 is", mob2.mobile_id)
+            print("mobile_id for mob3 is", mob3.mobile_id)
+            print("Current value of counter is", Mobile.counter)
+            OP:
+            mobile_id for mob1 is 1000
+            mobile_id for mob2 is 1001
+            mobile_id for mob3 is 1002
+            Current value of counter is 1003
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Types of variables:</h4>
+                            <ul>
+                                <li>self.variable_name indicates it is an instance variable. </li>
+                                <li>A variable which is created outside any method in a class is a static variable.
+                                </li>
+                                <li>Any method created with @staticmethod is a static method. </li>
+                                <li>Any other method in a class is an instance method. </li>
+                            </ul>
+                            <h4>Static - Summary</h4>
+                            <ul>
+                                <li>Static attributes are created at class level.</li>
+                                <li>Static attributes are accessed using ClassName.</li>
+                                <li>Static attributes are object independent. We can access them without creating
+                                    instance (object)
+                                    of the class
+                                    in which they are defined.</li>
+                                <li>The value stored in static attribute is shared between all instances(objects) of the
+                                    class in
+                                    which the
+                                    static attribute is defined.</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                            Class Relationships
+                        </button>
+                    </h2>
+                    <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Class Relationships - Introduction</h3>
+                            <p>In real life objects interact with other objects. For example, a Customer object buys a
+                                mobile
+                                object. Therefore,
+                                it must be true in OOP as well. So far, we have been creating classes and objects which
+                                don’t
+                                interact with
+                                other objects. Now we will take a look at how to create objects which have some
+                                relationship with
+                                other objects.
+                            </p>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Relationship</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Inheritance</td>
+                                        <td>When one object is a type of another object</td>
+                                        <td>Mobile is a Product</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aggregation</td>
+                                        <td>When one object owns another object, but they both have independent life
+                                            cycle</td>
+                                        <td>Customer has an Address. Even if the Customer is no more, there may be other
+                                            customers
+                                            in that
+                                            address. So Address continues to exist even after a customer is no more</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Composition</td>
+                                        <td>When one object owns another object, but they both have same life cycle</td>
+                                        <td>College has a department. If the college closes, the department is also
+                                            closed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Also, each object may relate with multiple objects at the same time. For example, Shoe is
+                                also a
+                                Product. A
+                                Customer may have many addresses. A department may have many employees. A child may have
+                                many
+                                siblings, etc.
+                            </p>
+                            <h4>Aggregation - Introduction</h4>
+                            <p>If class A owns class B, then class A is said to aggregate class B. This is also commonly
+                                known as
+                                "has-A"
+                                relationship. For example, in our shopping app, a Customer has an Address. First let us
+                                look at the
+                                Customer
+                                class and Address class independently. </p>
+                            <img src="img/oop17.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4>Aggregation - Independent classes</h4>
+                            <p>Let us look at the code of both the classes:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i49" aria-expanded="false" aria-controls="i49">
+                                Code
+                            </button>
+                            <div class="collapse" id="i49">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, name, age, phone_no):
+                    self.__name = name
+                    self.__age = age
+                    self.__phone_no = phone_no
+            
+                def view_details(self):
+                    pass
+            
+                def update_details(self):
+                    pass
+            
+            class Address:
+                def __init__(self, door_no, street, area, pincode):
+                    self.__door_no = door_no
+                    self.__street = street
+                    self.__area = area
+                    self.__pincode = pincode
+            
+                def update_address(self):
+                    pass
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Aggregation - Connecting classes</h4>
+                            <p>If we want the Customer class to aggregate the Address class, thereby owning the Address
+                                class and
+                                having full
+                                access to it, then the Customer class must have an additional attribute for Address as
+                                shown below:
+                            </p>
+                            <img src="img/oop18.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Just like Customer "has-a" name, Customer "has-a" age, Customer "has-a" phone_no, now
+                                Customer also
+                                "has-a"
+                                Address</p>
+                            <p>Note: In class diagram, aggregation is represented by a line connecting the classes and a
+                                diamond
+                                symbol in the
+                                class which aggregates the other class. In the above example, the Customer aggregates
+                                the Address
+                                and hence the
+                                diamond symbol is near the Customer class</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i50" aria-expanded="false" aria-controls="i50">
+                                Code
+                            </button>
+                            <div class="collapse" id="i50">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, name, age, phone_no, address):
+                    self.__name = name
+                    self.__age = age
+                    self.__phone_no = phone_no
+                    self.__address = address
+            
+                def view_details(self):
+                    pass
+            
+                def update_details(self):
+                    pass
+            
+            class Address:
+                def __init__(self, door_no, street, area, pincode):
+                    self.__door_no = door_no
+                    self.__street = street
+                    self.__area = area
+                    self.__pincode = pincode
+            
+                def update_address(self):
+                    pass
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Aggregation - Examples</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i51" aria-expanded="false" aria-controls="i51">
+                                Code
+                            </button>
+                            <div class="collapse" id="i51">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            add1=Address(123,"5th Lane",56001)
+            add2=Address(567,"6th Lane",82006)
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <img src="img/oop19.png" style="height: 250px;width: auto;" alt=""
+                                class="img-thumbnail img-fluid d-block img-size">
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i52" aria-expanded="false" aria-controls="i52">
+                                Code
+                            </button>
+                            <div class="collapse" id="i52">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            cus1=Customer("Jack",24,1234,None)
+            cus2=Customer("Jane",25,5678,None)    
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <img src="img/oop20.png" style="height: 250px;width: auto;" alt=""
+                                class="img-thumbnail img-fluid d-block img-size">
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i53" aria-expanded="false" aria-controls="i53">
+                                Code
+                            </button>
+                            <div class="collapse" id="i53">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            add1=Address(123,"5th Lane",56001)
+            add2=Address(567,"6th Lane",82006)
+            cus1=Customer("Jack",24,1234,add1)
+            cus2=Customer("Jane",25,5678,add2)  
+            
+            Note:
+            cust1.address.pincode 
+            OP:
+            56001
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <img src="img/oop21.png" style="height: 250px;width: auto;" alt=""
+                                class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Accessing aggregated attribute </h4>
+                            <p>Since the Customer class has aggregated the Address class, the address object is
+                                available in all the
+                                methods of
+                                the Customer class, just like regular attributes.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i54" aria-expanded="false" aria-controls="i54">
+                                Code
+                            </button>
+                            <div class="collapse" id="i54">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, name, age, phone_no, address):
+                    self.name = name
+                    self.age = age
+                    self.phone_no = phone_no
+                    self.address = address
+            
+                def view_details(self):
+                    print (self.name, self.age, self.phone_no)
+                    print (self.address.door_no, self.address.street, self.address.pincode)
+            
+                def update_details(self,add):
+                    self.address = add
+            
+            class Address:
+                def __init__(self, door_no, street, pincode):
+                    self.door_no = door_no
+                    self.street = street
+                    self.pincode = pincode
+            
+                def update_address(self):
+                    pass
+            
+            add1=Address(123, "5th Lane", 56001)
+            add2=Address(567, "6th Lane", 82006)
+            cus1=Customer("Jack", 24, 1234, add1)
+            
+            cus1.view_details()
+            
+            cus1.update_details(add2)
+            
+            cus1.view_details()
+            OP:
+            Jack 24 1234
+            123 5th Lane 56001
+            Jack 24 1234
+            567 6th Lane 82006
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Aggregation & encapsulation </h4>
+                            <p>Private variables cannot be accessed outside the class. This is true even in aggregation.
+                                The owning
+                                class cannot
+                                access the private attributes of the aggregated class directly.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i55" aria-expanded="false" aria-controls="i55">
+                                Code
+                            </button>
+                            <div class="collapse" id="i55">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Customer as above
+            
+            class Address:
+                def __init__(self, door_no, street, pincode):
+                    self.__door_no = door_no
+                    self.__street = street
+                    self.__pincode = pincode
+            
+                def update_address(self):
+                    pass
+            
+            add1=Address(123, "5th Lane", 56001)
+            cus1=Customer("Jack", 24, 1234, add1)
+            
+            cus1.view_details()
+            OP:
+            Runtime Exception
+            Attribute Error
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Aggregation & getters/setters</h4>
+                            <p>Once we have appropriate accessor and mutator methods we can start accessing the private
+                                variables of
+                                the
+                                aggregated class using those methods.</p>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i56" aria-expanded="false" aria-controls="i56">
+                                Code
+                            </button>
+                            <div class="collapse" id="i56">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, name, age, phone_no, address):
+                    self.name = name
+                    self.age = age
+                    self.phone_no = phone_no
+                    self.address = address
+            
+                def view_details(self):
+                    print (self.name, self.age, self.phone_no)
+                    print (self.address.get_door_no(), self.address.get_street(), self.address.get_pincode())
+            
+            class Address:
+                def __init__(self, door_no, street, pincode):
+                    self.__door_no = door_no
+                    self.__street = street
+                    self.__pincode = pincode
+            
+                def get_door_no(self):
+                    return self.__door_no
+            
+            
+                def get_street(self):
+                    return self.__street
+            
+            
+                def get_pincode(self):
+                    return self.__pincode
+            
+            
+                def set_door_no(self, value):
+                    self.__door_no = value
+            
+            
+                def set_street(self, value):
+                    self.__street = value
+            
+            
+                def set_pincode(self, value):
+                    self.__pincode = value
+            
+            
+                def update_address(self):
+                    pass
+            
+            
+            add1=Address(123, "5th Lane", 56001)
+            cus1=Customer("Jack", 24, 1234, add1)
+            
+            cus1.view_details()
+            OP:
+            Jack 24 1234
+            123 5th Lane 56001
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Dependency via Formal Parameter</h4>
+                            <p>Sometimes a class may depend on another class for some of its use. This is not a strict
+                                relationship
+                                and hence
+                                won’t appear in the class diagram. For example, in the below code, the Customer class
+                                depends on a
+                                payment
+                                object for purchasing. Here payment is a local variable and not an attribute.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i57" aria-expanded="false" aria-controls="i57">
+                                Code
+                            </button>
+                            <div class="collapse" id="i57">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Customer:
+                def __init__(self, name, age, phone_no):
+                    self.name = name
+                    self.age = age
+                    self.phone_no = phone_no
+            
+                def purchase(self, payment):
+                    if payment.type == "card":
+                        print ("Paying by card")
+                    elif payment.type == "e-wallet":
+                        print ("Paying by wallet")
+                    else:
+                        print ("Paying by cash")
+            
+            class Payment:
+                def __init__(self, type):
+                    self.type = type
+            
+            payment1=Payment("card")
+            c=Customer("Jack",23,1234)
+            
+            c.purchase(payment1)
+            OP:
+            Paying by card
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Dependency via local object</h4>
+                            <p>Apart from an object being passed as a parameter to the method, we can also create an
+                                object locally
+                                inside a
+                                method. This again is a weaker dependency which does not reflect in the class diagram.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i58" aria-expanded="false" aria-controls="i58">
+                                Code
+                            </button>
+                            <div class="collapse" id="i58">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            #Object creation
+            class Customer:
+                def __init__(self, name,cust_type,bill):
+                    self.name = name
+                    self.bill = bill
+                    self.cust_type=cust_type
+                def calulate_bill(self):
+                    tax1=Tax(self.cust_type)
+                    final_bill=self.bill*tax1.tax_details(self.cust_type)
+                    return final_bill
+            class Tax:
+                def __init__(self,cust_type):
+                    self.cust_type=cust_type
+                def tax_details(self,cust_type):
+                    if(cust_type=="Student"):
+                        return 5
+                    else:
+                        return 10
+            cust1=Customer("Maddy","Student",100)
+            print(cust1.calulate_bill())
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>Also, sometimes we may access the static values of another class directly in our method.
+                                This again
+                                is a weaker
+                                relationship.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i59" aria-expanded="false" aria-controls="i59">
+                                Code
+                            </button>
+                            <div class="collapse" id="i59">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            #Usage of static
+            class CustomerCare:
+                helpline=111000
+            class Customer:
+                def call_support(self):
+                    print("Calling ",CustomerCare.helpline)
+            Customer().call_support()
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Fun with python</h4>
+                            <p>Want a shortcut to print the attributes and values?</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i60" aria-expanded="false" aria-controls="i60">
+                                Code
+                            </button>
+                            <div class="collapse" id="i60">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Foo:
+                def __init__(self,num1,num2):
+                    self.__num1=num1
+                    self.num2=num2
+            
+                def __str__(self):
+                    return str(self.__dict__)
+            
+            f1=Foo(10,20)
+            f2=Foo(20,30)
+            f3=Foo(30,40)
+            print(f1,f2,f3)
+            OP:
+            {'num2': 20, '_Foo__num1': 10} {'num2': 30, '_Foo__num1': 20} {'num2': 40, '_Foo__num1': 30}                                           
+            
+            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                            Inheritance
+                        </button>
+                    </h2>
+                    <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h4>Inheritance - Introduction</h4>
+                            <p>Let us say that the online shopping app wants to sell different types of phones:
+                                Smartphones and Feature phones</p>
+                            <img src="img/oop23.png" alt="" class="img-thumbnail img-fluid d-block img-size"
+                                class="float-left">
+                            <img src="img/oop22.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>The class diagrams for both the classes::</p>
+                            <img src="img/oop24.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>We can see that both the class have a lot in common. This is because they both are
+                                ultimately phones
+                                and each is
+                                just a special type of phone. </p>
+                            <p>Since both the classes are of type phone, we can create a phone class with the common
+                                attributes and
+                                methods and
+                                make these two classes inherit those attributes and behavior, as shown:</p>
+                            <img src="img/oop25.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Note: The above class diagram illustrates the inheritance relationship</p>
+                            <p>When a class inherits from another class, then those classes are said to have an
+                                inheritance
+                                relationship. The
+                                class which is inheriting is called the child/sub/derived class and the class which is
+                                getting
+                                inherited is
+                                called the parent/super/base class. Inheritance is also called as "is-A" relationship.
+                            </p>
+                            <p>In our example, FeaturePhone is inheriting the Phone and SmartPhone is inheriting the
+                                Phone class
+                                (SmartPhone
+                                "is-A" phone, FeaturePhone "is-A" phone). So Phone is the parent class and FeaturePhone
+                                and
+                                SmartPhone are
+                                derived classes.</p>
+                            <h4>What are the advantages of inheritance?</h4>
+                            <ul>
+                                <li>We can keep common properties in a single place. Thus any changes needs to be made
+                                    need not be
+                                    repeated.
+                                </li>
+                                <li>Inheritance encourages code reuse thus saving us time.</li>
+                                <li>If we want to add a new type of phone later on, we can simply inherit the Phone
+                                    class instead of
+                                    writing it
+                                    from scratch.</li>
+                            </ul>
+                            <h4>Inheritance - independent classes</h4>
+                            <p>Let us look at inheritance in code. For now we will create the Phone class with necessary
+                                attributes
+                                and methods.
+                                We will create FeaturePhone and SmartPhone classes without any attributes or methods
+                                now. We will
+                                create them
+                                later.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i61" aria-expanded="false" aria-controls="i61">
+                                Code
+                            </button>
+                            <div class="collapse" id="i61">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    self.price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone:
+                pass
+            
+            class SmartPhone:
+                pass
+            
+            Phone(10000,"Apple","13px").buy()
+            OP:
+            Buying a phone
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Inheritance - Connecting classes </h4>
+                            <p>To create an inheritance relationship between the classes, mention the name of the parent
+                                class in
+                                brackets as
+                                shown:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i62" aria-expanded="false" aria-controls="i62">
+                                Code
+                            </button>
+                            <div class="collapse" id="i62">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    self.price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone(Phone):
+                pass
+            
+            class SmartPhone(Phone):
+                pass
+            
+            FeaturePhone(10000,"Apple","13px").buy()
+            OP:
+            Buying a phone
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>What gets inherited?</h4>
+                            <p>When we have a inheritance relationship, the attributes and behaviors get inherited, just
+                                like a
+                                child inherits
+                                certain attributes and behaviours from its parent. </p>
+                            <p>From a code perspective, a child class inherits:</p>
+                            <ul>
+                                <li>Constructor</li>
+                                <li>Non Private Attributes</li>
+                                <li>Non Private Methods</li>
+                            </ul>
+                            <p>This is true for languages like Java, C# etc.</p>
+                            <p>Unlike other languages, private variables get inherited in Python. We will discuss more
+                                about this
+                                later.</p>
+                            <p>When we say a child class inherits the attributes and methods, we can treat the
+                                attributes and
+                                behavior as if it
+                                is owned by the child class itself.</p>
+
+                            <h4>Inheriting Constructor</h4>
+                            <p>Since the SmartPhone class is inheriting the Phone class, the SmartPhone class inherits
+                                the
+                                constructor of the
+                                Phone class.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i63" aria-expanded="false" aria-controls="i63">
+                                Code
+                            </button>
+                            <div class="collapse" id="i63">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone(Phone):
+                pass
+            
+            class SmartPhone(Phone):
+                pass
+            
+            s=SmartPhone(20000, "Apple", 13)
+            OP:
+            Inside phone constructor
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <p>Consider the below code. Since the SmartPhone class has its own constructor, the Phone
+                                class
+                                constructor is not
+                                inherited. Hence the attributes in the Phone class are also not inherited.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i64" aria-expanded="false" aria-controls="i64">
+                                Code
+                            </button>
+                            <div class="collapse" id="i64">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone(Phone):
+                pass
+            
+            class SmartPhone(Phone):
+                def __init__(self, os, ram):
+                    self.os = os
+                    self.ram = ram
+                    print ("Inside SmartPhone constructor")
+            
+                def buy(self):
+                    print ("Buying a SmartPhone")
+            
+            s=SmartPhone("Android", 2)
+            
+            print(s.os)
+            print(s.brand)
+            OP:
+            Inside SmartPhone constructor
+            Android
+            Runtime Exception
+            AttributeError: 'SmartPhone' object has no attribute 'brand'
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Inheriting attributes</h4>
+                            <p>A child class cannot directly access the private attributes of the parent class.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i65" aria-expanded="false" aria-controls="i65">
+                                Code
+                            </button>
+                            <div class="collapse" id="i65">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class SmartPhone(Phone):
+                def check(self):
+                    print(self.brand)
+                    print(self.__price)
+            
+            s=SmartPhone(20000, "Apple", 13)
+            s.check()
+            OP:
+            Inside phone constructor
+            Apple
+            Runtime Exception
+            print(self.__price)
+            AttributeError: 'SmartPhone' object has no attribute '_SmartPhone__price'
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Inheriting methods</h4>
+                            <p>Apart from attributes, the child class inherits the methods of the parent class as shown:
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i66" aria-expanded="false" aria-controls="i66">
+                                Code
+                            </button>
+                            <div class="collapse" id="i66">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone(Phone):
+                pass
+            
+            class SmartPhone(Phone):
+                pass
+            
+            s=SmartPhone(20000, "Apple", 13)
+            
+            s.buy()
+            OP:
+            Inside phone constructor
+            Buying a phone
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Method Overriding</h4>
+                            <p>Sometimes a child may not want to use what it has inherited from the parent. The same
+                                holds true for
+                                OOP as well.
+                                If the child class does not want to use a method inherited from the parent class then it
+                                may create
+                                its own
+                                method with the same name.</p>
+                            <p>When the child has a method with the same name as that of the parent, it is said to
+                                override the
+                                parent’s method.
+                                This is called as Method Overriding. Method overriding is also called as Polymorphism.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i67" aria-expanded="false" aria-controls="i67">
+                                Code
+                            </button>
+                            <div class="collapse" id="i67">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone(Phone):
+                pass
+            
+            class SmartPhone(Phone):
+                def buy(self):
+                    print ("Buying a smartphone")
+            
+            s=SmartPhone(20000, "Apple", 13)
+            
+            s.buy()
+            OP:
+            Inside phone constructor
+            Buying a smartphone
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>super() - Invoke overridden method </h4>
+                            <p>Even though the child class may override the methods of the parent class, it might still
+                                decide to
+                                use the parent
+                                class overridden method. To invoke anything belonging to the parent class, the child
+                                class needs to
+                                use the
+                                super() function, as shown below:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i68" aria-expanded="false" aria-controls="i68">
+                                Code
+                            </button>
+                            <div class="collapse" id="i68">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone(Phone):
+                pass
+            
+            class SmartPhone(Phone):
+                def buy(self):
+                    print ("Buying a smartphone")
+                    super().buy()
+            
+            s=SmartPhone(20000, "Apple", 13)
+            
+            s.buy()
+            OP:
+            Inside phone constructor
+            Buying a smartphone
+            Buying a phone
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>super() - invoke constructor</h4>
+                            <p>To access the parent class constructor we can use super(). Thus, the data is passed to
+                                the child
+                                class
+                                constructor, from there the data is sent to the parent class constructor and thus the
+                                attributes of
+                                the parent
+                                class get inherited.</p>
+                            <p>super() function can be used to access the constructor or methods of the parent class,
+                                but not the
+                                attributes.
+                                Also super() function can be used only inside a class and not outside it</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i69" aria-expanded="false" aria-controls="i69">
+                                Code
+                            </button>
+                            <div class="collapse" id="i69">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class FeaturePhone(Phone):
+                pass
+            
+            class SmartPhone(Phone):
+                def __init__(self, price, brand, camera, os, ram):
+                    super().__init__(price, brand, camera)
+                    self.os = os
+                    self.ram = ram
+                    print ("Inside smartphone constructor")
+            
+                def buy(self):
+                    print ("Buying a smartphone")
+            
+            s=SmartPhone(20000, "Samsung", 12, "Android", 2)
+            
+            print(s.os)
+            print(s.brand)
+            OP:
+            Inside phone constructor
+            Inside smartphone constructor
+            Android
+            Samsung
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Inheritance - Summary</h4>
+                            <p>A class can inherit from another class.
+                            </p>
+                            <ul>
+                                <li>Inheritance improves code reuse</li>
+                                <li>Constructor, attributes, methods get inherited to the child class</li>
+                                <li>The parent has no access to the child class</li>
+                                <li>Private properties of parent are not accessible directly in child class</li>
+                                <li>Child class can override the attributes or methods. This is called method overriding
+                                </li>
+                                <li>super() is an inbuilt function which is used to invoke the parent class methods and
+                                    constructor
+                                </li>
+                            </ul>
+
+                            <h4>Inheritance - Types</h4>
+                            <p>Inheritance can come in many forms as below: </p>
+                            <img src="img/oop26.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Single level inheritance</h4>
+                            <p>Single inheritance enables a derived class to inherit properties and behavior from a
+                                single parent
+                                class.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i70" aria-expanded="false" aria-controls="i70">
+                                Code
+                            </button>
+                            <div class="collapse" id="i70">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class SmartPhone(Phone):
+                pass
+            
+            SmartPhone(1000,"Apple","13px").buy()
+            OP:
+            Inside phone constructor
+            Buying a phone
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Multi level inheritance </h4>
+                            <p>If a class is derived from another derived class then it is called multilevel
+                                inheritance.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i71" aria-expanded="false" aria-controls="i71">
+                                Code
+                            </button>
+                            <div class="collapse" id="i71">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Product:
+                def review(self):
+                    print ("Product customer review")
+            
+            class Phone(Product):
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class SmartPhone(Phone):
+                pass
+            
+            s=SmartPhone(20000, "Apple", 12)
+            
+            s.buy()
+            s.review()
+            OP:
+            Inside phone constructor
+            Buying a phone
+            Product customer review
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Hierarchical inheritance</h4>
+                            <p>When several classes are derived from common base class it is called hierarchical
+                                inheritance.</p>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i72" aria-expanded="false" aria-controls="i72">
+                                Code
+                            </button>
+                            <div class="collapse" id="i72">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            class SmartPhone(Phone):
+                pass
+            class FeaturePhone(Phone):
+                pass
+            SmartPhone(1000,"Apple","13px").buy()
+            OP:
+            Inside phone constructor
+            Buying a phone
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Multiple inheritance</h4>
+                            <p>If a class is derived from two or more base classes then it is called multiple
+                                inheritance.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i73" aria-expanded="false" aria-controls="i73">
+                                Code
+                            </button>
+                            <div class="collapse" id="i73">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class Product:
+                def review(self):
+                    print ("Customer review")
+            
+            class SmartPhone(Phone, Product):
+                pass
+            
+            s=SmartPhone(20000, "Apple", 12)
+            
+            s.buy()
+            s.review()
+            OP:
+            Inside phone constructor
+            Buying a phone
+            Customer review
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Multiple inheritance contd. </h4>
+                            <p>When a child is inheriting from multiple parents, and if there is a common behavior to be
+                                inherited,
+                                it inherits
+                                the method in Parent class which is first in the list. In our example, the buy() of
+                                Product is
+                                inherited as it
+                                appears first in the list.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i74" aria-expanded="false" aria-controls="i74">
+                                Code
+                            </button>
+                            <div class="collapse" id="i74">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Phone:
+                def __init__(self, price, brand, camera):
+                    print ("Inside phone constructor")
+                    self.__price = price
+                    self.brand = brand
+                    self.camera = camera
+            
+                def buy(self):
+                    print ("Buying a phone")
+            
+                def return_phone(self):
+                    print ("Returning a phone")
+            
+            class Product:
+                def buy(self):
+                    print ("Product buy method")
+            
+            class SmartPhone(Product, Phone):
+                pass
+            
+            s=SmartPhone(20000, "Apple", 12)
+            
+            s.buy()
+            OP:
+            Inside phone constructor
+            Product buy method
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                            Abstract
+                        </button>
+                    </h2>
+                    <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h3>Abstract Class - Introduction</h3>
+                            <p>Let us assume that we have a Product class , all items being sold in our online app and
+                                extend this
+                                Product
+                                class.</p>
+                            <img src="img/oop27.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <p>In an online shopping app, we only have specific types of products. We don’t have
+                                something called a
+                                Product
+                                itself. In that sense, an object of Product class would not represent a real world
+                                object, because a
+                                Product is
+                                just an abstract concept. While shopping, we purchase types of products, not a product
+                                itself. Thus
+                                the best
+                                practice is not to create object of the parent class.</p>
+                            <h4>Preventing instantiation</h4>
+                            <p>Since we are the creator of the Product class, we know it is abstract in nature and we
+                                won’t create
+                                an instance
+                                for it. But how can another programmer know about it? How can we ensure that some other
+                                developer
+                                does not end
+                                up creating an object of such an abstract class?</p>
+                            <h4>Abstract</h4>
+                            <p>We can programmatically declare a class as an abstract class. An abstract class should
+                                not be
+                                instantiated.</p>
+                            <p>Note: In python, you will not get an error if you try to instantiate it. However, in
+                                languages like
+                                Java, C++, C#
+                                you will get an error if you try to instantiate an abstract class</p>
+                            <img src="img/oop28.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i75" aria-expanded="false" aria-controls="i75">
+                                Code
+                            </button>
+                            <div class="collapse" id="i75">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            from abc import ABCMeta, abstractmethod
+            class Product(metaclass=ABCMeta):
+                def return_policy(self):
+                    pass
+            Product()
+            OP:
+            no errors are displayed.
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>What is the use of abstract?</h4>
+                            <p>If an abstract class should never be instantiated, then what is the use of such a class?
+                                The only way
+                                we can use
+                                an abstract class is to make other classes inherit from the abstract class. An abstract
+                                class is
+                                meant to be sub
+                                classed.</p>
+                            <h4>Abstract Method - A Scenario</h4>
+                            <p>Let us extend the concept of abstract further. All products must have a return_policy()
+                                method which
+                                will display
+                                the number of days within which the products have to be returned </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i76" aria-expanded="false" aria-controls="i76">
+                                Code
+                            </button>
+                            <div class="collapse" id="i76">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Product:
+                def return_policy(self):
+                    pass
+            class Mobile(Product):
+                pass
+            class Shoe(Product):
+                pass
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Need for abstract method- Scenario 1</h4>
+                            <p>Now each type of product will have its own return_policy(), so we will override the
+                                return_policy()
+                                in each of
+                                the child classes.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i77" aria-expanded="false" aria-controls="i77">
+                                Code
+                            </button>
+                            <div class="collapse" id="i77">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Product:
+                def return_policy(self):
+                    pass
+            
+            class Mobile(Product):
+                def return_policy(self):
+                    print("All mobiles must be returned within 10 days of purchase")
+            
+            class Shoe(Product):
+                def return_policy(self):
+                    print("All shoes must be returned within 7 days of purchase")                                                 
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>Since the return_policy() is overridden in each of the child classes, the parent class
+                                return_policy() is never
+                                used and hence it becomes redundant.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i78" aria-expanded="false" aria-controls="i78">
+                                Code
+                            </button>
+                            <div class="collapse" id="i78">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class Product:
+                def return_policy(self):
+                    pass
+            
+            class Mobile(Product):
+                def return_policy(self):
+                    print ("All mobiles must be returned within 10 days of purchase")
+            
+            class Shoe(Product):
+                def return_policy(self):
+                    print ("All shoes must be returned within 7 days of purchase")
+            
+            m=Mobile()
+            m.return_policy()
+            
+            s=Shoe()
+            s.return_policy()
+            OP:
+            All mobiles must be returned within 10 days of purchase
+            All shoes must be returned within 7 days of purchase                                                
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Need for Abstract Method - Scenario 2</h4>
+                            <p>Let us say we want to add a new type of product, say Furniture. We can create a Furniture
+                                class and
+                                make it
+                                inherit the Product class.</p>
+                            <img src="img/oop29.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>By mistake we have forgotten to override the return_policy() in the Furniture class. If
+                                someone tries
+                                to find the
+                                return_policy() of furniture by invoking the method, it will invoke the redundant
+                                return_policy() of
+                                the parent
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i79" aria-expanded="false" aria-controls="i79">
+                                Code
+                            </button>
+                            <div class="collapse" id="i79">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            from abc import ABCMeta
+            class Product(metaclass=ABCMeta):
+                def return_policy(self):
+                    pass
+            class Furniture(Product):
+                pass    
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>How can we ensure that all subclasses of the Product class must mandatorily override the
+                                return_policy()?</p>
+                            <p>Thus in scenario 1 we ended up in creating a return_policy() which is never used and
+                                hence became a
+                                redundant
+                                method.And in scenario 2 we have forgotten to override the return_policy() in the
+                                Furniture class.
+                                If someone
+                                tries to find the return_policy() of furniture by invoking the method, it will invoke
+                                the redundant
+                                return_policy() of the parent. SO it is important for us to create an abstract method.
+                            </p>
+                            <h4>Declaring abstract method</h4>
+                            <p>If we programmatically declare our return_policy() of Product class as an abstract
+                                method, then every
+                                sub-class
+                                of Product class MUST override the abstract method. We can make our return_policy() an
+                                abstract
+                                method as shown
+                                below:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i80" aria-expanded="false" aria-controls="i80">
+                                Code
+                            </button>
+                            <div class="collapse" id="i80">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            from abc import ABCMeta, abstractmethod
+            class Product(metaclass=ABCMeta):
+                @abstractmethod
+                def return_policy(self):
+                    pass
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Instantiating abstract class</h4>
+                            <p>Even if one method is abstract, then we will get an error if we try to instantiate the
+                                class.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i81" aria-expanded="false" aria-controls="i81">
+                                Code
+                            </button>
+                            <div class="collapse" id="i81">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            from abc import ABCMeta, abstractmethod
+            class Product(metaclass=ABCMeta):
+                @abstractmethod
+                def return_policy(self):
+                    pass
+            
+            Product()
+            OP:
+            Runtime Exception   
+            Product()
+            TypeError: Can't instantiate abstract class Product with abstract methods return_policy                                                
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Instantiating Abstract Subclass</h4>
+                            <p>If a method is abstract, then the Subclass must override the abstract method. Else we
+                                cannot
+                                instantiate the
+                                subclass also.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i82" aria-expanded="false" aria-controls="i82">
+                                Code
+                            </button>
+                            <div class="collapse" id="i82">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            from abc import ABCMeta, abstractmethod
+            class Product(metaclass=ABCMeta):
+                @abstractmethod
+                def return_policy(self):
+                    pass
+            
+            class Furniture(Product):
+                pass
+            
+            Furniture()
+            OP:
+            Runtime Exception 
+            Furniture()
+            TypeError: Can't instantiate abstract class Furniture with abstract methods return_policy                                            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Need not override abstract method</h4>
+                            <p>If a child class overrides the abstract method, then its own child classes need not
+                                override the
+                                abstract method.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i83" aria-expanded="false" aria-controls="i83">
+                                Code
+                            </button>
+                            <div class="collapse" id="i83">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            from abc import ABCMeta, abstractmethod
+            class Product(metaclass=ABCMeta):
+                @abstractmethod
+                def return_policy(self):
+                    pass
+            
+            class Furniture(Product):
+                def return_policy(self):
+                    print("Furnitures cannot be returned")
+            
+            class Sofa(Furniture):
+                pass
+            
+            Sofa()
+            OP:NO errors  fine execution                                        
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Abstract - Summary</h4>
+                            <ul>
+                                <li>Abstract classes should not be instantiated.</li>
+                                <li>An abstract class may contain 0 or many abstract methods.</li>
+                                <li>Usually the parent class is an abstract class.</li>
+                                <li>Abstract classes are meant to be inherited.</li>
+                                <li>If a class has an abstract method, then the class cannot be instantiated.</li>
+                                <li>The child class must implement/override all the abstract methods of the parent
+                                    class. Else the
+                                    child class
+                                    cannot be instantiated.</li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                            Exception Handling
+                        </button>
+                    </h2>
+                    <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Exception Handling</h3>
+                            <p>We have seen</p>
+                            <ul>
+                                <li>The need for exception handling</li>
+                                <li>Creating custom exception messages</li>
+                            </ul>
+                            <p>Now we will take a look at what is the relation between OOP and exception handling and
+                                how to improve
+                                exception
+                                handling in our code</p>
+                            <h4>Raise exception</h4>
+                            <p>Let us consider a scenario where a customer can have many credit cards which he can use
+                                for
+                                purchasing. Each
+                                credit card has a number and a balance.</p>
+                            <p>Let us consider a purchase_item() method which takes the price of the item and card
+                                number as an
+                                input. In case
+                                price is invalid or price is beyond the credit card balance, we can transfer the control
+                                to an
+                                except block by
+                                raising an exception. In Python, we can raise exception by using the raise keyword.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i84" aria-expanded="false" aria-controls="i84">
+                                Code
+                            </button>
+                            <div class="collapse" id="i84">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class CreditCard:
+                def __init__(self, card_no, balance):
+                    self.card_no = card_no
+                    self.balance = balance
+            class Customer:
+                def __init__(self,cards):
+                    self.cards=cards
+                def purchase_item(self, price, card_no):
+                    if price &lt 0:
+                        raise Exception()
+                    if card_no not in self.cards:
+                        raise Exception()
+                    if price>self.cards[card_no].balance:
+                        raise Exception()
+            card1=CreditCard(101,800)
+            card2=CreditCard(102,2000)
+            cards={card1.card_no:card1,card2.card_no:card2}
+            c=Customer(cards)
+            while(True):
+                card_no=int(input("Please enter a card number"))
+                try:
+                    c.purchase_item(1200,card_no)
+                    break
+                except Exception as e:
+                    print("Something went wrong. "+str(e))
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>What if we want to treat these exceptions differently, let’s say if the price is invalid,
+                                then we
+                                should just
+                                print a message and if the price is beyond the credit card balance, we have to ask the
+                                customer to
+                                use another
+                                card.</p>
+
+                            <h4>Raise exception with message</h4>
+                            <p>We can do this by raising exception with a message as shown. In this approach, the print
+                                statements/presentation
+                                are not mixed with the business logic. If we don’t use exceptions.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i85" aria-expanded="false" aria-controls="i85">
+                                Code
+                            </button>
+                            <div class="collapse" id="i85">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class CreditCard:
+                def __init__(self,card_no,balance):
+                    self.card_no=card_no
+                    self.balance=balance
+            class Customer:
+                def __init__(self,cards):
+                    self.cards=cards
+                def purchase_item(self, price, card_no):
+                    if price &lt 0:
+                        raise Exception("Invalid Price")
+                    if card_no not in self.cards:
+                        raise Exception("Wrong card")
+                    if price>self.cards[card_no].balance:
+                        raise Exception("Wrong card")
+            card1=CreditCard(101,800)
+            card2=CreditCard(102,2000)
+            cards={card1.card_no:card1,card2.card_no:card2}
+            c=Customer(cards)
+            while(True):
+                card_no=int(input("Please enter a card number"))
+                try:
+                    c.purchase_item(1200,card_no)
+                    break
+                except Exception as e:
+                    if str(e)=="Invalid Price":
+                        print("Product price is wrong")
+                        break
+                    if str(e)=="Wrong card":
+                        continue
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>But even this approach of sending messages with exceptions is not ideal as we end up
+                                writing if/else
+                                conditions
+                                in our except block. Such logic is prone to errors.</p>
+                            <h4>Custom Exceptions</h4>
+                            <p>The solution is to create custom exceptions. Exception is an inbuilt class in python and
+                                we can
+                                create our own
+                                exception by inheriting the Exception class as shown:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i86" aria-expanded="false" aria-controls="i86">
+                                Code
+                            </button>
+                            <div class="collapse" id="i86">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class InvalidPrice(Exception):
+                pass
+            class WrongCard(Exception):
+                pass
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>Here we are creating two exception classes which inherit the Exception class. Only
+                                classes of type
+                                exception can
+                                be used along with the raise keyword.</p>
+                            <h4>Raise custom exceptions</h4>
+                            <p>We can use raise these custom exceptions and handle them differently in our except block
+                                as shown:
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i87" aria-expanded="false" aria-controls="i87">
+                                Code
+                            </button>
+                            <div class="collapse" id="i87">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class InvalidPrice(Exception):
+                pass
+            class WrongCard(Exception):
+                pass
+            class CreditCard:
+                def __init__(self, card_no, balance):
+                    self.card_no=card_no
+                    self.balance=balance
+            class Customer:
+                def __init__(self,cards):
+                    self.cards=cards
+                def purchase_item(self,price,card_no):
+                    if price &lt 0:
+                        raise InvalidPrice("The price is wrong")
+                    if card_no not in self.cards:
+                        raise WrongCard("Card is invalid")
+                    if price>self.cards[card_no].balance:
+                        raise WrongCard("Card has insufficient balance")
+            card1=CreditCard(101,800)
+            card2=CreditCard(102,2000)
+            cards={card1.card_no:card1,card2.card_no:card2}
+            c=Customer(cards)
+            while(True):
+                card_no=int(input("Please enter a card number"))
+                try:
+                    c.purchase_item(1200,card_no)
+                    break
+                except InvalidPrice as e:
+                    print(str(e))
+                    break
+                except WrongCard as e:
+                    print(str(e))
+                    continue
+                except Exception as e:
+                    print("Something went wrong. "+str(e))
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Custom exceptions - Order of except</h4>
+                            <p>Can you guess what will be the output of the below code?</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i88" aria-expanded="false" aria-controls="i88">
+                                Code
+                            </button>
+                            <div class="collapse" id="i88">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class InvalidPrice(Exception):
+                pass
+            class WrongCard(Exception):
+                pass
+            
+            try:
+                raise InvalidPrice()
+            except Exception as e:
+                print("Exception")
+            except InvalidPrice:
+                print("InvalidPrice")
+            except WrongCard:
+                print("WrongCard")
+            OP:
+            Exception
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>Here we can see that the except block of Exception is executed, even though we are
+                                raising
+                                InvalidPrice. This is
+                                because a parent class except block will be able to handle all the child class except
+                                blocks also.
+                                Since
+                                Exception is parent class to InvalidPrice it can handle the exception of type
+                                InvalidPrice.</p>
+                            <p>Therefore, the parent class except blocks must always come after the child class except
+                                block</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i89" aria-expanded="false" aria-controls="i89">
+                                Code
+                            </button>
+                            <div class="collapse" id="i89">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            class InvalidPrice(Exception):
+                pass
+            class WrongCard(Exception):
+                pass
+            try:
+                raise InvalidPrice()
+            except InvalidPrice:
+                print("InvalidPrice")
+            except WrongCard:
+                print("WrongCard")
+            except Exception as e:
+                print("Exception")
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>In-built exceptions - Order of except</h4>
+                            <p>What is the output of the below code?</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i90" aria-expanded="false" aria-controls="i90">
+                                Code
+                            </button>
+                            <div class="collapse" id="i90">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            try:
+                1/0
+            except Exception:
+                print("Exception")
+            except ZeroDivisionError:
+                print("Zero division")
+            OP:
+            Exception
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <p>Here also we find the except block of Exception runs first. This is because internally
+                                all exceptions
+                                are
+                                subclasses of the Exception class. This is why we should always keep the except block of
+                                Exception
+                                as the last
+                                one</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <img src="pdfs/s1.png" class="img-thumbnail img-fluid d-block img-size">
+                    <img src="pdfs/s2.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                    <img src="pdfs/s3.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                    <img src="pdfs/s4.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                    <img src="pdfs/s5.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                    <img src="pdfs/s6.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                </div>
+
+
+
+
+            </div>
+            <!--accordioin end div-->
+        </div>
+        <!--maincontent end div -->
+    </div>
+    <!--continer end div -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

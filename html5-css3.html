@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+  <title>HTML5 & CSS3</title>
+</head>
+
+<body class="bg-blue">
+  <div class="container bg-light my-5 border border-light rounded-3">
+    <h2 class="text-center pt-3">HTML5 & CSS3</h2>
+    <hr class="ruler-color" size="5">
+    <div class="padding-l-r main-content">
+      <h3>Introduction</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus inventore modi deleniti vitae
+        repudiandae architecto eaque? Non, rerum veniam nisi rem temporibus, quasi quibusdam nostrum unde
+        asperiores odio dignissimos nihil hic. Dicta, sequi. Est, vero?</p>
+      <div class="sub-contents">
+        <h4>Sub head</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque maiores rem eligendi
+          suscipit ab?</p>
+        <img src="img/gencHO1.jpg" class="img-thumbnail img-fluid d-block img-size" alt="...">
+        <p>code button</p>
+        <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#i1"
+          aria-expanded="false" aria-controls="i1">
+          Code
+        </button>
+        <div class="collapse" id="i1">
+          <div class="card card-body">
+            <pre>
+<code>
+  
+</code>
+</pre>
+          </div>
+        </div>
+
+        <p>coursol</p>
+        <!-- Carousel -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#i2"
+          aria-expanded="false" aria-controls="i2">
+          Images
+        </button>
+        </p>
+        <div class="collapse" id="i2">
+          <div class="c-container">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+              <!-- Indicators/dots -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+              </div>
+
+              <!-- The slideshow/carousel -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="img/test.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img src="img/gencHO1.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img src="img/test.jpg">
+                </div>
+              </div>
+
+              <!-- Left and right controls/icons -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <p>accordtion</p>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="fh1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc1"
+                aria-expanded="false" aria-controls="fc1">
+                Accordion Item #1
+              </button>
+            </h2>
+            <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the first item's accordion body.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="fh2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc2"
+                aria-expanded="false" aria-controls="fc2">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being
+                filled with some actual content.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="fh3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc3"
+                aria-expanded="false" aria-controls="fc3">
+                Accordion Item #3
+              </button>
+            </h2>
+            <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                happening here in terms of content, but just filling up the space to make it look, at least at first
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Data Structures and Algorithms using Java
+    </title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">JAVA</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            Accordion Item #1
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            accordioin end div
+          </div>
+          maincontent end div 
+      </div>
+      continer end div 
+  
+  
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+          integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+          crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+          integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+          crossorigin="anonymous"></script>
+  </body>
+  
+  </html>
+
+
+
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            Accordion Item #1
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                            Accordion Item #2
+                        </button>
+                    </h2>
+                    <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                            Accordion Item #3
+                        </button>
+                    </h2>
+                    <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                            Accordion Item #4
+                        </button>
+                    </h2>
+                    <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                            Accordion Item #5
+                        </button>
+                    </h2>
+                    <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                            Accordion Item #6
+                        </button>
+                    </h2>
+                    <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                            Accordion Item #7
+                        </button>
+                    </h2>
+                    <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                            Accordion Item #8
+                        </button>
+                    </h2>
+                    <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                            Accordion Item #9
+                        </button>
+                    </h2>
+                    <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                            Accordion Item #10
+                        </button>
+                    </h2>
+                    <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc11" aria-expanded="false" aria-controls="fc11">
+                            Accordion Item #11
+                        </button>
+                    </h2>
+                    <div id="fc11" class="accordion-collapse collapse" aria-labelledby="fh11"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc12" aria-expanded="false" aria-controls="fc12">
+                            Accordion Item #12
+                        </button>
+                    </h2>
+                    <div id="fc12" class="accordion-collapse collapse" aria-labelledby="fh12"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc13" aria-expanded="false" aria-controls="fc13">
+                            Accordion Item #13
+                        </button>
+                    </h2>
+                    <div id="fc13" class="accordion-collapse collapse" aria-labelledby="fh13"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc14" aria-expanded="false" aria-controls="fc14">
+                            Accordion Item #14
+                        </button>
+                    </h2>
+                    <div id="fc14" class="accordion-collapse collapse" aria-labelledby="fh14"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh15">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc15" aria-expanded="false" aria-controls="fc15">
+                            Accordion Item #15
+                        </button>
+                    </h2>
+                    <div id="fc15" class="accordion-collapse collapse" aria-labelledby="fh15"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh16">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc16" aria-expanded="false" aria-controls="fc16">
+                            Accordion Item #16
+                        </button>
+                    </h2>
+                    <div id="fc16" class="accordion-collapse collapse" aria-labelledby="fh16"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh17">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc17" aria-expanded="false" aria-controls="fc17">
+                            Accordion Item #17
+                        </button>
+                    </h2>
+                    <div id="fc17" class="accordion-collapse collapse" aria-labelledby="fh17"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh18">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc18" aria-expanded="false" aria-controls="fc18">
+                            Accordion Item #18
+                        </button>
+                    </h2>
+                    <div id="fc18" class="accordion-collapse collapse" aria-labelledby="fh18"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh19">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc19" aria-expanded="false" aria-controls="fc19">
+                            Accordion Item #19
+                        </button>
+                    </h2>
+                    <div id="fc19" class="accordion-collapse collapse" aria-labelledby="fh19"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh20">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc20" aria-expanded="false" aria-controls="fc20">
+                            Accordion Item #20
+                        </button>
+                    </h2>
+                    <div id="fc20" class="accordion-collapse collapse" aria-labelledby="fh20"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh21">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc21" aria-expanded="false" aria-controls="fc21">
+                            Accordion Item #21
+                        </button>
+                    </h2>
+                    <div id="fc21" class="accordion-collapse collapse" aria-labelledby="fh21"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+ -->

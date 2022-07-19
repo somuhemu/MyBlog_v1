@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Data Structures and Algorithms using Python </title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">Data Structures and Algorithms using Python - Part 1</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            Introduction to Data Structures
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h3>Data Structures and Algorithms using Python</h3>
+                            <p>In common words, Data Structures are storage containers in which elements can be stored,
+                                located, retrieved and
+                                deleted from, easily. Data Structures make the organization and management of large
+                                amounts of data efficiently.
+                            </p>
+
+                            <h3>Data Structures - Introduction</h3>
+                            <p>Google Search:
+                                When you provide a search term in Google and click on search, you get the search results
+                                in a fraction of
+                                second.</p>
+                            <p>Google Maps:
+                                When you provide a source and destination in Google Maps and click on find route, you
+                                get multiple results based
+                                on time, current traffic etc. in a fraction of second.
+                            </p>
+                            <p>Facebook:
+                                When you put a post in Facebook, irrespective of how many friends you are connected to,
+                                the post is immediately
+                                reflected in all their accounts.</p>
+                            <img src="img/ds1.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In any application, organizing and storing data in a way or in a structure that is best
+                                suited to its usage is
+                                key to efficient access and processing of data. </p>
+                            <p>There are some standard data structures that can be used to efficiently work with data.
+                                We can even customize
+                                them or build completely new ones to suit our application.</p>
+                            <h4>Data Structures</h4>
+                            <p>Data structures represent the way of arranging data in computer so that it can be
+                                accessed and used efficiently.
+                                It is all about grouping and storing collections of data in memory, operations that can
+                                be performed on these
+                                collections and algorithms that can be used for these operations.</p>
+                            <p>There are different types of data structures like list, stack, queue etc. Each of them
+                                are suitable for specific
+                                type of tasks.</p>
+                            <img src="img/ds2.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                            Lists
+                        </button>
+                    </h2>
+                    <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+
+                            <h3>List - Introduction</h3>
+                            <p>Scenario:
+                                It was a Saturday morning and Maria was in the grocery shop with her list of grocery
+                                items. The list kept on
+                                changing as she moved from one section of the shop to another. She added few items,
+                                removed few and kept on
+                                scanning the list.
+                                She in fact, started with a list of 4 items and ended up buying many more.</p>
+                            <p>Here, we need to represent Maria’s list as a sequence of grocery items. The sequence
+                                keeps changing frequently.
+                            </p>
+                            <img src="img/ds3.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In this case, we can use list data structure to represent Maria’s list of grocery items.
+                            </p>
+                            List:
+                            <ul>
+                                <li> Is a linear data structure</li>
+                                <li> Is used to store a sequence of values</li>
+                                <li> It can grow and shrink dynamically based on need</li>
+                            </ul>
+                            <p>Common operations on list are:add,insert,delete,display</p>
+                            <p>List can be implemented using array or linked list. Let’s begin with the array
+                                implementation.</p>
+                            <h4>List using array</h4>
+                            <p>Array is a data type which is of fixed capacity and can store a collection of elements.
+                                However we can use it to
+                                implement the list data structure.</p>
+                            <p>For implementation we will be using list data type in python which is internally a
+                                dynamic array which can grow
+                                and shrink based on the elements added to or removed from it. Initially, it is created
+                                with a certain capacity
+                                and based on elements getting added or removed, the capacity is increased or decreased
+                                respectively.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i1" aria-expanded="false" aria-controls="i1">
+                                Code
+                            </button>
+                            <div class="collapse" id="i1">
+                                <div class="card card-body">
+                                    <pre><code>
+                            #Do not remove the below import statement
+                            import sys
+                            
+                            '''This function provides the capacity, size and space left in the list.
+                            You can invoke it to get the details of the list'''
+                            
+                            def list_details(lst):
+                                #Number of elements that can be stored in the list
+                                print("Capacity:", (sys.getsizeof(lst)-36)//4)
+                            
+                                #Number of elements in the list
+                                print("Size:", len(lst))
+                            
+                                #Number of elements that can be accommodated in the space left
+                                print("Space Left:", ((sys.getsizeof(lst)-36) - len(lst*4))//4)
+                            
+                                #formula changes based on the system architecture
+                                #(size-36)/4 for 32 bit machines and
+                                #(size-64)/8 for 64 bit machines
+                            
+                                # 36, 64 - size of an empty list based on machine
+                                # 4, 8 - size of a single element in the list based on machine
+                            
+                            marias_lst=[]
+                            print("Empty list created!!!")
+                            print("List details:")
+                            list_details(marias_lst)
+                            OP:
+                            Empty list created!!!
+                            List details:
+                            Capacity: 7
+                            Size: 0
+                            Space Left: 7
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Add operation</h4>
+                            <p>When an element is added to an empty list in Python, a block of memory is allocated and
+                                element is added at index
+                                position 0(first element). The remaining memory is considered to be reserved space which
+                                will be used later for
+                                addition or insertion of elements.</p>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i2" aria-expanded="false" aria-controls="i2">
+                                Code
+                            </button>
+                            <div class="collapse" id="i2">
+                                <div class="card card-body">
+                                    <pre><code>
+                            add(element):
+                            1. When the list is initially created, it is created with a certain capacity.
+                            2. While adding the elements, if the list is filled to the capacity,
+                               a. Create a new list with increased capacity
+                               b. Copy the elements of initial list to the new list
+                            3. Add the element to the end of the existing elements in the list    
+                        </code></pre>
+                                </div>
+                            </div>
+                            <p>append() method of Python list implicitly implements the above algorithm.</p>
+                            <p>Note: The space after adding the element can be used for further adding or inserting the
+                                elements. However, they
+                                should be considered only as reserved space. We cannot directly access that space.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i3" aria-expanded="false" aria-controls="i3">
+                                Code
+                            </button>
+                            <div class="collapse" id="i3">
+                                <div class="card card-body">
+                                    <pre><code>
+                            marias_lst=[]
+                            print("Empty list created!!!")
+                            print("List details:")
+                            list_details(marias_lst)
+                            marias_lst.append("Sugar")
+                            marias_lst.append("Sugar")
+                            print("Maria's list after adding Sugar:")
+                            print(marias_lst)
+                            print("List details:")
+                            list_details(marias_lst)
+                            OP:
+                            Empty list created!!!
+                            List details:
+                            Capacity: 7
+                            Size: 0
+                            Space Left: 7
+                            Maria's list after adding Sugar:
+                            ['Sugar', 'Sugar']
+                            List details:
+                            Capacity: 15
+                            Size: 2
+                            Space Left: 13
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Insert Operation</h4>
+                            <img src="img/ds5.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds4.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds6.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds7.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds8.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i4" aria-expanded="false" aria-controls="i4">
+                                Code
+                            </button>
+                            <div class="collapse" id="i4">
+                                <div class="card card-body">
+                                    <pre><code>
+                            insert(pos, element):
+                            1. If the list is filled to capacity
+                               a. Create a new list with increased capacity
+                               b. Copy the elements of initial list to the new list
+                            2. Shift right all the existing elements from index position (pos) by 1 position
+                            3. Insert the element at index position (pos)
+                        
+                        </code></pre>
+                                </div>
+                            </div>
+                            <p>insert(pos,element) method of Python list implicitly implements the above algorithm.</p>
+                            <p>Note: The space after adding the element can be used for further adding or inserting the
+                                elements. However, they
+                                should be considered only as reserved space. We cannot directly access that space.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i5" aria-expanded="false" aria-controls="i5">
+                                Code
+                            </button>
+                            <div class="collapse" id="i5">
+                                <div class="card card-body">
+                                    <pre><code>
+                            marias_lst=[]
+                            marias_lst.append("Sugar")
+                            marias_lst.append("Tea Bags")
+                            marias_lst.append("Milk")
+                            marias_lst.insert(1,"Salt")
+                        </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Delete operation</h4>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i6" aria-expanded="false" aria-controls="i6">
+                                Code
+                            </button>
+                            <div class="collapse" id="i6">
+                                <div class="card card-body">
+                                    <pre><code>
+                            delete(pos):
+                            1. Shift left all the existing elements from index 
+                               position (pos+1) by 1 position
+                           Note: Capacity will be decreased whenever remaining number 
+                           of elements fall below certain value
+                        </code></pre>
+                                </div>
+                            </div>
+                            <p>pop(pos) method of Python list implicitly implements the above algorithm.</p>
+
+                            <h4>List using Array - observations</h4>
+                            <img src="img/ds9.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4> Self Study</h4>
+                            <p>When we look up for employees(s) by keying in his/her name in a directory of an
+                                organization, it retives the
+                                objects of all employees whose details have the keyed name in it and stores the employee
+                                objects in a list
+                                before displaing it.</p>
+                            <p>Here is a code that implements the look up functionality of an Organization's Directory.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i7" aria-expanded="false" aria-controls="i7">
+                                Code
+                            </button>
+                            <div class="collapse" id="i7">
+                                <div class="card card-body">
+                                    <pre><code>
+                        class Employee:
+                            def __init__(self, name, emp_id, email_id):
+                                self.__name=name
+                                self.__emp_id=emp_id
+                                self.__email_id=email_id
+                        
+                            def get_name(self):
+                                return self.__name
+                        
+                            def get_emp_id(self):
+                                return self.__emp_id
+                        
+                            def get_email_id(self):
+                                return self.__email_id
+                        
+                        class OrganizationDirectory:
+                            def __init__(self,emp_list):
+                                self.__emp_list=emp_list
+                        
+                            def lookup(self,key_name):
+                                result_list=[]
+                                for emp in self.__emp_list:
+                                    if(key_name in emp.get_name()):
+                                        result_list.append(emp)
+                                self.display(result_list)
+                                return result_list
+                        
+                            def display(self,result_list):
+                                print("Search results:")
+                                for emp in result_list:
+                                    print(emp.get_name()," ", emp.get_emp_id()," ",emp.get_email_id())
+                        
+                        
+                        
+                        emp1=Employee("Kevin",24089, "Kevin_xyz@organization.com")
+                        emp2=Employee("Jack",56789,"Jack_xyz@organization.com")
+                        emp3=Employee("Jackson",67895,"Jackson_xyz@organization.com")
+                        emp4=Employee("Henry Jack",23456,"Jacky_xyz@organization.com")
+                        emp_list=[emp1,emp2,emp3,emp4]
+                        
+                        org_dir=OrganizationDirectory(emp_list)
+                        #Search for an employee
+                        org_dir.lookup("Jack")
+                        OP:
+                        Search results:
+                        Jack 56789 Jack_xyz@organization.com
+                        Jackson 67895 Jackson_xyz@organization.com
+                        Henry Jack 23456 Jacky_xyz@organization.com
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>List using Array - Memory Usage</h4>
+                            <ul>
+                                <li>List using array may involve shifting of elements in both insert and delete
+                                    operations.</li>
+                                <li> When capacity of the array is increased during addition or insertion of elements,
+                                    it may result in wastage
+                                    of memory in the form of reserved space.</li>
+                            </ul>
+
+                            <h3>List using Linked List - Introduction</h3>
+                            <p>As Maria's list is going to have frequent additions and deletions, it may not be a good
+                                choice to implement it
+                                using arrays.
+                                There is one more implementation for list which is using Linked List.</p>
+                            <p>A linked list consists of a group of nodes which together represent a sequence or a list.
+                                Each node will have a
+                                data part which holds the actual data and an address part which holds the link to the
+                                next node. The first node
+                                in the list is known as head node and the last node is known as tail node. Unlike array,
+                                in linked list, the
+                                nodes need not be stored in contiguous memory locations.</p>
+                            <img src="img/ds10.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>The node in the linked list can be represented as follows:</p>
+                            <img src="img/ds11.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Creation of a node which contains item name, “Sugar”.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i8" aria-expanded="false" aria-controls="i8">
+                                Code
+                            </button>
+                            <div class="collapse" id="i8">
+                                <div class="card card-body">
+                                    <pre><code>
+                        
+                        class Node:
+                            def __init__(self,data):
+                                self.__data=data
+                                self.__next=None
+                        
+                            def get_data(self):
+                                return self.__data
+                        
+                            def set_data(self,data):
+                                self.__data=data
+                        
+                            def get_next(self):
+                                return self.__next
+                        
+                            def set_next(self,next_node):
+                                self.__next=next_node
+                        
+                        item_node=Node("Sugar")
+                        print(item_node.get_data())
+                        OP:
+                        Sugar                           
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Creation</h4>
+                            <p>To link the nodes and create a linked list, let’s create a new class, LinkedList with two
+                                attributes, head and
+                                tail both initialized to None as shown below.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i9" aria-expanded="false" aria-controls="i9">
+                                Code
+                            </button>
+                            <div class="collapse" id="i9">
+                                <div class="card card-body">
+                                    <pre><code>
+                            class LinkedList:
+                            def __init__(self):
+                                self.__head=None
+                                self.__tail=None
+                            def get_head(self):
+                                return self.__head
+                            def get_tail(self):
+                                return self.__tail
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Display Operation</h4>
+                            <p>Assume that Maria's list is maintained as a linked list and she wants to traverse through
+                                the list and display
+                                the items in the list starting from the first item.</p>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i10" aria-expanded="false" aria-controls="i10">
+                                Code
+                            </button>
+                            <div class="collapse" id="i10">
+                                <div class="card card-body">
+                                    <pre><code>
+                            display()
+                            1. Call the head node as temp
+                            2. While temp is not None,
+                               a. Display temp’s data
+                               b. Make the next node as temp
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Add Operation</h4>
+                            <p>Maria wants to add the item, "Sugar" to the linked list and after that add "Tea Bags" to
+                                the end of the linked
+                                list.</p>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i11" aria-expanded="false" aria-controls="i11">
+                                Code
+                            </button>
+                            <div class="collapse" id="i11">
+                                <div class="card card-body">
+                                    <pre><code>
+                            add(data)
+                            1. Create a new node with the data
+                            2. If the linked list is empty (head node is not referring to any other node), 
+                               make the head node and the tail node refer to the new node
+                            3. Otherwise,
+                               a. Make the tail node’s link refer to new node
+                               b. Call the new node as tail node
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Insert Operation</h4>
+                            <p>Maria wants to insert an item, Salt after Sugar in the linked list.</p>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i12" aria-expanded="false" aria-controls="i12">
+                                Code
+                            </button>
+                            <div class="collapse" id="i12">
+                                <div class="card card-body">
+                                    <pre><code>
+                            insert(data,data_before)
+                            1. Create a new node with the given data
+                            2. If the data_before is None,
+                                a. Make the new node's link refer to head node 
+                                b. Call the new node as head node
+                                c. If the new node's link is None, make it the tail node
+                            3. Else
+                                a. Find the node with data_before, once found consider it as node_before
+                                b. Make the new node’s link refer to node_before’s link.
+                                c. Make the node_before’s link refer to new node
+                                d. If new node’s link is None, make it the tail node
+                            4. If node with data_before is not found, display appropriate error message
+                            
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Delete Operation</h4>
+                            <p>Maria wants to delete the items, Sugar and Milk from linked list.</p>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i13" aria-expanded="false" aria-controls="i13">
+                                Code
+                            </button>
+                            <div class="collapse" id="i13">
+                                <div class="card card-body">
+                                    <pre><code>
+                            delete(data):
+                            1. Find the node with the given data. If found,
+                               a. If the node to be deleted is head node, make the next node as head node
+                                  1. If it is also the tail node, make the tail node as None
+                               b. Otherwise,
+                                  1. Traverse till the node before the node to be deleted, call it temp
+                                  2. Make temp’s link refer to node’s link.
+                                  3. If the node to be deleted is the tail node, call the temp as tail node
+                                  4. Make the node's link as None
+                            2. If the node to be deleted is not found, display appropriate error message
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Recap</h4>
+                            <p>Shift operations are not required to insert and delete the elements to or from the linked
+                                list. It can be done
+                                easily by rearranging the links.</p>
+                            <p>Extra memory is required to store the link/address part in every node apart from the
+                                data.</p>
+                            <p>The elements cannot be accessed randomly, we have to traverse sequentially starting from
+                                the first node to access
+                                any element in the list.</p>
+                            <img src="img/ds12.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Assume that the below blocks of memory are available for dynamic memory allocation.
+                                As shown, the blocks are linked one after the other using the linked list. At a point of
+                                time, few blocks may be
+                                allocated and few may be free.</p>
+                            <img src="img/ds13.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds14.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In this case, maximum contiguous free blocks is 30% and total free blocks is 50%.</p>
+                            <p>If a program now requests for 4 blocks of memory, OS will not be able to allocate as it
+                                does not have 4
+                                contiguous free blocks (blocks in white) available. OS regularly performs memory
+                                compaction to bring together
+                                all the free blocks.</p>
+                            <p>Let’s see how this is performed.</p>
+                            <img src="img/ds15.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>After memory compaction, maximum contiguous free blocks is 50% and total free blocks is
+                                50%.</p>
+                            <h4>implementation of memory compaction process</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i14" aria-expanded="false" aria-controls="i14">
+                                Code
+                            </button>
+                            <div class="collapse" id="i14">
+                                <div class="card card-body">
+                                    <pre><code>
+                        class Node:
+                            def __init__(self,data):
+                                self.__data=data
+                                self.__next=None
+                        
+                            def get_data(self):
+                                return self.__data
+                        
+                            def set_data(self,data):
+                                self.__data=data
+                        
+                            def get_next(self):
+                                return self.__next
+                        
+                            def set_next(self,next_node):
+                                self.__next=next_node
+                        
+                        
+                        class LinkedList:
+                            def __init__(self):
+                                self.__head=None
+                                self.__tail=None
+                        
+                            def get_head(self):
+                                return self.__head
+                        
+                            def get_tail(self):
+                                return self.__tail
+                        
+                            #This method is added for this tryout alone
+                            def set_head(self,new_node):
+                                self.__head=new_node
+                        
+                            #This method is added for this tryout alone
+                            def set_tail(self,new_node):
+                                self.__tail=new_node
+                        
+                            def add(self,data):
+                                new_node=Node(data)
+                                if(self.__head is None):
+                                    self.__head=self.__tail=new_node
+                                else:
+                                    self.__tail.set_next(new_node)
+                                    self.__tail=new_node
+                        
+                            def insert(self,data,data_before):
+                                new_node=Node(data)
+                                if(data_before==None):
+                                    new_node.set_next(self.__head)
+                                    self.__head=new_node
+                                    if(new_node.get_next()==None):
+                                        self.__tail=new_node
+                        
+                                else:
+                                    node_before=self.find_node(data_before)
+                                    if(node_before is not None):
+                                        new_node.set_next(node_before.get_next())
+                                        node_before.set_next(new_node)
+                                        if(new_node.get_next() is None):
+                                            self.__tail=new_node
+                                    else:
+                                        print(data_before,"is not present in the Linked list")
+                        
+                            def display(self):
+                                temp=self.__head
+                                while(temp is not None):
+                                    print(temp.get_data())
+                                    temp=temp.get_next()
+                        
+                        
+                            def find_node(self,data):
+                                temp=self.__head
+                                while(temp is not None):
+                                    if(temp.get_data()==data):
+                                        return temp
+                                    temp=temp.get_next()
+                                return None
+                        
+                            def delete(self,data):
+                                node=self.find_node(data)
+                                if(node is not None):
+                                    if(node==self.__head):
+                                        if(self.__head==self.__tail):
+                                            self.__tail=None
+                                        self.__head=node.get_next()
+                                    else:
+                                        temp=self.__head
+                                        while(temp is not None):
+                                            if(temp.get_next()==node):
+                                                temp.set_next(node.get_next())
+                                                if(node==self.__tail):
+                                                    self.__tail=temp
+                                                node.set_next(None)
+                                                break
+                                            temp=temp.get_next()
+                                else:
+                                    print(data,"is not present in Linked list") 
+                                                                
+                            #You can use the below __str__() to print the elements of the DS object while debugging
+                            def __str__(self):
+                                temp=self.__head
+                                msg=[]
+                                while(temp is not None):
+                                   msg.append(str(temp.get_data()))
+                                   temp=temp.get_next()
+                                msg=" ".join(msg)
+                                msg="Linkedlist data(Head to Tail): "+ msg
+                                return msg
+                        
+                        
+                        def find_total_nodes(mem_block):
+                            temp=mem_block.get_head()
+                            total_nodes=0
+                            while(temp is not None):
+                                total_nodes+=1
+                                temp=temp.get_next()
+                        
+                            return total_nodes
+                        
+                        def maximum_contiguous_free_blocks(mem_block):
+                            temp=mem_block.get_head()
+                            total_nodes=find_total_nodes(mem_block)
+                            free_list=[]
+                            free_contiguous_nodes=0
+                            if(temp.get_data()=="Free"):
+                                free_contiguous_nodes+=1
+                            prev_data=temp.get_data()
+                            temp=temp.get_next()
+                            while(temp is not None):
+                                if(temp.get_data()=="Free"):
+                                        if(prev_data=="Free"):
+                                            free_contiguous_nodes+=1
+                                        else:
+                                            free_list.append(free_contiguous_nodes)
+                                            free_contiguous_nodes=1
+                                else:
+                                    free_list.append(free_contiguous_nodes)
+                                    free_contiguous_nodes=0
+                        
+                                prev_data=temp.get_data()
+                                temp=temp.get_next()
+                            free_list.append(free_contiguous_nodes)
+                            max_free_contiguous_nodes=max(free_list)
+                            return((max_free_contiguous_nodes/total_nodes)*100)
+                        
+                        def total_free_blocks(mem_block):
+                            temp=mem_block.get_head()
+                            total_blocks=find_total_nodes(mem_block)
+                            total_free_blocks=0
+                            while(temp is not None):
+                                if(temp.get_data()=="Free"):
+                                    total_free_blocks+=1
+                                temp=temp.get_next()
+                            return ((total_free_blocks/total_blocks)*100)
+                        
+                        def memory_compaction(mem_block):
+                            temp=mem_block.get_head()
+                            prev_occupied=None
+                            prev_free=None
+                            occupied=None
+                            free=None
+                            if(temp.get_data()=="Occupied"):
+                                    occupied=temp
+                                    prev_occupied=temp
+                            elif(temp.get_data()=="Free"):
+                                    free=temp
+                                    prev_free=temp
+                            temp=temp.get_next()
+                            while(temp is not None):
+                                if(temp.get_data()=="Occupied"):
+                                    if(occupied==None):
+                                        occupied=temp
+                                    if(prev_occupied==None):
+                                        prev_occupied=temp
+                                    else:
+                                        prev_occupied.set_next(temp)
+                                        prev_occupied=temp
+                                elif(temp.get_data()=="Free"):
+                                    if(free==None):
+                                        free=temp
+                                    if(prev_free==None):
+                                        prev_free=temp
+                                    else:
+                                        prev_free.set_next(temp)
+                                        prev_free=temp
+                                temp=temp.get_next()
+                        
+                            prev_occupied.set_next(free)
+                            prev_free.set_next(None)
+                            mem_block.set_head(occupied)
+                            mem_block.set_tail(prev_free)
+                        
+                        mem_block=LinkedList()
+                        mem_block.add("Occupied")
+                        mem_block.add("Free")
+                        mem_block.add("Occupied")
+                        mem_block.add("Occupied")
+                        mem_block.add("Free")
+                        mem_block.add("Occupied")
+                        mem_block.add("Free")
+                        mem_block.add("Free")
+                        mem_block.add("Free")
+                        mem_block.add("Free")
+                        
+                        print("Before compaction")
+                        print("_________________")
+                        print("Max. contiguous free blocks:", maximum_contiguous_free_blocks(mem_block),"%")
+                        print("Total free blocks:",total_free_blocks(mem_block),"%")
+                        
+                        memory_compaction(mem_block)
+                        
+                        print()
+                        print("After compaction")
+                        print("________________")
+                        print("Max. contiguous free blocks:", maximum_contiguous_free_blocks(mem_block),"%")
+                        print("Total free blocks:",total_free_blocks(mem_block),"%")
+                        
+                        OP:
+                        
+                        Before compaction
+                        _________________
+                        Max. contiguous free blocks: 40.0 %
+                        Total free blocks: 60.0 %
+                        
+                        After compaction
+                        ________________
+                        Max. contiguous free blocks: 60.0 %
+                        Total free blocks: 60.0 %
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>List using Array vs Linked List</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Operation</th>
+                                        <th>List using Array</th>
+                                        <th>List using Linked List</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Insert</td>
+                                        <td>Shifting of elements are required</td>
+                                        <td>Shifting of elements are not required</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delete</td>
+                                        <td>Shifting of elements are required</td>
+                                        <td>Shifting of elements are not required</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Memory</td>
+                                        <td>Elements are stored in contiguous memory locations</td>
+                                        <td>Elements need not necessarily be stored in contiguous memory locations</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Access</td>
+                                        <td>Both random and sequential</td>
+                                        <td> Only sequential</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>We may choose between array or linked list for implementing list based on the problem
+                                statement. If the problem
+                                has frequent insertions and deletions, prefer linked list. Otherwise, if it involves
+                                only accessing the elements
+                                at random or in sequence with less number of insertions and deletions, use array.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                            Stack
+                        </button>
+                    </h2>
+                    <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+
+                            <h4>Stack - Introduction</h4>
+                            <p>This pile of shirts arranged one on top of the other which follows Last-In-First-Out
+                                (LIFO) principle is known as
+                                Stack.</p>
+                            <img src="img/ds16.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Operations possible on the stack are:</p>
+                            <ul>
+                                <li>Push or insert an element to the top of the stack</li>
+                                <li>Pop or remove an element from top of the stack</li>
+                            </ul>
+                            <p>Let's have a class Stack as follows:</p>
+                            <img src="img/ds17.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds18.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Push Operation</h4>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i15" aria-expanded="false" aria-controls="i15">
+                                Code
+                            </button>
+                            <div class="collapse" id="i15">
+                                <div class="card card-body">
+                                    <pre><code>
+                            push(data):
+                            1. Check whether the stack is full. If full, display appropriate message
+                            2. If not,
+                               a. increment top by one
+                               b. Add the element at top position in the elements array    
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Pop operation</h4>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i16" aria-expanded="false" aria-controls="i16">
+                                Code
+                            </button>
+                            <div class="collapse" id="i16">
+                                <div class="card card-body">
+                                    <pre><code>
+                            pop:
+                            1. Check whether the stack is empty. If empty, display appropriate message
+                            2. If not,
+                               a. Retrieve data at the top of the stack
+                               b. Decrement top by 1
+                               c. Return the retrieved data    
+                        </code></pre>
+                                </div>
+                            </div>
+                            <img src="img/ds24.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Application areas</h4>
+                            <p>Stack is used to implement bracket matching algorithm for arithmetic expression
+                                evaluation and also in
+                                implementation of method calls.</p>
+                            <h4>Stack - Self Study</h4>
+                            <img src="img/ds19.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Here is a text written in MS-Word. Observe how the text changed on click of Ctrl-Z and
+                                Ctrl-Y.</p>
+                            <img src="img/ds20.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Here is a code that simulates undo- redo operation.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i17" aria-expanded="false" aria-controls="i17">
+                                Code
+                            </button>
+                            <div class="collapse" id="i17">
+                                <div class="card card-body">
+                                    <pre><code>
+                        class Stack:
+                            def __init__(self,max_size):
+                                self.__max_size=max_size
+                                self.__elements=[None]*self.__max_size
+                                self.__top=-1
+                        
+                            def is_full(self):
+                                if(self.__top==self.__max_size-1):
+                                    return True
+                                return False
+                        
+                            def is_empty(self):
+                                if(self.__top==-1):
+                                    return True
+                                return False
+                        
+                            def push(self,data):
+                                if(self.is_full()):
+                                    print("The stack is full!!")
+                                else:
+                                    self.__top+=1
+                                    self.__elements[self.__top]=data
+                        
+                            def pop(self):
+                                if(self.is_empty()):
+                                    print("The stack is empty!!")
+                                else:
+                                    data= self.__elements[self.__top]
+                                    self.__top-=1
+                                    return data
+                        
+                            def display(self):
+                                if(self.is_empty()):
+                                    print("The stack is empty")
+                                else:
+                                    index=self.__top
+                                    while(index>=0):
+                                        print(self.__elements[index])
+                                        index-=1
+                        
+                            def get_max_size(self):
+                                return self.__max_size
+                                                               
+                            #You can use the below __str__() to print the elements of the DS object while debugging
+                            def __str__(self):
+                                msg=[]
+                                index=self.__top
+                                while(index>=0):
+                                    msg.append((str)(self.__elements[index]))
+                                    index-=1
+                                msg=" ".join(msg)
+                                msg="Stack data(Top to Bottom): "+msg
+                                return msg    
+                        
+                        def remove():
+                            global clipboard,undo_stack
+                            data=clipboard[len(clipboard)-1]
+                            clipboard.remove(data)
+                            undo_stack.push(data)
+                            print("Remove:",clipboard)
+                        
+                        def undo():
+                            global clipboard,undo_stack,redo_stack
+                            if(undo_stack.is_empty()):
+                                print("There is no data to undo")
+                            else:
+                                data=undo_stack.pop()
+                                clipboard.append(data)
+                                redo_stack.push(data)
+                            print("Undo:",clipboard)
+                        
+                        
+                        def redo():
+                            global clipboard, undo_stack,redo_stack
+                            if(redo_stack.is_empty()):
+                                print("There is no data to redo")
+                            else:
+                                data=redo_stack.pop()
+                                if(data not in clipboard):
+                                        print("There is no data to redo")
+                                        redo_stack.push(data)
+                                else:
+                                    clipboard.remove(data)
+                                    undo_stack.push(data)
+                            print("Redo:",clipboard)
+                        
+                        
+                        
+                        clipboard=["A","B","C","D","E","F"]
+                        undo_stack=Stack(len(clipboard))
+                        redo_stack=Stack(len(clipboard))
+                        remove()
+                        undo()
+                        redo()
+                        OP:
+                        Remove: ['A', 'B', 'C', 'D', 'E']
+                        Undo: ['A', 'B', 'C', 'D', 'E', 'F']
+                        Redo: ['A', 'B', 'C', 'D', 'E']
+                        </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                            Queue
+                        </button>
+                    </h2>
+                    <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Queue - Introduction</h3>
+                            <p>Peter and Maria went for a movie one day. In the multiplex, the tickets were issued on
+                                first-come-first-serve
+                                basis and people were standing behind each other waiting for their turn. So they went to
+                                the back and stood
+                                behind the last person waiting for the ticket</p>
+                            <p>Here, the people are standing one behind the other and they are serviced based on
+                                First-In-First-Out (FIFO)
+                                mechanism. Such an arrangement is known as Queue.</p>
+                            <p>Operations possible on the queue are:</p>
+                            <ul>
+                                <li>En-queue or add an element to the end of the queue
+                                </li>
+                                <li>De-queue or remove an element from the front of the queue</li>
+                            </ul>
+                            <p>Let's have a class, Queue as follows:</p>
+                            <img src="img/ds21.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds22.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>The queue at the multiplex when there are no people.</p>
+                            <img src="img/ds23.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>The queue at the multiplex when filled</p>
+                            <img src="img/ds25.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Enqueue Operation</h4>
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i18" aria-expanded="false" aria-controls="i18">
+                                Code
+                            </button>
+                            <div class="collapse" id="i18">
+                                <div class="card card-body">
+                                    <pre><code>
+                            enqueue (data):
+                            1. Check whether queue is full. If full, display appropriate message
+                            2. If not,
+                               a. increment rear by one
+                               b. Add the element at rear position in the elements array    
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Dequeue Operation</h4>
+
+                            <p>Algorithm steps:</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i19" aria-expanded="false" aria-controls="i19">
+                                Code
+                            </button>
+                            <div class="collapse" id="i19">
+                                <div class="card card-body">
+                                    <pre><code>
+                            dequeue()
+                            1. Check whether the queue is empty. If it is empty, display appropriate message
+                            2. If not,
+                               a. Retrieve data at the front of the queue
+                               b. Increment front by 1
+                               c. Return the retrieved data    
+                        </code></pre>
+                                </div>
+                            </div>
+                            <img src="img/ds26.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Queue - Self study</h4>
+                            <img src="img/ds27.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>For example:
+                                Suppose you have issued print commands for 3 documents in the order doc1, followed by
+                                doc2 and doc3.
+                                The print queue will be populated as shown below:</p>
+                            <img src="img/ds28.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>doc-n where doc is the document sent for printing and n is the number of pages in the
+                                document.
+                                For example, doc2-10 means doc2 is to be printed and it has 10 pages.</p>
+                            <p>Here is a code that simulates print queue operation. Go through the code and observe how
+                                the queue is used in
+                                this implementation.
+                            </p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i20" aria-expanded="false" aria-controls="i20">
+                                Code
+                            </button>
+                            <div class="collapse" id="i20">
+                                <div class="card card-body">
+                                    <pre><code>
+                        class Queue:
+                            def __init__(self,max_size):
+                                self.__max_size=max_size
+                                self.__elements=[None]*self.__max_size
+                                self.__rear=-1
+                                self.__front=0
+                        
+                            def is_full(self):
+                                if(self.__rear==self.__max_size-1):
+                                        return True
+                                return False
+                        
+                            def is_empty(self):
+                                if(self.__front>self.__rear):
+                                    return True
+                                return False
+                        
+                            def enqueue(self,data):
+                                if(self.is_full()):
+                                    print("Queue is full!!!")
+                                else:
+                                    self.__rear+=1
+                                    self.__elements[self.__rear]=data
+                        
+                            def dequeue(self):
+                                if(self.is_empty()):
+                                    print("Queue is empty!!!")
+                                else:
+                                    data=self.__elements[self.__front]
+                                    self.__front+=1
+                                    return data
+                        
+                            def display(self):
+                                for index in range(self.__front, self.__rear+1):
+                                    print(self.__elements[index])
+                        
+                            def get_max_size(self):
+                                return self.__max_size
+                                                                
+                            #You can use the below __str__() to print the elements of the DS object while debugging
+                            def __str__(self):
+                                msg=[]
+                                index=self.__front
+                                while(index<=self.__rear):
+                                    msg.append((str)(self.__elements[index]))
+                                    index+=1
+                                msg=" ".join(msg)
+                                msg="Queue data(Front to Rear): "+msg
+                                return msg
+                        
+                        def send_for_print(doc):
+                            global print_queue
+                            if(print_queue.is_full()):
+                                print("Queue is full")
+                            else:
+                                print_queue.enqueue(doc)
+                                print(doc,"sent for printing")
+                        
+                        
+                        def start_printing():
+                            global print_queue
+                            while(not print_queue.is_empty()):
+                                doc=print_queue.dequeue()
+                                global pages_in_printer
+                                for i in range(0,len(doc)):
+                                    if(doc[i]=="-"):
+                                        no_of_pages=int(doc[i+1:])
+                                        break
+                                if(no_of_pages&lt=pages_in_printer):
+                                    print(doc,"printed")
+                                    pages_in_printer-=no_of_pages
+                                    print("Remaining no. of pages in printer:", pages_in_printer)
+                                else:
+                                    print("Couldn't print",doc[:i],". Not enough pages in the printer.")
+                        pages_in_printer=12
+                        print_queue=Queue(10)
+                        send_for_print("doc1-5")
+                        send_for_print("doc2-3")
+                        send_for_print("doc3-6")
+                        start_printing()
+                        
+                        OP:
+                        doc1-5 sent for printing
+                        doc2-3 sent for printing
+                        doc3-6 sent for printing
+                        doc1-5 printed
+                        Remaining no. of pages in printer: 7
+                        doc2-3 printed
+                        Remaining no. of pages in printer: 4
+                        Couldn't print doc3 . Not enough pages in the printer.
+                        
+                        </code></pre>
+                                </div>
+                            </div>
+                            <h4>Linked List & Queue -</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i21" aria-expanded="false" aria-controls="i21">
+                                Code
+                            </button>
+                            <div class="collapse" id="i21">
+                                <div class="card card-body">
+                                    <pre><code>
+                        class Queue:
+                            def __init__(self,max_size):
+                                self.__max_size=max_size
+                                self.__elements=[None]*self.__max_size
+                                self.__rear=-1
+                                self.__front=0
+                        
+                            def is_full(self):
+                                if(self.__rear==self.__max_size-1):
+                                    return True
+                                return False
+                        
+                            def is_empty(self):
+                                if(self.__front>self.__rear):
+                                    return True
+                                return False
+                        
+                            def enqueue(self,data):
+                                if(self.is_full()):
+                                    print("Queue is full!!!")
+                                else:
+                                    self.__rear+=1
+                                    self.__elements[self.__rear]=data
+                        
+                            def dequeue(self):
+                                if(self.is_empty()):
+                                    print("Queue is empty!!!")
+                                else:
+                                    data=self.__elements[self.__front]
+                                    self.__front+=1
+                                    return data
+                        
+                            def display(self):
+                                for index in range(self.__front, self.__rear+1):
+                                    print(self.__elements[index])
+                        
+                            def get_max_size(self):
+                                return self.__max_size
+                                                                
+                            #You can use the below __str__() to print the elements of the DS object while debugging
+                            def __str__(self):
+                                msg=[]
+                                index=self.__front
+                                while(index&lt=self.__rear):
+                                    msg.append((str)(self.__elements[index]))
+                                    index+=1
+                                msg=" ".join(msg)
+                                msg="Queue data(Front to Rear): "+msg
+                                return msg
+                        
+                        class Node:
+                            def __init__(self,data):
+                                self.__data=data
+                                self.__next=None
+                        
+                            def get_data(self):
+                                return self.__data
+                        
+                            def set_data(self,data):
+                                self.__data=data
+                        
+                            def get_next(self):
+                                return self.__next
+                        
+                            def set_next(self,next_node):
+                                self.__next=next_node
+                        
+                        
+                        class LinkedList:
+                            def __init__(self):
+                                self.__head=None
+                                self.__tail=None
+                        
+                            def get_head(self):
+                                return self.__head
+                        
+                            def get_tail(self):
+                                return self.__tail
+                        
+                        
+                            def add(self,data):
+                                new_node=Node(data)
+                                if(self.__head is None):
+                                    self.__head=self.__tail=new_node
+                                else:
+                                    self.__tail.set_next(new_node)
+                                    self.__tail=new_node
+                        
+                            def insert(self,data,data_before):
+                                new_node=Node(data)
+                                if(data_before==None):
+                                    new_node.set_next(self.__head)
+                                    self.__head=new_node
+                                    if(new_node.get_next()==None):
+                                        self.__tail=new_node
+                        
+                                else:
+                                    node_before=self.find_node(data_before)
+                                    if(node_before is not None):
+                                        new_node.set_next(node_before.get_next())
+                                        node_before.set_next(new_node)
+                                        if(new_node.get_next() is None):
+                                            self.__tail=new_node
+                                    else:
+                                        print(data_before,"is not present in the Linked list")
+                        
+                            def display(self):
+                                temp=self.__head
+                                while(temp is not None):
+                                    print(temp.get_data())
+                                    temp=temp.get_next()
+                        
+                        
+                            def find_node(self,data):
+                                temp=self.__head
+                                while(temp is not None):
+                                    if(temp.get_data()==data):
+                                        return temp
+                                    temp=temp.get_next()
+                                return None
+                        
+                            def delete(self,data):
+                                node=self.find_node(data)
+                                if(node is not None):
+                                    if(node==self.__head):
+                                        if(self.__head==self.__tail):
+                                            self.__tail=None
+                                        self.__head=node.get_next()
+                                    else:
+                                        temp=self.__head
+                                        while(temp is not None):
+                                            if(temp.get_next()==node):
+                                                temp.set_next(node.get_next())
+                                                if(node==self.__tail):
+                                                    self.__tail=temp
+                                                node.set_next(None)
+                                                break
+                                            temp=temp.get_next()
+                                else:
+                                    print(data,"is not present in Linked list")
+                        
+                            #You can use the below __str__() to print the elements of the DS object while debugging
+                            def __str__(self):
+                                temp=self.__head
+                                msg=[]
+                                while(temp is not None):
+                                    msg.append(str(temp.get_data()))
+                                    temp=temp.get_next()
+                                msg=" ".join(msg)
+                                msg="Linkedlist data(Head to Tail): "+ msg
+                                return msg
+                        
+                        
+                        def fun(input_list1,input_list2):
+                            temp1 = input_list1.get_head()
+                            temp2 = input_list2.get_head()
+                            output_queue = Queue(10)
+                            while(temp1 != None and temp2 != None):
+                                if(temp1.get_data() &lt temp2.get_data()):
+                                    output_queue.enqueue(temp1.get_data())
+                                    temp1 = temp1.get_next()
+                                elif(temp1.get_data() > temp2.get_data()):
+                                    output_queue.enqueue(temp2.get_data())
+                                    temp2 = temp2.get_next()
+                                else:
+                                    output_queue.enqueue(temp2.get_data())
+                                    temp1 = temp1.get_next()
+                                    temp2 = temp2.get_next()
+                            while(temp1 != None):
+                                output_queue.enqueue(temp1.get_data())
+                                temp1 = temp1.get_next()
+                            while(temp2 != None):
+                                output_queue.enqueue(temp2.get_data())
+                                temp2 = temp2.get_next()
+                            return output_queue
+                        
+                        list1=LinkedList()
+                        list1.add(1)
+                        list1.add(2)
+                        list1.add(5)
+                        list1.add(7)
+                        list1.add(8)
+                        list1.add(10)
+                        
+                        list2=LinkedList()
+                        list2.add(3)
+                        list2.add(4)
+                        list2.add(6)
+                        list2.add(9)
+                        
+                        res_queue=fun(list1,list2)
+                        res_queue.display()
+                        
+                        OP:
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        </code></pre>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                            Non - Linear Data Structures
+                        </button>
+                    </h2>
+                    <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h3>Non - Linear Data Structures - Introduction</h3>
+                            <p>Scenarios</p>
+                            <p>The network engineers of a company are trying to connect all the computers (numbered 1 to
+                                9) in the company
+                                network. They also need to provide a path to traverse from one computer to the other.
+                            </p>
+
+                            <p>Maria is planning a vacation trip to Europe and is trying to choose the best air route
+                                from the available options
+                                based on the travel time in hrs.
+                                Option-1: Bangalore(4hrs) -> Dubai(7hrs)-> Paris(1hr)-> London;
+                                Option-2: Bangalore(3hrs)->Delhi(8hrs)->Frankfurt(2hrs)->London;
+                                Option-3: Bangalore(4hrs)->Dubai(7hrs)->London</p>
+                            <img src="img/ds29.png" alt="" class="img-thumbnail img-fluid d-block img-size">s
+                            <h4>Graph</h4>
+                            <p>In these scenarios, we understand that we cannot use any of the linear data structures
+                                like array, linked list,
+                                stack or queue to represent it. Here, we need an arrangement which allows to have a set
+                                of vertices and edges
+                                between them. Such a data structure is known as graph.</p>
+                            <p>Graph is a non-linear data structure having a set of vertices(or nodes) and edges between
+                                vertices. It can have
+                                any number of edges and nodes and any node can be connected to any other node by an
+                                edge. It can be implemented
+                                using arrays or linked lists.</p>
+                            <img src="img/ds30.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Graph operations</h4>
+                            <p>Common operations possible on graph are listed below:</p>
+                            <img src="img/ds31.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4>Graph applications</h4>
+                            <p>Listed below are two common usage scenarios of graphs:</p>
+                            <p>1. Find the shortest path where path is defined as a sequence of edges which connect a
+                                sequence of vertices .
+                                Shortest path is used in a weighted graph to find the path that results in the shortest
+                                path from a source node
+                                to a destination node. It is used to find shortest routes, profitable routes etc.</p>
+                            <p>2. Detect a cycle in a graph. Cycle consists of a sequence of vertices starting and
+                                ending at the same vertex
+                                with no repetitions of vertices and edges other than the starting and ending vertex.</p>
+
+                            <h4>self study</h4>
+                            <p>Google Maps uses weighted graph to represent a map where each node is a city, edge is a
+                                road connecting two
+                                cities and weight can be the distance between the two cities.</p>
+                            <p>Facebook uses directed graph to represent people and their relationships where each node
+                                represents a
+                                person/activity and edge represents the relationships between two people (liked by,
+                                tagged by, friend of etc.)
+                            </p>
+
+                            <h4>Tree</h4>
+                            <p>Scenario-1: Family Tree</p>
+                            <img src="img/ds32.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Scenario-2: Organization Structure</p>
+                            <img src="img/ds33.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>This type of non-linear arrangement where a node is attached to one or more nodes
+                                directly beneath it, is a
+                                special type of graph known as tree. In this data structure, the top most node is called
+                                the root and the
+                                connections between nodes are called edges. Nodes that have no children are called leaf
+                                nodes and non-root and
+                                non-leaf nodes are called internal nodes.</p>
+                            <p>Trees are used extensively in searching and sorting applications.</p>
+                            <img src="img/ds34.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Tree - Self study</h4>
+                            <img src="img/ds35.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/ds36.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                        </div>
+                    </div>
+                </div>
+
+
+                <h2 class="text-center pt-3">Data Structures and Algorithms using Python - Part 2</h2>
+                <hr class="ruler-color" size="5">
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                            Introduction
+                        </button>
+                    </h2>
+                    <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <p>In "Data Structures & Algorithms using Python - Part 1" course the following topics have
+                                been covered:</p>
+                            <ol>
+                                <li>Need and benefits of data structures</li>
+                                <li>Various linear types of data structures that are commonly used like List, Stack,
+                                    Queue etc </li>
+                                <li>Operations on linear data structures </li>
+                                <li>Application areas of linear data structures</li>
+                                <li>Insights into few non - linear data structures.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                            Hashing & Hash Table
+                        </button>
+                    </h2>
+                    <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <img src="img/pd1.png" alt="">
+                            <p>The search will involve character by character searching of each customer name followed
+                                by the 11 digit account number. i.e. 26 possibilities for each character of a variable
+                                length string followed by 10 possibilities for each of the 11 digits.</p>
+                            <p>In these kind of situations, hashing can be used to arrive at a fixed length shorter hash
+                                value from the key. Searching a fixed length shorter hash value is definitely much
+                                faster than searching for the original key value.</p>
+
+                            <h4>Hashing</h4>
+                            <p>Hashing is the process of transforming a set of characters (key) into a shorter fixed
+                                length integer value. This shorter fixed length integer value which represents the
+                                original set of characters (key) is known as hash value or hash. A hash function will be
+                                used to generate the hash value from the original set of characters (key). Various
+                                algorithms may be used to arrive at the hash function.</p>
+                            <p>Suppose we have a key-value pair as shown below. Here key is the three letter
+                                abbreviation of country names and value is the corresponding country name. </p>
+                            <img src="img/pd2.jpg" alt="">
+                            <p>Suppose we want to store the country names based on its key using the below hash
+                                function, let’s understand how it works.</p>
+                            <img src="img/pd3.png" alt="">
+                            <p>Hash values corresponding to each key can be generated as shown below:</p>
+                            <img src="img/pd4.jpg" alt="">
+                            <img src="img/pd5.png" alt="">
+
+                            <p>Points to Note:</p>
+                            <ol>
+                                <li>Hash function will always generate the same hash value (output) for a given key
+                                    (input).</li>
+                                <li>Keys have to be unique.</li>
+                                <li>A given key will have only one value in the key-value pair.</li>
+                            </ol>
+                            <p>Suppose now we have added SWE also to the list.</p>
+                            <img src="img/pd6.jpg" alt="">
+
+                            <h5>Collisions</h5>
+                            <p>Two keys (IND and SWE) have generated the same hash value. That means hash function may
+                                compute same hash value for multiple keys and this is known as collision in hashing.
+                                This occurs because the number of possibilities in input (key) is much greater than the
+                                number of possibilities in the output (hash value).
+                            </p>
+                            <p>In this example, three letter abbreviation exists for all the countries in the world
+                                whereas the hash value can be only between 0 – 4.</p>
+                            <p>Collisions are inevitable, however number of collisions depends on the goodness of the
+                                hash function.</p>
+
+                            <h4>Hash table</h4>
+                            <p>Now let’s understand how we can store the values in the key-value pair using the hash of
+                                its corresponding key. </p>
+                            <p>Hash table is a data structure that helps to map the keys to its value. It is primarily
+                                an array which stores the reference to the actual value based on the hash. In the hash
+                                table, hash refers to its index and the number of elements in the hash table is based on
+                                the hash function. Thus hash table can be searched very quickly for the actual value
+                                based on the hash obtained from its key.</p>
+                            <p>To begin with let’s consider hashing without collision:</p>
+                            <img src="img/pd7.png" alt="">
+                            <p>Here, we observe that since hash function takes a mod of 5, only possible values for hash
+                                are 0 to 4, hence the hash table can have only 5 elements.</p>
+                            <img src="img/pd8.png" alt="">
+
+                            <h5>Collisions</h5>
+                            <p>Hashing with collision:</p>
+                            <p>We have already seen that hash function may compute same hash value for multiple keys
+                                resulting in collision.
+
+                                Let’s understand how this is handled.</p>
+
+                            <p>One of the techniques that can be used for handling collision is known as separate
+                                chaining. In this case, instead of hash table containing a reference to one value, it
+                                will maintain a reference to a linked list. When more than one key maps to the same
+                                hash, its values are added as nodes to the corresponding linked list.</p>
+                            <p>Observe the linked list maintained for each hash and how values are stored in case of
+                                collision (IND,SWE).</p>
+                            <img src="img/pd9.png" alt="">
+                            <img src="img/pd10.png" alt="">
+                            <img src="img/pd11.png" alt="">
+                            <p>Can you answer?</p>
+                            <img src="img/pd12.png" alt="">
+                            <img src="img/pd13.png" alt="">
+                            <p>That means, it may not be sufficient to just store the value alone in the linked list,
+                                instead we have to store the key value pair as shown below. Here the key-value pair
+                                forms the data part of the linked list.</p>
+                            <img src="img/pd14.png" alt="">
+
+                            <h5>Hash table - Algorithm</h5>
+                            <p>Operations possible on the hash table are put() and get().</p>
+                            <p>put(): This operation is used to put a key-value pair into the hash table based on the
+                                key and the hash.</p>
+                            <p>Algorithm Steps:</p>
+                            <pre>
+<code>
+    Identify the hash by applying the hash function on the given key
+    Locate the hash in the hash table
+    Create a new node with the given key-value pair to be linked to the hash
+    Traverse through the linked list corresponding to the hash until its end
+    Place the new node as the last node of the linked list
+    
+</code>
+</pre>
+                            <p>get(): This operation is used to retrieve a value based on its key and hash.</p>
+                            <p>Algorithm Steps:</p>
+                            <pre>
+<code>
+    Identify the hash by applying the hash function on the given key
+    Locate the hash in the hash table
+    Search its corresponding linked list for a node with the given key
+    When found, return its corresponding value
+    If a node with key is not found, display "Node not found" and return
+    
+</code>
+</pre>
+
+                            <h5>Hash table - Applications</h5>
+                            <img src="img/pd15.png" alt="">
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                            Data Structures - Summary
+                        </button>
+                    </h2>
+                    <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+<p>Data structures in a nut shell</p>
+ <img src="img/pd16.png" alt="">
+<p>which according to you is the best data structure?</p>
+<p>Rarely is one data structure better than another in all situations. All the data structures require space for each data item it stores, time to perform each basic operation and also involves programming effort. Only after a careful analysis of the problem, we will be able to determine which is the most suited data structure for a task.</p>
+<h5>Stack & Queue - Summary - Try out 1</h5>
+<button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#i23"
+aria-expanded="false" aria-controls="i23">
+Code
+</button>
+<div class="collapse" id="i23">
+<div class="card card-body">
+  <pre>
+<code>
+    class Stack:
+    def __init__(self,max_size):
+        self.__max_size=max_size
+        self.__elements=[None]*self.__max_size
+        self.__top=-1
+    
+    def is_full(self):
+        if(self.__top==self.__max_size-1):
+            return True
+        return False
+    
+    def is_empty(self):
+        if(self.__top==-1): 
+            return True
+        return False
+    
+    def push(self,data):
+        if(self.is_full()):
+            print("The stack is full!!")
+        else:
+            self.__top+=1
+            self.__elements[self.__top]=data
+    
+    def pop(self):
+        if(self.is_empty()):
+            print("The stack is empty!!")
+        else:
+            data= self.__elements[self.__top]
+            self.__top-=1
+        return data
+    
+    def display(self):
+        if(self.is_empty()):
+            print("The stack is empty")
+        else:
+            index=self.__top
+            while(index>=0):
+                print(self.__elements[index])
+                index-=1
+    
+    def get_top(self):
+        return self.__top
+    
+    def get_max_size(self):
+        return self.__max_size
+                                        
+    #You can use the below __str__() to print the elements of the DS object while debugging
+    def __str__(self):
+        msg=[]
+        index=self.__top
+        while(index>=0):
+            msg.append((str)(self.__elements[index]))
+            index-=1
+        msg=" ".join(msg)
+        msg="Stack data(Top to Bottom): "+msg
+        return msg   
+                                        
+                                                
+class Queue:
+    def __init__(self,max_size):
+        self.__max_size=max_size
+        self.__elements=[None]*self.__max_size
+        self.__rear=-1
+        self.__front=0
+
+    def is_full(self):
+        if(self.__rear==self.__max_size-1):
+            return True
+        return False
+
+    def is_empty(self):
+        if(self.__front>self.__rear):
+            return True
+        return False
+
+    def enqueue(self,data):
+        if(self.is_full()):
+            print("Queue is full!!!")
+        else:
+            self.__rear+=1
+            self.__elements[self.__rear]=data
+
+    def dequeue(self):
+        if(self.is_empty()):
+            print("Queue is empty!!!")
+        else:
+            data=self.__elements[self.__front]
+            self.__front+=1
+            return data
+
+    def display(self):
+        for index in range(self.__front, self.__rear+1):
+            print(self.__elements[index])
+
+    def get_front(self):
+        return self.__front
+
+    def get_rear(self):
+        return self.__rear
+
+    def get_max_size(self):
+        return self.__max_size
+                                        
+    #You can use the below __str__() to print the elements of the DS object while debugging
+    def __str__(self):
+        msg=[]
+        index=self.__front
+        while(index&lt=self.__rear):
+            msg.append((str)(self.__elements[index]))
+            index+=1
+        msg=" ".join(msg)
+        msg="Queue data(Front to Rear): "+msg
+        return msg
+
+
+
+def fun(input_stack):
+    output_queue=Queue(input_stack.get_max_size())
+    temp_queue=Queue(input_stack.get_max_size())
+    while(not input_stack.is_empty()):
+        data=input_stack.pop()
+        if(data%2==0):
+            output_queue.enqueue(data)
+        else:
+            temp_queue.enqueue(data)
+    temp_data=0
+    while(not temp_queue.is_empty()):
+        temp_data+=temp_queue.dequeue()
+        output_queue.enqueue(temp_data)
+    output_queue.display()
+
+sample= Stack(5)
+sample.push(3)
+sample.push(7)
+sample.push(2)
+sample.push(5)
+sample.push(1)
+fun(sample)
+
+OP:
+2
+1
+6
+13
+16
+</code>
+</pre>
+</div>
+</div>
+<h5>Stack - Summary - Try out</h5>
+<button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#i24"
+aria-expanded="false" aria-controls="i24">
+Code
+</button>
+<div class="collapse" id="i24">
+<div class="card card-body">
+  <pre>
+<code>
+    class Stack:
+    def __init__(self,max_size):
+        self.__max_size=max_size
+        self.__elements=[None]*self.__max_size
+        self.__top=-1
+
+    def is_full(self):
+        if(self.__top==self.__max_size-1):
+            return True
+        return False
+
+    def is_empty(self):
+        if(self.__top==-1):
+            return True
+        return False
+
+    def push(self,data):
+        if(self.is_full()):
+            print("The stack is full!!")
+        else:
+            self.__top+=1
+            self.__elements[self.__top]=data
+
+    def pop(self):
+        if(self.is_empty()):
+            print("The stack is empty!!")
+        else:
+            data= self.__elements[self.__top]
+            self.__top-=1
+            return data
+
+    def display(self):
+        if(self.is_empty()):
+            print("The stack is empty")
+        else:
+            index=self.__top
+            while(index>=0):
+                print(self.__elements[index])
+                index-=1
+
+    def get_max_size(self):
+        return self.__max_size 
+    
+    #You can use the below __str__() to print the elements of the DS object while debugging
+    def __str__(self):
+        msg=[]
+        index=self.__top
+        while(index>=0):
+            msg.append((str)(self.__elements[index]))
+            index-=1
+        msg=" ".join(msg)
+        msg="Stack data(Top to Bottom): "+msg
+        return msg    
+
+class Queue:
+    def __init__(self,max_size):
+        self.__max_size=max_size
+        self.__elements=[None]*self.__max_size
+        self.__rear=-1
+        self.__front=0
+
+    def is_full(self):
+        if(self.__rear==self.__max_size-1):
+            return True
+        return False
+
+    def is_empty(self):
+        if(self.__front>self.__rear):
+            return True
+        return False
+
+    def enqueue(self,data):
+        if(self.is_full()):
+            print("Queue is full!!!")
+        else:
+            self.__rear+=1
+            self.__elements[self.__rear]=data
+
+    def dequeue(self):
+        if(self.is_empty()):
+            print("Queue is empty!!!")
+        else:
+            data=self.__elements[self.__front]
+            self.__front+=1
+            return data
+
+    def display(self):
+        for index in range(self.__front, self.__rear+1):
+            print(self.__elements[index])
+
+    def get_max_size(self):
+        return self.__max_size
+                                        
+    #You can use the below __str__() to print the elements of the DS object while debugging
+    def __str__(self):
+        msg=[]
+        index=self.__front
+        while(index&lt=self.__rear):
+            msg.append((str)(self.__elements[index]))
+            index+=1
+        msg=" ".join(msg)
+        msg="Queue data(Front to Rear): "+msg
+        return msg
+
+
+def fun(input_stack):
+    num=input_stack.get_max_size()-1
+    num1=1
+    while(num>0):
+        top_element=input_stack.pop()
+        temp_stack=Stack(input_stack.get_max_size())
+        num2=1
+        while(num2&lt=num1):
+            element=input_stack.pop()
+            temp_stack.push(element+top_element)
+            num2+=1
+        while(not temp_stack.is_empty()):
+            input_stack.push(temp_stack.pop())
+        input_stack.push(top_element)
+        num1+=1
+        num-=1
+    return input_stack
+
+sample= Stack(5)
+sample.push(8)
+sample.push(2)
+sample.push(6)
+sample.push(7)
+sample.push(10)
+result_stack=fun(sample)
+result_stack.display()
+
+OP:
+10
+47
+36
+22
+18
+</code>
+</pre>
+</div>
+</div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                            Algorithms
+                        </button>
+                    </h2>
+                    <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+<h4>Introduction to algorithms</h4>
+<p>We learnt in programming fundamentals that an algorithm is a sequence of steps for solving a problem.</p>
+<pre>
+<code>
+    import sys
+    sys.setrecursionlimit(10000)
+    def code1(num):
+        if(num&lt=2):
+            return 1
+        else:
+            return (code1(num-1)+code1(num-2))
+    print(code1(10))
+</code>
+</pre>
+<pre>
+<code>
+    import sys
+    sys.setrecursionlimit(10000)
+    def code2(num):
+        global memo
+        if(num&lt=2):
+            return 1
+        if(memo.get(num)!=None):
+            return memo[num]
+        else:
+            val=code2(num-1)+code2(num-2)
+            memo.update({num:val})
+            return memo[num]
+    memo={}
+    print(code2(10))
+</code>
+</pre>
+<pre>
+<code>
+    import sys
+    sys.setrecursionlimit(10000)
+    def code3(num):
+        global memo
+        if(num&lt=2):
+            return 1
+        if(memo.get(num)!=None):
+                return memo[num]
+        for n in range(2,num+1):
+            val=code3(n-1)+code3(n-2)
+            memo.update({n:val})
+        return memo[num]
+    memo={}
+    print(code3(10))
+</code>
+</pre>
+<p>All the three programs are finding the nth fibonacci number but they use different strategies.
+    The strategy used to arrive at a solution is an algorithm and it greatly determines the capability and effectiveness of a program.</p>
+<p>Just like for fibonacci, there are some common algorithms and techniques which we can use while solving problems.</p>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc11" aria-expanded="false" aria-controls="fc11">
+                            Search Algorithms
+                        </button>
+                    </h2>
+                    <div id="fc11" class="accordion-collapse collapse" aria-labelledby="fh11"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+<h4>Linear Search</h4>
+<p>It's one of the simplest search algorithms which searches through a list of elements in a sequential manner starting from the first element in the list. The technique used in this algorithm is known as Brute-Force.</p>
+<p>Brute-Force is a trial and error technique in which we keep trying through all the possibilities until the solution is found or until we have exhausted all the possibilities.</p>
+<img src="img/pd17.png" alt="">
+
+<h4>Binary Search</h4>
+<p>The sorted numbers have, in fact, given us the advantage of focusing on the lower half or upper half of the list based on whether the number guessed is lower than or greater than the number to be found. We then repeated this until we found the number.</p>
+<p>This algorithm in which we repeatedly divide the list of elements into two halves and then focus on any one of those lists based on whether the element to be searched is greater than or less than the middle element of the list is known as the binary search algorithm.</p>
+
+<h5>Linear vs binary search</h5>
+<img src="img/pd18.png" alt="">
+<img src="img/pd19.png" alt="">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc12" aria-expanded="false" aria-controls="fc12">
+                            Sort Algorithms
+                        </button>
+                    </h2>
+                    <div id="fc12" class="accordion-collapse collapse" aria-labelledby="fh12"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc13" aria-expanded="false" aria-controls="fc13">
+                            Algorithm Technique
+                        </button>
+                    </h2>
+                    <div id="fc13" class="accordion-collapse collapse" aria-labelledby="fh13"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc14" aria-expanded="false" aria-controls="fc14">
+                            Analysis of Algorithms
+                        </button>
+                    </h2>
+                    <div id="fc14" class="accordion-collapse collapse" aria-labelledby="fh14"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--accordioin end div-->
+        </div>
+        <!--maincontent end div -->
+    </div>
+    <!--continer end div -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

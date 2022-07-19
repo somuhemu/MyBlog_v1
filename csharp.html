@@ -1,0 +1,2964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>C#</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3 ">
+        <h2 class="text-center pt-3">Complete c# - Udemy</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            First c# & overview of VS
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+
+                            <p>by default it generates a few amount of code in vs for us.</p>
+                            <p>right click on file and you can then also choose to view in file explorer and see what
+                                are the files
+                                generated.
+                            </p>
+                            <p>using System; -> says that i want to use the namespace called system. and this namespace
+                                system
+                                has bunch of different classes i.e functionalities that we can use.
+                            </p>
+                            <p>eg: Console belongs to System.</p>
+                            <p>we have created our own namespace called HelloWorld.and inside of that namespace we have
+                                a class
+                                called Program ,which was done by default for us.Every class has a certain functionality
+                                in our case
+                                the class Program has just one functionality i.e it goes into the main method.So it will
+                                be the
+                                entry point of any program.
+                            </p>
+                            <p>static -> we don't need to create an object to run this method enough for now ,void -> it
+                                doesn't
+                                return anything , Main-> is the actual method name.WriteLine a method of Console class ,
+                                where the
+                                Console inturn belongs to System namespace.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                            DataTypes & Variables
+                        </button>
+                    </h2>
+                    <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h4>DataTypes & Variables</h4>
+                            <p>A variable is a container to store a value.And after some time it may also change to
+                                store another value in the same container.
+                            </p>
+                            <p>A buffe want a coffee,cake .so plate for cake,cup for coffee.But not cake in cup haha.
+                                So a variable must have a type i.e a plate or cup.Thus the type of variable will tell us
+                                what kind of data it can store.Also as we will be dealing with lot of variables so we
+                                need to
+                                distinguish between so we give names to variables. Therefore type,data,name.
+                            </p>
+                            <p>a variable can be declared either inside or outside of a method.
+                                If created inside of a method it will be available/visible in that method only
+                            </p>
+
+                            <p>int num = 5;</p>
+                            <p>int age; //default value is 0</p>
+                            <p>float pi = 3.14;</p>
+                            <p>bool isloaded = true</p>
+                            <p>string str = "Somu";</p>
+                            <p>chat ch = '@';</p>
+                            <p>Refer corresponding pdf</p>
+                            <p>datatypes: sbyte(signed byte),short,int,long,float(add f),double,decimal,bool,char,string
+                            </p>
+
+                            <p>int,float,double</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i1" aria-expanded="false" aria-controls="i1">
+                                Code
+                            </button>
+                            <div class="collapse" id="i1">
+                                <div class="card card-body">
+                                    <pre><code>
+                
+            using System;
+            
+            namespace HelloWorld
+            {
+                class Program
+                {
+            
+                    static void Main(string[] args)
+                    {
+                        //just declare
+                        int n;
+                        //initialize or assign
+                        n = 98;
+                        //declare and initialize.
+                        int num1 = 13;
+                        //declare multiple variables
+                        int n1,n2, n3;
+            
+                        int num2 = 5;
+                        int sum = num1 + num2;
+            
+                        double d1 = 3.5;
+                        double d2 = 1.337;
+                        double sumD = d1 / d2;//high precision more memory
+            
+                        float f1 = 3.24f;
+                        float f2 = 453.334f;
+                        float sumf = f1 / f2;//low precision nthen double so less memory.
+            
+                        long l1 = 23433434344533677845678;
+                        double ddiv = d1 / num1;
+            
+                        Console.WriteLine("The sum of " + num1 + " and " + num2 + " is " + sum);
+                        Console.WriteLine(d1 + " devided by " + num2 + " is " + sumD);
+                        Console.Read();
+                    }
+                    
+                }
+            }
+            
+                
+               </code></pre>
+                                </div>
+                            </div>
+
+                            <p>string</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i2" aria-expanded="false" aria-controls="i2">
+                                Code
+                            </button>
+                            <div class="collapse" id="i2">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {
+                    class Program
+                    {
+                
+                        static void Main(string[] args)
+                        {
+                            string myname = "Denis";
+                
+                            string message = "My name is " + myname;
+                
+                            string capsMessage = message.ToUpper();
+                
+                            string lowerCaseMessage = message.ToLower();
+                    
+                
+                            Console.WriteLine(lowerCaseMessage);
+                            Console.Read();
+                        }
+                    }
+                }
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>value type vs reference type</h4>
+                            <p>value type: is a data type which when declared and assigned a value,holds the value
+                                directly on its
+                                own memory
+                                space.</p>
+                            <p>value type uses a heap to store the value. ex:
+                                int,float,long,double,char,bool,decimal,double etc,
+                            </p>
+
+                            <p>Reference type: is a variable type which instead of storing the value in memory directly,
+                                stores the memory location of the actual data.ex: string,class,array etc,
+                            </p>
+                            <p>So when we copy this reference type of a data type it will jus copy the memory address of
+                                the
+                                data so we will then have two variable pointing to the same data.
+                            </p>
+
+                            <h4>Console methods</h4>
+                            <p>lets see various methods available in console class</p>
+                            <p>Console.Write("text here") - prints and keeps the cursor on the same line.</p>
+                            <p>Console.WriteLine("text here") - prints and puts the cursor in the next line.</p>
+                            <p>Console.Read() - takes a single input of type string and it returns the Ascii value of
+                                that input.
+                            </p>
+                            <p>Console.ReadLine() - takes a string or integer input and returns it as the output value.
+                            </p>
+                            <p>Console.ReadKey()- takes a single input of type string and it returns the key info.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i3" aria-expanded="false" aria-controls="i3">
+                                Code
+                            </button>
+                            <div class="collapse" id="i3">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            # in main
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.clear();
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Coding standards</h4>
+                            <p>class names,method names with PascalCase.For classes try to use Nouns.</p>
+                            <p>arguments, local variables with camelCase</p>
+                            <p>don't use numbers at start of variables.No reserved words for variables.</p>
+
+                            <h4>implicit & explicit conversions</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i4" aria-expanded="false" aria-controls="i4">
+                                Code
+                            </button>
+                            <div class="collapse" id="i4">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {   
+                    class Program
+                    {
+                
+                        static void Main(string[] args)
+                        {
+                            // impicit conversion
+                            int num = 12390532;
+                            long bigNum = num;
+                
+                            float myFloat = 13.37F;
+                            double myNewDouble = myFloat;
+                
+                            double myDouble = 13.37;
+                            int myInt;
+                            // explicit conversion
+                            // cast double to int;
+                            myInt = (int)myDouble;
+                
+                            // typeConversion 
+                            string myString = myDouble.ToString(); // "13.37"
+                            string myFloatString = myFloat.ToString();
+                            bool sunIsShining = false;
+                
+                            string myBoolString = sunIsShining.ToString();
+                
+                            Console.WriteLine(myBoolString);
+                            Console.Read();
+                        }
+                        
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Parsing a string to an integer</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i5" aria-expanded="false" aria-controls="i5">
+                                Code
+                            </button>
+                            <div class="collapse" id="i5">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {   
+                    class Program
+                    {
+                
+                        static void Main(string[] args)
+                        {
+                            string myString = "15";
+                            string mySecondString = "13";
+                            int num1 = Int32.Parse(myString);
+                            //exception will occur if string contains other then numbers.
+                            int num2 = int.Parse(mySecondString);
+                            int resultInt = num1 + num2;
+                            string result = myString + mySecondString;
+                
+                            Console.WriteLine(resultInt);
+                            Console.Read();
+                        }
+                        
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>String manipulation</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i6" aria-expanded="false" aria-controls="i6">
+                                Code
+                            </button>
+                            <div class="collapse" id="i6">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {
+                    internal class Program
+                    {
+                        //entry point of our program.
+                        static void Main(string[] args)
+                        {
+                            Console.WriteLine("Hello World!");
+                            Console.WriteLine("hello somu");
+                            string temp = string.Empty;//empty strig.
+                            //Console.Read();//to make window open until u press a key- when we open through file explorer directly 
+                
+                            int age = 19;
+                            string name = "somu";
+                            string job = "developer";
+                
+                            //1.string concatenation
+                            Console.WriteLine("My name is "+name+" I am "+age+" years old");
+                             
+                            //2.string formatting- it used index
+                            Console.WriteLine("Hello my name is {0} , I am {1} years old, i am a {2}",name,age,job);
+                
+                            //3.string interpolation-uses $ at start & variables written as {Variablename}
+                            Console.WriteLine($"hello my name is {name} , I am {age} years old");
+                
+                            //4.verbatim strings
+                            //start with @-tells the compiler to take the string literally and ignore any spaces and escape characters like /n
+                            Console.WriteLine(@"Lorem ipsum dolor sit amet consectetur, 
+                                            adipisicing elit. Sed non architecto corrupti molestiae. 
+                
+                                                Accusamus vitae quos amet quam quia. Aspernatur?");
+                
+                            //insted of using // we can use verbatim string to make it simple
+                            //but if you don't put @ you will get errow bcz \A,\U are not valid escape characters
+                            Console.WriteLine(@"C:\users\programs\img.png");
+                
+                            //with verbatim string even valid escape characters won't work
+                            Console.WriteLine(@"haha \n you have no power here!");
+                            Console.WriteLine("haha \n you have power here!");
+                        }
+                    }
+                }
+                 
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>String and its methods</h4>
+                            <p>string is an object of the System.String class.here in programming terms its a sequence
+                                of
+                                characters.</p>
+                            <p>SubString(startindex),IndexOf(string),string.IsNullOrWhiteSpace();</p>
+                            <p>ToLower(),ToUpper(),Trim.string.Concat(),string.Format("any str {index}",obj);</p>
+
+
+                            <h4>user input</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i7" aria-expanded="false" aria-controls="i7">
+                                Code
+                            </button>
+                            <div class="collapse" id="i7">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            string name;
+            Console.WriteLine("please enter your name:");
+            name = Console.ReadLine();//returns string.
+            char c = Console.ReadLine()[0];
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>Constants</h4>
+                            <p>they are immutable values.And after compilation,they then do not change for whole the
+                                life time of
+                                the program.
+                            </p>
+                            <p>const double PI = 3.14;</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                            Functions/Methods
+                        </button>
+                    </h2>
+                    <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Methods/Functions</h4>
+                            <p>The Main method is the entry point for every c# application and it is called by the
+                                common
+                                language runtime(clr) when the program is started.
+                            </p>
+                            <p>access-specifier return-type method-name(parameter-list){method-body}</p>
+                            <p>access-specifier determines the visibility of a variable or method from another class</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i8" aria-expanded="false" aria-controls="i8">
+                                Code
+                            </button>
+                            <div class="collapse" id="i8">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+            namespace HelloWorld
+            {   
+                class Program
+                {
+            
+                    static void Main(string[] args)
+                    {
+                        WriteSomething();
+                        WriteSomethingSpecific("I am an argument and am called from a method");
+                        //to call like above ,we need to add static for those methods 
+                        Console.Read();
+                    }
+                    // access modifier (static) return type method name (parameter1, parameter2)
+                    public static void WriteSomething()
+                    {
+                        Console.WriteLine("I am called from a method");
+                    }
+            
+                    public static void WriteSomethingSpecific(string myText)
+                    {
+                        Console.WriteLine(myText);
+                    }
+            
+                }
+            }
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i9" aria-expanded="false" aria-controls="i9">
+                                Code
+                            </button>
+                            <div class="collapse" id="i9">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {   
+                    class Program
+                    {
+                
+                        static void Main(string[] args)
+                        {
+                            int s = Add(2, 3);
+                            Console.WriteLine(Devide(25,13));
+                            Console.Read();
+                        }
+                   
+                        public static int Add(int num1, int num2)
+                        {
+                            return num1 + num2;
+                        }
+                
+                        public static int Multiply(int num1, int num2)
+                        {
+                            return num1 * num2;
+                        }
+                
+                        public static double Devide(double num1, double num2)
+                        {
+                            return num1 / num2;
+                        }
+                
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Try/catch</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i10" aria-expanded="false" aria-controls="i10">
+                                Code
+                            </button>
+                            <div class="collapse" id="i10">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace TryAndCatchC
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            Console.WriteLine("Please enter a number!");
+                            string userInput = Console.ReadLine();
+                
+                            int num1 = 5;
+                            int num2 = 0;
+                            int result;
+                
+                            try
+                            {
+                                int userInputAsInt = int.Parse(userInput);
+                            }
+                            catch(Exception)
+                            {
+                                Console.WriteLine("Format exception, please enter the correct type next time.");
+                            }
+                
+                
+                            try
+                            {
+                                result = num1 / num2;
+                            }
+                            catch (DivideByZeroException)
+                            {
+                                Console.WriteLine("Can't devide by zero!");
+                            }
+                               
+                
+                            try
+                            {
+                                int userInputAsInt = int.Parse(userInput);
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Format exception, please enter the correct type next time.");
+                            }
+                            catch (OverflowException)
+                            {
+                                Console.WriteLine("Overflow exception, the number was too long or too short for an int32");
+                            }
+                            catch (ArgumentNullException)
+                            {
+                                Console.WriteLine("ArgumentNullException, the value was empty(null)");
+                            }
+                            finally
+                            {
+                                Console.WriteLine("This is called anyways!");
+                            }
+                            
+                            Console.ReadKey();
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Operators</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i11" aria-expanded="false" aria-controls="i11">
+                                Code
+                            </button>
+                            <div class="collapse" id="i11">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace OperatorsC
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            int num1 = 5;
+                            int num2 = 3;
+                            int num3;
+                
+                            // unary operators
+                            num3 = -num1;
+                            Console.WriteLine("num3 is {0}",num3 );//5*-1=-5
+                
+                            //not
+                            bool isSunny = true;
+                            Console.WriteLine("is it sunny? {0}", !isSunny);
+                
+                            // increment operators
+                            int num = 0;
+                            num++;
+                            Console.WriteLine("num is {0}", num);//1
+                            Console.WriteLine("num is {0}", num++);//1
+                            Console.WriteLine("num is {0}", num);//2
+                            // pre increment
+                            Console.WriteLine("num is {0}", ++num);//3
+                
+                            // decrement opertor
+                            num--;
+                            Console.WriteLine("num is {0}", num);//2
+                            Console.WriteLine("num is {0}", num--);//2
+                            // pre decrement
+                            Console.WriteLine("num is {0}", --num);//0
+                
+                            int result;
+                
+                            result = num1 + num2;
+                            Console.WriteLine("result of num1 + num2 is {0}", result);
+                            result = num1 - num2;
+                            Console.WriteLine("result of num1 - num2 is {0}", result);
+                            result = num1 / num2;
+                            Console.WriteLine("result of num1 / num2 is {0}", result);
+                            result = num1 * num2;
+                            Console.WriteLine("result of num1 * num2 is {0}", result);
+                            result = num1 % num2;
+                            Console.WriteLine("result of num1 % num2 is {0}", result);
+                
+                            // relational and type operators
+                            bool isLower;
+                            isLower = num1 &lt num2;
+                            Console.WriteLine("result of num1 &lt num2 is {0}", isLower);
+                
+                            // equality operator
+                            bool isEqual;
+                            isEqual = num1 == num2;
+                            Console.WriteLine("result of num1 == num2 is {0}", isEqual);
+                
+                            isEqual = num1 != num2;
+                            Console.WriteLine("result of num1 != num2 is {0}", isEqual);
+                
+                            // conditional operators
+                            bool isLowerAndSunny;
+                            // condition1 AND condition2
+                            isLowerAndSunny = isLower && isSunny;
+                            Console.WriteLine("result of isLower && isSunny is {0}", isLowerAndSunny);
+                
+                            // condition1 OR condition2
+                            isLowerAndSunny = isLower || isSunny;
+                            Console.WriteLine("result of isLower || isSunny is {0}", isLowerAndSunny);
+                            Console.ReadKey();
+                        }
+                    }
+                }
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                            Making Decisions
+                        </button>
+                    </h2>
+                    <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h4>Making Decisions</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i12" aria-expanded="false" aria-controls="i12">
+                                Code
+                            </button>
+                            <div class="collapse" id="i12">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {
+                    internal class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                          
+                            Console.WriteLine("What's the temperature like?");
+                            string temperature = Console.ReadLine();
+                           // int numTemp = int.Parse(temperature);
+                            int numTemp;
+                            int number;
+                            if(int.TryParse(temperature,out number))
+                            {
+                                numTemp = number;
+                            }
+                            else{
+                                numTemp =0;
+                            }
+            
+                            if (numTemp &lt 20)
+                            {
+                                Console.WriteLine("Take the coat");
+                            }
+                            if (numTemp == 20)
+                            {
+                                Console.WriteLine("Pants and Pull Over should be fine");
+                            }
+                            if (numTemp > 20)
+                            {
+                                Console.WriteLine("Shorts are enough today");
+                            }
+                            Console.WriteLine("with elseif ");
+            
+                            if (numTemp &lt 20)
+                            {
+                                Console.WriteLine("Take the coat");
+                            }
+                            else if (numTemp == 20)
+                            {
+                                Console.WriteLine("Pants and Pull Over should be fine");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Shorts are enough today");
+                            }
+                            Console.Read();
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>nested if</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i13" aria-expanded="false" aria-controls="i13">
+                                Code
+                            </button>
+                            <div class="collapse" id="i13">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                //Some Booleans
+                //Play around with the Values
+                bool isRegistered = true;
+                string userName = "";
+                bool isAdmin = true;
+            
+                //User-Input
+                //Try "Mike"
+                Console.WriteLine("Please enter you username");
+                userName = Console.ReadLine();
+            
+                //Code inside will be executed, if isRegistered is true
+                if (isRegistered)
+                {
+                    Console.WriteLine("User is registered");
+            
+                    //Code inside will be executed, if userName is not ""
+                    if (userName != "")
+                    {
+                        Console.WriteLine("Hello {0}", userName);
+            
+                        //Code inside will be executed, if userName is "Mike"
+                        if (isAdmin)
+                        {
+                            Console.WriteLine("Oh, an Admin logged in. Welcome");
+                        }
+                    }
+                }
+            
+                //The same result can be achieved by using logical and
+                if (isRegistered && userName != "" && isAdmin)
+                {
+                    Console.WriteLine("User is registered");
+                    Console.WriteLine("Hello {0}", userName);
+                    Console.WriteLine("Oh, an Admin logged in. Welcome");
+            
+                    if (userName == "Mike")
+                    {
+                        Console.WriteLine("Welcome, Master Mike");
+                    }
+                }
+            
+                //This will keep the Console open
+                Console.Read();
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>switch</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i14" aria-expanded="false" aria-controls="i14">
+                                Code
+                            </button>
+                            <div class="collapse" id="i14">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {
+                    internal class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            int age = 19;
+                
+                            switch (age)
+                            {
+                                case 15:
+                                    Console.WriteLine("Too young to party in the club!");
+                                    break;
+                                case 25:
+                                    Console.WriteLine("Good to go!");
+                                    break;
+                                default:
+                                    Console.WriteLine("How old are you then?");
+                                    break;
+                            }
+                
+                            if (age == 15)
+                            {
+                                Console.WriteLine("Too young to party in the club!");
+                            }
+                            else if (age == 25)
+                            {
+                                Console.WriteLine("Good to go!");
+                            }
+                            else
+                            {
+                                Console.WriteLine("How old are you then?");
+                            }
+                
+                            string username = "Frank";
+                
+                            switch (username)
+                            {
+                                case "Denis":
+                                    Console.WriteLine("username is Denis");
+                                    break;
+                                case "root":
+                                    Console.WriteLine("username is root");
+                                    break;
+                                default:
+                                    Console.WriteLine("username is unknown");
+                                    break;
+                            }
+                
+                            Console.Read();
+                
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>practice</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i15" aria-expanded="false" aria-controls="i15">
+                                Code
+                            </button>
+                            <div class="collapse" id="i15">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace RegisteringAndLogginIn
+                {
+                    class Program
+                    {
+                        //need to create global variables since we are going to use them in more than one methods.
+                        static string username;
+                        static string password;
+                
+                        static void Main(string[] args)
+                        {
+                            Register();
+                            Login();
+                            Console.Read();
+                        }
+                
+                        public static void Register()
+                        {
+                            Console.WriteLine("Please enter your username");
+                            username = Console.ReadLine();
+                            Console.WriteLine("Please enter your password");
+                            password = Console.ReadLine();
+                            Console.WriteLine("Registration completed");
+                            Console.WriteLine("-------------------------------------------");
+                        }
+                
+                        public static void Login()
+                        {
+                            Console.WriteLine("Please enter your username");
+                            if(username == Console.ReadLine())
+                            {
+                                Console.WriteLine("Please enter your password");
+                                if(password == Console.ReadLine())
+                                {
+                                    Console.WriteLine("Login successful");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Login failed, wrong password. Restart Program");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Login failed, wrong username. Restart Program");
+                            }
+                        }
+                
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>practice 2</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i16" aria-expanded="false" aria-controls="i16">
+                                Code
+                            </button>
+                            <div class="collapse" id="i16">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace IfStatementsChallenge2
+                {
+                    class Program
+                    {
+                        static int highscore = 300;
+                        static string highscorePlayer = "Denis";
+                        
+                        static void Main(string[] args)
+                        {
+                            CheckHighscore(250, "Maria");
+                            CheckHighscore(315, "Michael");
+                            CheckHighscore(350, "Denis");
+                
+                            Console.Read();
+                        }
+                
+                        public static void CheckHighscore(int score, string playerName)
+                        {
+                            if(score > highscore)
+                            {
+                                highscore = score;
+                                highscorePlayer = playerName;
+                
+                                Console.WriteLine("New highscore is " + score);
+                                Console.WriteLine("It is now held by " + playerName);
+                
+                            }
+                            else
+                            {
+                                Console.WriteLine("The old highscore could not be broken. It is still "
+                                    + highscore + " and held by " + highscorePlayer);
+                            }
+                        }
+                
+                    }
+                }    
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>TryParse Method</h4>
+                            <p>converting strigs to numeric</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i17" aria-expanded="false" aria-controls="i17">
+                                Code
+                            </button>
+                            <div class="collapse" id="i17">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            string s = "123";
+            int parsedval;
+            bool isSuccess = int.TryParse(s,out parsedval);
+            //thus will return true or false accordingly.can also use float or double.
+            //parsing fails when while converting to desired data type fails.
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Enhanced-if - Ternary operator</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i18" aria-expanded="false" aria-controls="i18">
+                                Code
+                            </button>
+                            <div class="collapse" id="i18">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace Enhanced_If_Statements
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            //[condition] ? [first expression] : [second expression]
+                            //condition has to be either true or false
+                
+                            //The conditional Operator is right-associative
+                            //That means, that a ? b : c ? d : e
+                            // is evaluated as a ? b : (c ? d : e)
+                
+                            //The conditional Operator cannot be overloaded.
+                
+                            //in celcius
+                            //Play around with that Value
+                            int temperature = -5;
+                
+                            //Our result
+                            string stateOfMatter;
+                            
+                            //Is the Temperature below 0 Degree Celsius?
+                            if(temperature &lt 0)
+                            {
+                                stateOfMatter = "solid";
+                            }
+                            //Is the Temperature higher than 100 Degree Celcius?
+                            else if(temperature > 100)
+                            {
+                                stateOfMatter = "gas";
+                            }
+                            //In all other Cases it must be liquid.
+                            else
+                            {
+                                stateOfMatter = "liquid";
+                            }
+                
+                            Console.WriteLine("State of Matter is {0}", stateOfMatter);
+                
+                            //The same result can be achieved by this
+                            //The enhanced Version of the If-Else-Statement from above
+                            stateOfMatter = temperature &lt 0 ? "solid" : (temperature > 100 ? "gas" : "liquid");
+                
+                            Console.WriteLine("State of Matter is {0}", stateOfMatter);
+                
+                            //To make sure the Console keeps open
+                            Console.Read();
+                
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                            Loops
+                        </button>
+                    </h2>
+                    <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h4>Loops</h4>
+                            <h4>for</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i19" aria-expanded="false" aria-controls="i19">
+                                Code
+                            </button>
+                            <div class="collapse" id="i19">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace ForLoop
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            for(int counter = 1; counter &lt 20; counter += 2)
+                            {
+                                Console.WriteLine(counter);
+                            }
+                            Console.Read();
+                
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>while</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i20" aria-expanded="false" aria-controls="i20">
+                                Code
+                            </button>
+                            <div class="collapse" id="i20">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace WhileLoop
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            int counter = 0;
+                            string enteredText = "";
+                            while(enteredText.Equals(""))
+                            {
+                                Console.WriteLine("Please press enter to increase amount by one and anything else" +
+                                    " + enter if you want to finish counting");
+                                enteredText = Console.ReadLine();
+                                
+                                counter++;
+                                Console.WriteLine("Current people count is {0}", counter);
+                
+                            }
+                            Console.WriteLine("{0} people are inside the bus. Press enter to close the program", counter);
+                            Console.Read();
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <h4>do while</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i21" aria-expanded="false" aria-controls="i21">
+                                Code
+                            </button>
+                            <div class="collapse" id="i21">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace DoWhileLoop
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                
+                            int lenghtOfText = 0;
+                            string wholeText = "";
+                            do
+                            {
+                                Console.WriteLine("Please enter the name of a friend");
+                                string nameOfAFriend = Console.ReadLine();
+                                int currentLenght = nameOfAFriend.Length;
+                                lenghtOfText += currentLenght;
+                                wholeText += nameOfAFriend;
+                            } while (lenghtOfText &lt 20);
+                            Console.WriteLine("Thanks, that was enough! " + wholeText);
+                            Console.Read();
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>break & continue</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i22" aria-expanded="false" aria-controls="i22">
+                                Code
+                            </button>
+                            <div class="collapse" id="i22">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {
+                    internal class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            for (int counter = 0; counter &lt 10; counter++)
+                            {
+                
+                                if (counter % 2 == 0)
+                                {
+                                    Console.WriteLine("Now comes an odd number!");
+                                    continue;
+                                }
+                                Console.WriteLine(counter);
+                            }
+                
+                            for (int c = 0; c &lt 5; c++)
+                            {
+                                Console.WriteLine(c);
+                                if (c == 3)
+                                {
+                                    break;
+                                }
+                            }
+                            Console.Read();
+                
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>practice</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i23" aria-expanded="false" aria-controls="i23">
+                                Code
+                            </button>
+                            <div class="collapse" id="i23">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace AverageChallenge
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            string input = "0";
+                            int count = 0;
+                            int total = 0;
+                            int currentNumber = 0;
+                
+                            while(input != "-1")
+                            {
+                                Console.WriteLine("Last number was {0}", currentNumber);
+                                Console.WriteLine("Please enter the next score");
+                                Console.WriteLine("Current amount of entries {0}", count);
+                                Console.WriteLine("Please enter -1 once you are ready to calculate the average");
+                
+                                input = Console.ReadLine();
+                                if (input.Equals("-1"))
+                                {
+                                    Console.WriteLine("--------------------------------------------");
+                                    double average = (double)total / (double)count;
+                                    Console.WriteLine("The average score of your students is {0}", average);
+                                }
+                                if(int.TryParse(input, out currentNumber) && currentNumber > 0 && currentNumber &lt 21)
+                                {
+                                    total += currentNumber;
+                                }
+                                else
+                                {
+                                    if (!(input.Equals("-1")))
+                                    {
+                                        Console.WriteLine("Please enter a value between 1 and 20!");
+                                    }
+                                    continue;
+                                }
+                
+                                count++;
+                
+                            }
+                
+                            Console.ReadLine();
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                            Object Oriented Programming
+                        </button>
+                    </h2>
+                    <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h4>Object Oriented programming </h4>
+                            <p>a class is a blue print of an object.we can then create a multiple objects of a specific
+                                class.</p>
+                            <p>a class is like a blueprint of a datatype</p>
+                            <p>a class has abilities/actions so called member functions or methods.</p>
+                            <p>and it has properties so called member variables.</p>
+                            <p>a class can be used like a datatype.</p>
+                            <p>objects are creeated out of a class.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i24" aria-expanded="false" aria-controls="i24">
+                                Code
+                            </button>
+                            <div class="collapse" id="i24">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Human.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace Classes___Basics
+            {
+                // this class is a blueprint for a datatype 
+            
+                // create a public variable lastName of type string.
+                // change the IntroduceMyself method, so it tells the whole name.
+                // create two objects with full information about themself - firstName and lastName
+                
+                class Human//Human is a datatype
+                {
+                    // member variable
+                    public string firstName;
+                    public string lastName;
+            
+                    // constructor
+                    public Human(string myFirstName, string lastName)
+                    {
+                        firstName = myFirstName;
+                        this.lastName = lastName;
+            
+                    }
+            
+            
+                    // member method
+                    public void IntroduceMyself()
+                    {
+                        Console.WriteLine("Hi, I'm {0} {1}",firstName, lastName);
+                    }
+                }
+            }
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i25" aria-expanded="false" aria-controls="i25">
+                                Code
+                            </button>
+                            <div class="collapse" id="i25">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Program.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace Classes___Basics
+            {
+                class Program
+                {
+                    static void Main(string[] args)
+                    {
+                        //an instance of Human class or object of Human class.
+                        Human sissy = new Human("Sissy", "Wagner");
+                        sissy.firstName = "somu";
+                        sissy.IntroduceMyself();
+            
+            
+                        Console.ReadKey();
+                    }
+                }
+            }
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>constructor</h4>
+                            <p>constructor is called whenever an object is created.</p>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i26" aria-expanded="false" aria-controls="i26">
+                                Code
+                            </button>
+                            <div class="collapse" id="i26">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Human.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace _0602Class
+            {
+                class Human
+                {
+                  
+                    private int age;
+                    private string firstName;
+                    private string lastName;
+                    private string eyeColor;
+                    private bool isHuman = true;
+            
+                    public Human(int theAge, string firstName, string lastName, string eyeColor)
+                    {
+                        age = theAge;
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.eyeColor = eyeColor;
+                    }
+            
+            
+                    public void IntroduceOnceself()
+                    {
+                        Console.WriteLine("My name is {0} {1}, and my eye color is {2}", firstName, lastName, eyeColor);
+                        
+                    }
+            
+            
+                }
+            }
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i27" aria-expanded="false" aria-controls="i27">
+                                Code
+                            </button>
+                            <div class="collapse" id="i27">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Program.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace _0602Class
+            {
+                class Program
+                {
+                    static void Main(string[] args)
+                    {
+                       
+                        Human denis = new Human(29, "Denis", "Panjuta", "green");
+                        Human frank = new Human(35, "Frank", "TheTank", "awesome");
+                        denis.IntroduceOnceself();
+                        frank.IntroduceOnceself();
+                        Console.Read();
+                    }
+                }
+            }
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Multiple constructors</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i28" aria-expanded="false" aria-controls="i28">
+                                Code
+                            </button>
+                            <div class="collapse" id="i28">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Human.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace Classes___Basics
+            {
+                // add two more member variables to "Human". eyeColor and age.
+                // adjust the constructor, so it requires all of the four values to be used, when creating an object of Human.
+                // create two objects of type Human.
+            
+                // this class is a blueprint for a datatype 
+                class Human
+                {
+                    // member variable
+                    private string firstName;
+                    private string lastName;
+                    private string eyeColor;
+                    private int age;
+            
+                    // default constructor
+                    public Human()
+                    {
+                        Console.WriteLine("Constructor called. Object created" );
+                    }
+            
+                    public Human(string firstName)
+                    {
+                        this.firstName = firstName;
+                    }
+            
+                    public Human(string firstName, string lastName)
+                    {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                    }
+            
+                    public Human(string firstName, string lastName, string eyeColor)
+                    {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.eyeColor = eyeColor;
+                    }
+            
+                    public Human(string firstName, string lastName, int age)
+                    {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.age = age;
+                    }
+            
+                    // parameterized constructor
+                    public Human(string firstName, string lastName, string eyeColor, int age)
+                    {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.eyeColor = eyeColor;
+                        this.age = age;
+                    }
+            
+            
+            
+                    // member method
+                    public void IntroduceMyself()
+                    {
+                        if(age != 0 && lastName != null && eyeColor != null && firstName != null)
+                            Console.WriteLine("Hi, I'm {0} {1} and {2} years old. My eye color is {3}",firstName, lastName, age, eyeColor);
+                        else if (age != 0 && lastName != null && firstName != null)
+                        {
+                            Console.WriteLine("Hi, I'm {0} {1} and {2} years old.", firstName, lastName, age);
+                        }
+                        else if (lastName != null && firstName != null)
+                        {
+                            Console.WriteLine("Hi, I'm {0} {1}.", firstName, lastName);
+                        }
+                        else if (firstName != null)
+                        {
+                            Console.WriteLine("Hi, I'm {0} ", firstName);
+                        }
+            
+                    }
+                }
+            }
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i29" aria-expanded="false" aria-controls="i29">
+                                Code
+                            </button>
+                            <div class="collapse" id="i29">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Program.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace Classes___Basics
+            {
+                class Program
+                {
+                    static void Main(string[] args)
+                    {
+                        Human denis = new Human("Denis", "Panjuta", "green", 29);
+                        denis.IntroduceMyself();
+            
+                        Human amalia = new Human("Amalia", "Panjuta", "blue");
+                        amalia.IntroduceMyself();
+            
+                        Human basicHuman = new Human();
+                        basicHuman.IntroduceMyself();
+            
+                        Human natalie = new Human("Natalie");
+                        natalie.IntroduceMyself();
+            
+                        Human michael = new Human("Michael", "Miller");
+                        michael.IntroduceMyself();
+            
+                        Human frank = new Human("Frank", "Walter", 25);
+                        frank.IntroduceMyself();
+            
+                        Console.ReadKey();
+                    }
+                }
+            }
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Encapsulation,getters,setters, destructors,members,properties</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i30" aria-expanded="false" aria-controls="i30">
+                                Code
+                            </button>
+                            <div class="collapse" id="i30">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Members.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Diagnostics;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace MembersC
+            {
+                class Members
+                {
+                    //member variables are at the level of class
+                    // member - private field(secure then public) use getters and setters to access this private variable.
+                    //private = no one access it except its own class.other can via getters and setters.
+                    private string memberName;
+                    private string jobTitle;
+                    private int salary;
+            
+                    private int length;
+                    public void setLength(int length)
+                    {
+                        this.length = length;
+                    }
+                    public int getLength()
+                    {
+                        return length;
+                    }
+            
+                    //another much simpler way-via auto implemented property.used mostly when there is no need of 
+                    //additional logic in getting and setting the value.
+                    public int Width { get; set; }  
+                    //above is same as this
+            
+                   /* 
+                    * it needs a member variable like this.
+                    * public int width;
+                    public int Width
+                    {
+                        get { 
+                            return width;
+                        }
+                        set {
+                            this.width = value;
+                        }
+                   */
+            
+            
+                    // member - public field
+                    public int age;
+            
+                    // member - property - exposes jobTitle safely - properties start with a capital letter
+                    //a another simple/shotter way of getters and setters.
+                    //it is same  as normal getters and setters but now it is our gateway i.t our property JobTitle (not jobTitle)
+                    //we can access or set using the property JobTitle.
+                    public string JobTitle {
+                        get
+                        {
+                            return jobTitle;
+                        }
+                        set
+                        {
+                            //can have logic here.
+                            jobTitle = value;
+                        }
+                    }
+            
+                    // public member Method - can be called from other classes
+                    public void Introducing(bool isFriend)
+                    {
+                        if (isFriend)
+                        {
+                            SharingPrivateInfo();//calling private method from public method
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hi, my name is {0}, and my job title is {1}. I'm {2} years old", memberName, jobTitle, age);
+                        }
+            
+                    }
+            
+                    private void SharingPrivateInfo()
+                    {
+                        Console.WriteLine("My salary is {0}", salary);
+                    }
+            
+                    // member constructor
+                    public Members()
+                    {
+                        age = 30;
+                        memberName = "Lucy";
+                        salary = 60000;
+                        jobTitle = "Developer";
+                        Console.WriteLine("Object created");
+                    }
+            
+                    // member - finalizer - destructor
+                    //a class can have multiple constructor but a class can have only one destructor or finalizer
+                    //Also a finalizer cann't be overloaded or inherited and it cann't be called
+                    //it is only there - so whenever the object runs out of scope/deleted/closed , then this finalizer will be called 
+                    ~Members()
+                    {
+                        // cleanup statements
+                        Console.WriteLine("Deconstruction of Members object");
+                        Debug.Write("Destruction of Members object");
+                    }
+                    //Note: don't create an empty finalixer {} bcz it's just going to add sth into the queue which is not doing anything and thus reduces the performances.
+                }
+            }
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i31" aria-expanded="false" aria-controls="i31">
+                                Code
+                            </button>
+                            <div class="collapse" id="i31">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+            Program.cs
+            
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            
+            namespace MembersC
+            {
+                class Program
+                {
+                   
+                    static void Main(string[] args)
+                    {
+                        Members member1 = new Members();
+                        member1.Introducing(true);
+                        member1.setLength(4);
+                        int x = member1.getLength();
+                        //encaptulation:
+                        /* what we have done to length variable is encapsulation,so we are encapsulating the access of length 
+                         * encapsulation refers to the building of data with the methods that operate on that data or 
+                         * the restricting of direct access to some of an object components.
+                         * so here we're restricting the access to this component called length ,which is part of object of our class.
+                         * And we are creating this getters and setters in order to still adjust them.
+                         * the logic in setting,getting and parameters passing to them will be acc to yours */
+            
+                        member1.jobTitle = 5;//set
+                        member1.Width = 9;//set
+                        Console.WriteLine(member1.Width);//get
+                        Console.ReadKey();
+                    }
+                    /*after { } that block we will see the destructor working i.e after that scope is done.
+            
+                    
+                }
+            }
+            
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                            Collectioins in c#
+                        </button>
+                    </h2>
+                    <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Collections</h4>
+                            <p>Arrays</p>
+                            <p>stores fixed size sequential collection of elements.Only of the same type.</p>
+                            <p>can create arr of int,string,objects etc,</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i32" aria-expanded="false" aria-controls="i32">
+                                Code
+                            </button>
+                            <div class="collapse" id="i32">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace _07___Arrays
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            // declare and initialize array grades
+                            int[] grades = new int[5];
+                
+                            grades[0] = 20;
+                            grades[1] = 15;
+                            grades[2] = 12;
+                            grades[3] = 9;
+                            grades[4] = 7;
+                
+                            Console.WriteLine("grades at index 0 : {0}", grades[0]);
+                
+                            string input = Console.ReadLine();
+                            // assign value to array grades at index 0
+                            grades[0] = int.Parse(input);
+                            Console.WriteLine("grades at index 0 : {0}", grades[0]);
+                            
+                
+                            // another way of initializing an array
+                            int[] gradesOfMathStudentsA = { 20, 13, 12, 8, 8 };
+                
+                            // thrid way of initializing an array
+                            int[] gradesOfMathStudentsB = new int[] { 15, 20, 3, 17, 18, 15 };
+                
+                            Console.WriteLine("Length of gradesOfMathStudentsA: {0}", gradesOfMathStudentsA.Length);
+                            Console.ReadKey();
+                        }
+                    }
+                }
+                
+            
+             </code></pre>
+                                </div>
+                            </div>
+                            <h4>foreach</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i33" aria-expanded="false" aria-controls="i33">
+                                Code
+                            </button>
+                            <div class="collapse" id="i33">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace _07___Arrays
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            int[] nums = new int[10];
+                
+                            for(int i = 0; i &lt 10; i++)
+                            {
+                                nums[i] = i + 10;
+                            }
+                
+                            for(int j = 0; j &lt nums.Length; j++)
+                            {
+                                Console.WriteLine("Element{0} = {1}", j, nums[j]);
+                            }
+                
+                            int counter = 0;
+                            foreach(int k in nums)
+                            {
+                                Console.WriteLine("Element{0} = {1}", counter, k);
+                                counter++;
+                            }
+                
+                            // Create an array with the names of five friends
+                            // greet all of them with a foreach loop
+                
+                            string[] myFriends = { "Michael", "Wlad", "Ilja", "Andy", "Daniel" };
+                
+                            foreach (string name in myFriends)
+                            {
+                                Console.WriteLine("Hi there {0}, my friend", name);
+                            }
+                
+                            Console.ReadKey();
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Multidimensional Arrays</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i34" aria-expanded="false" aria-controls="i34">
+                                Code
+                            </button>
+                            <div class="collapse" id="i34">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                
+                namespace MultiDimensionalArrays
+                {
+                    class Program
+                    {
+                        static void Main(string[] args)
+                        {
+                            //Declare and initualize a 2-dimensional Array
+                            int[,] array2D = new int[,]
+                            {
+                                {11, 12, 13 },
+                                {21, 22, 23 },
+                                {31, 32, 33 }
+                            };
+                
+                            //We access the Value 23
+                            //Note, that Indexes start with 0
+                            Console.WriteLine(array2D[1, 2]);
+                
+                
+                            //3-Dimensions are more complex, but the Conzept is the same
+                            string[,,] array3D = new string[,,] 
+                            {
+                                {
+                                    {"000", "001", "002" },
+                                    {"010", "011", "012" },
+                                    {"020", "021", "022" }
+                                },
+                                {
+                                    {"100", "101", "102" },
+                                    {"110", "111", "112" },
+                                    {"120", "121", "122" }
+                                },
+                                {
+                                    {"200", "201", "202" },
+                                    {"210", "211", "212" },
+                                    {"220", "221", "222" }
+                                },
+                                {
+                                    {"Hi", "I", "am" },
+                                    {"also", "part", "of" },
+                                    {"the", "3-dimensional", "array" }
+                                }
+                
+                            };
+                
+                            //We access the Value "201"
+                            Console.WriteLine(array3D[2, 0, 1]);
+                
+                            //Hi
+                            Console.WriteLine(array3D[3, 0, 0]);
+                
+                            //Will give us the Dimension of the corresponding Array
+                            int amountDimensions = array3D.Rank;
+                            Console.WriteLine("The Dimension is {0}", amountDimensions);
+                
+                            //Multi-dimensional Arrays can also be created that way:
+                            string[,] arr2D = { { "00", "01" } };
+                
+                            Console.WriteLine(arr2D[0, 0]);
+                
+                            //To keep the Console open
+                            Console.Read();
+                        }
+                    }
+                }
+                
+            
+             </code></pre>
+                                </div>
+                            </div>
+                            <h4>Nested for loop</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#i35" aria-expanded="false" aria-controls="i35">
+                                Code
+                            </button>
+                            <div class="collapse" id="i35">
+                                <div class="card card-body">
+                                    <pre><code>
+            
+                using System;
+            
+                namespace HelloWorld
+                {
+                    internal class Program
+                    {
+                        static int[,] mat = {
+                            {2,3,4 },
+                            {5,6,7},
+                            {6,7,8}
+                        };
+                
+                        static void Main(string[] args)
+                        {
+                            foreach (var m in mat)
+                            {
+                                Console.Write(m+" ");
+                            }
+                
+                            //u need to give the dimension names-nested for loop 
+                            //outer loop
+                            for (int i = 0; i &lt mat.GetLength(0); i++)
+                            {
+                                //inner loop
+                                for (int j = 0; j &lt mat.GetLength(1); j++)
+                                {
+                                    Console.Write(mat[i,j].ToString());
+                                    if(mat[i,j] %2==0)
+                                    {
+                                        Console.Write("even"+mat[i, j] + " ");
+                
+                                    }
+                                    else
+                                    {
+                                        Console.Write(" ");
+                                    }
+                                    //diagonal
+                                    if (i==j)
+                                    {
+                                        Console.Write("even" + mat[i, j] + " ");
+                
+                                    }
+                                    else
+                                    {
+                                        Console.Write(" ");
+                                    }
+                                }
+                            }
+                
+                        }
+                    }
+                }
+                
+            
+            </code></pre>
+                                </div>
+                            </div>
+
+                            <h4>Jagged Arrays</h4>
+                            <p>it is an array with an array</p>
+                            <p>with this can have multiple arrays in a array.</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#d1" aria-expanded="false" aria-controls="d1">
+                                Code
+                            </button>
+                            <div class="collapse" id="d1">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
+    namespace _07___JaggedArray
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                //     index                   0    1    2    3  
+                // normal array of type int : [15],[21],[23],[13]
+                //     index                       0                        1                    2
+                // jagged array of type int : [array1([15],[13],[5])],[array2([7],[8],[2])],[array3([2],[4],[1])]
+    
+    
+    
+                // declare jaggedArray -3arrays with in an arr
+                int[][] jaggedArray = new int[3][];
+    
+                jaggedArray[0] = new int[5];//arr of 5 vals
+                jaggedArray[1] = new int[3];
+                jaggedArray[2] = new int[2];
+    
+                jaggedArray[0] = new int[] { 2, 3, 5, 7, 11 };
+                jaggedArray[1] = new int[] { 1, 2, 3 };
+                jaggedArray[2] = new int[] { 13, 21 };
+    
+                // alternative way:
+                int[][] jaggedArray2 = new int[][]
+                {
+                    new int[] { 2, 3, 5, 7, 11 },
+                    new int[] { 1, 2, 3 }
+                };
+    
+                Console.WriteLine("The Value in the middle of the first entry is {0}", jaggedArray2[0][2]);
+    
+                for(int i = 0; i &lt jaggedArray2.Length; i++)
+                {
+                    Console.WriteLine("Element {0}", i);
+                    for(int j = 0; j&ltjaggedArray2[i].Length; j++)
+                        Console.WriteLine("{0} ", jaggedArray2[i][j]);
+                }
+    
+    
+                Console.ReadKey();
+            }
+        }
+    }
+    
+</code>
+</pre>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#d2" aria-expanded="false" aria-controls="d2">
+                                Code
+                            </button>
+                            <div class="collapse" id="d2">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
+    namespace JaggedArrayChallenge
+    {
+        class Program
+        {
+            // Create a jagged array, which contains 3 "friends arrays", in which two family members should be stored
+            // Introduce family members from different families to each other via console (three introductions)
+    
+    
+            static void Main(string[] args)
+            {
+                string[] joesFamily = new string[] { "Martha", "Robert" };
+    
+    
+                string[][] friendsAndFamily = new string[][]
+                {
+                    new string[]{"Michael", "Sandy"},
+                    new string[]{"Frank", "Claudia"},
+                    new string[]{"Andrew", "Michelle"},
+                    joesFamily
+                };
+    
+                Console.WriteLine("Hi {0}, I would like to introduce {1} to you.", friendsAndFamily[0][0], friendsAndFamily[1][0]);
+                Console.WriteLine("Hi {0}, I would like to introduce {1} to you.", friendsAndFamily[0][1], friendsAndFamily[2][0]);
+                Console.WriteLine("Hi {0}, I would like to introduce {1} to you.", friendsAndFamily[0][1], friendsAndFamily[2][1]);
+                Console.WriteLine("Hi {0}, I would like to introduce {1} to you.", friendsAndFamily[3][1], friendsAndFamily[2][1]);
+                Console.ReadKey();
+            }
+        }
+    }
+    
+</code>
+</pre>
+                                </div>
+                            </div>
+                            <h4>Using Arrays As Parameters</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#d3" aria-expanded="false" aria-controls="d3">
+                                Code
+                            </button>
+                            <div class="collapse" id="d3">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
+    namespace ArraysAsParameters
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int[] studentsGrades = new int[] { 15, 13, 8, 12, 6, 16 };
+                double averageResult = GetAverage(studentsGrades);
+    
+                int[] happiness = { 2, 3, 4, 5, 6 };
+                SunIsShining(happiness);
+    
+                foreach(int y in happiness)
+                {
+                    Console.WriteLine(y);
+                }
+                Console.ReadLine();
+    
+    
+    
+                foreach(int grade  in studentsGrades)
+                {
+                    Console.WriteLine(" {0} ", grade);
+                }
+    
+                Console.WriteLine("The average is: {0}", averageResult);
+                Console.ReadKey();
+            }
+    
+            static double GetAverage(int[] gradesArray)
+            {
+                int size = gradesArray.Length;
+                double average;
+                int sum = 0;
+    
+                for(int i = 0; i&lt size; i++)
+                {
+                    sum += gradesArray[i];
+                }
+                average = (double)sum / size;
+                return average;
+            }
+    
+            static void SunIsShining(int[] x)
+            {
+                for (int i = 0; i &lt x.Length; i++)
+                    x[i] += 2;
+            }
+    
+    
+            // CHALLENGE - Create an array of happiness in the main method and assign 5 values to it.
+            // Create a method "SunIsShining", which has an array of type int as its parameter. 
+            // This method should increase the argument given by 2, for each entry.
+            // Call this method in the main method and use "happiness" as the argument.
+            // Create a foreach loop in the main method to write all values onto the console.
+        }
+    }
+    
+</code>
+</pre>
+                                </div>
+                            </div>
+                            <p>Arrays are a reference type in c#. This means that each time an array is passed as an
+                                argument to any function, the reference(or pointer) to the argument is passed to the
+                                function.Thus any modifications you make to the array in the function are made in the
+                                actual arguments also.
+                            </p>
+
+                            <h5>Params keyword</h5>
+                            <p>when you hover ove WriteLine for eg: you will see that 18 overloads.so 18 diff
+                                implementations of WriteLine in Console class</p>
+                            <p>Overloads are basically different kind of implementation for a method.</p>
+                            <p>void Console.WriteLine(string format,params Object[] args) </p>
+                            <p>params means it will accept as many parameters as you give it .And it will accept
+                                parameters of type object.i.e Basically , every single class element that you create or
+                                object of anything is going to be of type Object.</p>
+                            <p>eg: Console.WriteLine("price is {0}, pi is {1}",56,3.14);</p>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#d4" aria-expanded="false" aria-controls="d4">
+                                Code
+                            </button>
+                            <div class="collapse" id="d4">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+    using System;
+
+    namespace HelloWorld
+    {
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+                int price = 56;
+                float p = 5.6f;
+                int ma = int.MaxValue;
+
+                ParamsMethod2(price, p);
+                ParamsMethod2("somu", 6, 4.5, '$');
+                ParamsMethod();
+            }
+            public static void ParamsMethod(params string [] sentence)
+            {
+                for(int i = 0; i &lt sentence.Length; i++)
+                {
+                    Console.WriteLine(sentence[i]);
+                }
+            }
+            public static void ParamsMethod2(params object[] stuf)
+            {
+              foreach(object obj in stuf)
+                {
+                    Console.Write(obj+" ");
+                }
+            }
+        }
+    }
+    
+</code>
+</pre>
+                                </div>
+                            </div>
+
+                            <p>Note: Every single class has a method or is inheriting from object ,which means that it
+                                has this method called toString();</p>
+                            <p>so what ever obj you give to that methd it will make a string out of it.But for proper
+                                display of info you have to override it.</p>
+
+                            <h4>Overview of Generic and Non Generic collections</h4>
+                            <p>collections are classes that we can use to store a collection of objects.</p>
+                            <p>not limited to one type of objects like arrays.</p>
+                            <p>No size constraints, it can grow in size as we add more elements.</p>
+                            <p>why do we need collections?
+                            </p>
+                            <p>wee use them to store, manage and manipulate groups of objects more efficiently eg:
+                                adding,deleting,replacing,searching,copying etc.</p>
+                            <h5>types of collections</h5>
+                            <p>Non generic-> can store any type of objects.It is located in System.Collections namespace
+                            </p>
+                            <p>Generic -> it is limited to one type of objects.Located in System.Collections.Generic
+                                namespace</p>
+                            <p>Non generic collection example:</p>
+                            <pre>
+<code>
+int n1 = 5;
+float n2 = 4.4f;
+string s = "somu";
+ArrayList a = new ArrayList();
+a.Add(n1);
+a.Add(n2);
+a.Add(s);
+foreach(object ele in a)
+{
+    Console.Write(ele);
+}
+</code>
+</pre>
+                            <p>generic collection example:</p>
+                            <pre>
+<code>
+string s1="hemu;"
+string s = "somu";
+List&ltstring> a = new List&ltstring>();
+
+</code>
+</pre>
+
+                            <h4>ArrayList</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#d5" aria-expanded="false" aria-controls="d5">
+                                Code
+                            </button>
+                            <div class="collapse" id="d5">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    
+    namespace ArrayListC
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                // declaring an ArrayList with undefined amount of object
+                ArrayList myArrayList = new ArrayList();
+                // declaring an ArrayList with defined amount of object
+                ArrayList myArrayList2 = new ArrayList(100);
+    
+                myArrayList.Add(25);
+                myArrayList.Add("Hello");
+                myArrayList.Add(13.37);
+                myArrayList.Add(13);
+                myArrayList.Add(128);
+                myArrayList.Add(25.3);
+                myArrayList.Add(13);
+    
+                // delete element with specific value from the arraylist
+                myArrayList.Remove(13);
+                myArrayList.Remove(13);
+                myArrayList.Remove(13);
+                // delete element at specific position
+                myArrayList.RemoveAt(0);
+    
+                Console.WriteLine(myArrayList.Count);
+    
+                double sum = 0;
+    
+                foreach(object obj in myArrayList)
+                {
+                    if(obj is int)
+                    {
+                        sum += Convert.ToDouble(obj);
+                    }else if(obj is double)
+                    {
+                        sum += (double)obj;
+                    }
+                    else if( obj is string) 
+                    {
+                        Console.WriteLine(obj);
+                    }
+                }
+    
+                Console.WriteLine(sum);
+                Console.ReadKey();
+            }
+        }
+    }
+    
+</code>
+</pre>
+                                </div>
+                            </div>
+                            <h4>Lists</h4>
+                            <p>compared to arrays, the group of objects/values you work with here can grow and shrink
+                                dynamically.</p>
+                            <p>A collection is a class and it requires an instance of the class before adding elements
+                                to that collection.</p>
+                            <p>for collections that only contain one data type use the System.Collections.Generic
+                                namespace</p>
+
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#d6" aria-expanded="false" aria-controls="d6">
+                                Code
+                            </button>
+                            <div class="collapse" id="d6">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+    using System;
+    using System.Collections.Generic;
+    
+    namespace HelloWorld
+    {
+        internal class Program
+        {
+           
+    
+            static void Main(string[] args)
+            {
+    
+                var num = new List&ltint>();
+                var n = new List&ltint> { 1, 3, 5, 6 };
+                num.Add(8);
+                num.Remove(8);
+                int index = 0;
+                num.RemoveAt(index);
+                int val = num[0];
+                num.Clear();
+                foreach(int element in num)
+                {
+                    Console.WriteLine(element);
+                }
+                for (int i = 0; i &lt num.Count; i++)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    }
+    
+</code>
+</pre>
+                                </div>
+                            </div>
+
+                            <h4>HashTables</h4>
+                            <button class="btn btn-primary d-block mb-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#d7" aria-expanded="false" aria-controls="d7">
+                                Code
+                            </button>
+                            <div class="collapse" id="d7">
+                                <div class="card card-body">
+                                    <pre>
+<code>
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    
+    namespace HelloWorld
+    {
+        internal class Program
+        {
+            //key-value
+            static void Main(string[] args)
+            {
+                Hashtable stable = new Hashtable();
+                Student s1 = new Student(1, "somu", 56);
+                Student s2 = new Student(2, "hemu", 78);
+                stable.Add(s1.Id, s1);
+                stable.Add(s2.Id, s2);
+    
+                //retrive individual items
+                Student sobj = (Student)stable[1];
+    
+                //retrive all
+                foreach(DictionaryEntry entry in stable)
+                {
+                    Student stu = (Student)entry.Value;
+                    Console.WriteLine(stu.Id);
+                }
+                foreach(Student value in stable.Values)
+                {
+                    Console.WriteLine(value.Id);    
+                    Console.WriteLine(value.Name);
+                }
+                bool ex = stable.ContainsKey(1);
+                Console.WriteLine(sobj.Name);
+    
+            }
+        }
+        class Student
+        {
+            //property called Id.
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public float GPA { get; set; }
+    
+            public Student(int id,string name,float gpa)
+            {
+                this.Id = id;
+                this.Name = name;
+                this. GPA = gpa;
+    
+            }
+        }
+    }
+    
+</code>
+</pre>
+                                </div>
+                            </div>
+
+
+                            <p>Now assume that we want to print all the data inside of our hashtable and we don't have a
+                                particular key at our disposal.
+                                then wee can do by simply getting all the keys from our hash table to slove ths.
+                            </p>
+                            <p>lets discuss a struct called dictionary entry, whenever we add a new entry to our
+                                hashtable
+                                so our key value pair & new dictionary entry object will be created for us and it will
+                                get inserted into our hashtable,
+                                which means that a hashtable is basically a collection of dictionary entries.
+                            </p>
+                            <p>so using a temporary obj of dictionary entry, we can go through our hash table using
+                                foreach.</p>
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                            Debugging
+                        </button>
+                    </h2>
+                    <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                            Inheritance & more about OOP
+                        </button>
+                    </h2>
+                    <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                            Polymorphism + Text Files
+                        </button>
+                    </h2>
+                    <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc11" aria-expanded="false" aria-controls="fc11">
+                            Advanced C#
+                        </button>
+                    </h2>
+                    <div id="fc11" class="accordion-collapse collapse" aria-labelledby="fh11"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc12" aria-expanded="false" aria-controls="fc12">
+                            Events & Delegates
+                        </button>
+                    </h2>
+                    <div id="fc12" class="accordion-collapse collapse" aria-labelledby="fh12"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc13" aria-expanded="false" aria-controls="fc13">
+                            Windows Presentation Foundation -WPF
+                        </button>
+                    </h2>
+                    <div id="fc13" class="accordion-collapse collapse" aria-labelledby="fh13"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc14" aria-expanded="false" aria-controls="fc14">
+                            Using Database with c#
+                        </button>
+                    </h2>
+                    <div id="fc14" class="accordion-collapse collapse" aria-labelledby="fh14"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh15">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc15" aria-expanded="false" aria-controls="fc15">
+                            Linq
+                        </button>
+                    </h2>
+                    <div id="fc15" class="accordion-collapse collapse" aria-labelledby="fh15"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh16">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc16" aria-expanded="false" aria-controls="fc16">
+                            WPF project-currency converter with gui database
+                        </button>
+                    </h2>
+                    <div id="fc16" class="accordion-collapse collapse" aria-labelledby="fh16"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh17">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc17" aria-expanded="false" aria-controls="fc17">
+                            Threads
+                        </button>
+                    </h2>
+                    <div id="fc17" class="accordion-collapse collapse" aria-labelledby="fh17"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh18">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc18" aria-expanded="false" aria-controls="fc18">
+                            UNITY - Basics
+                        </button>
+                    </h2>
+                    <div id="fc18" class="accordion-collapse collapse" aria-labelledby="fh18"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh19">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc19" aria-expanded="false" aria-controls="fc19">
+                            UNITY-Building the Game Pong with Unity
+                        </button>
+                    </h2>
+                    <div id="fc19" class="accordion-collapse collapse" aria-labelledby="fh19"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh20">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc20" aria-expanded="false" aria-controls="fc20">
+                            Building a Zig Zag Clonw with Unity
+                        </button>
+                    </h2>
+                    <div id="fc20" class="accordion-collapse collapse" aria-labelledby="fh20"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh21">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc21" aria-expanded="false" aria-controls="fc21">
+                            Building a Fruit Ninja clonw with unity
+                        </button>
+                    </h2>
+                    <div id="fc21" class="accordion-collapse collapse" aria-labelledby="fh21"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <!--accordioin end div-->
+        </div>
+        <!--maincontent end div -->
+    </div>
+    <!--continer end div -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

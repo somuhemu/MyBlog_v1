@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Database Management System</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">Database Management System Part - 1</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            Introduction
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h5>What is Data?</h5>
+                            <p>Data is an unprocessed set of inputs, which is not self-explanatory. We need to
+                                comprehend the idea of data. Data is a collection of facts about the object of interest.
+                                For e.g. data about a student would include information like name, address, roll no,
+                                subjects, marks etc. Software Applications need to store data as it is required to
+                                answer questions like e.g. how many students have scored above 90? Data is also required
+                                to convey a story e.g. how a student is categorized as Top Performer?</p>
+                            <p>Data is crude, simply a bunch of realities which without anyone else doesn't pass on
+                                anything. We need to comprehend designs between genuine information and give it a
+                                significance. This is called information which causes us with answers to questions like
+                                who, when, what, where and so forth. Union of data and information drives us to address
+                                the how question and take business choices. This is referred to as Knowledge.</p>
+                            <h5>Requirements from data?</h5>
+                            <p>Software Applications that utilizes data are relied upon to meet a few necessities of
+                                end-users. Let us take the example of a Facebook application.</p>
+                            <img src="img/db2.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h5>Limitations of Flat Files</h5>
+                            <p>Data is stored in flat files and can be accessed using any programming language. The
+                                file-based approach suffers following problems:</p>
+                            <ol>
+                                <li>Dependency of program on physical structure of data</li>
+                                <li>Complex process to fetch data</li>
+                                <li>Loss of data on simultaneous access</li>
+                                <li>Inability to give access based on record (Security)</li>
+                                <li>Data redundancy</li>
+                            </ol>
+                            <h5>Database Systems</h5>
+                            <p>A Database is a shared collection of logically related data and description of these
+                                data, designed to meet the information needs of an organization.</p>
+                            <p>A Database Management System(DBMS) is a software system that enables users to define,
+                                create, maintain, and control access to the database. Database Systems typically have
+                                high costs and require high-end hardware configurations.</p>
+                            <p>An Application Program communicates with a database by issuing an appropriate request
+                                (typically a SQL statement)</p>
+                            <img src="img/db3.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Client-Server Architecture is a computing model in which the server hosts, delivers and
+                                manages most of the resources and services to be consumed by the client. </p>
+                            <h5>Functions of DBMS</h5>
+                            <p>Database Management Systems offers several functions that help us overcome problems
+                                associated with file-based systems. We will focus on Data Management, Integrity,
+                                Transaction and Concurrency in this course. Security, Recovery and Utilities are out of
+                                scope for this introductory-level course.</p>
+                            <img src="img/db4.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h4>Types of Database Systems</h4>
+                            <p>Database systems are categorized into four types based upon the underlying structure used
+                                to store data. These database systems in chronological order of their evolution are
+                                Hierarchical, Network, Relational and NoSql.</p>
+
+                            <ol>
+                                <li>Hierarchical Databases organize data into a tree-like structure. Data is stored as
+                                    records which are connected to one another through parent child relationships. Some
+                                    examples of Hierarchical Databases are Information Management System (IMS), Raima
+                                    Database Manager (RDM) Mobile etc.</li>
+                                <li>Network Databases organize data into a graph structure in which object types are
+                                    nodes and relationship types are arcs. Each record can have multiple parent and
+                                    child records. Some examples of Network Databases are Integrated Database Management
+                                    System (IDMS), Integrated Data Store (IDS) etc.</li>
+                                <li>Relational Databases organizes data into one or more tables. A table consists of
+                                    attributes (columns), tuples (rows) and provides a way to uniquely identify each
+                                    tuple. Tables are related to each other through parent child relationships. Some
+                                    examples of Relational Databases are DB2, Oracle, SQL Server etc.</li>
+                                <li>NoSQL (Not only SQL) database uses key-value, graph or document data structures to
+                                    store data. These databases aim for simplicity of design, horizontal scaling and
+                                    finer control over availability. Some examples on No Sql databases are Cassandra,
+                                    MongoDB, CouchDB, OrientDB, HBASE etc.</li>
+
+                            </ol>
+                            <li>Additionally there are other databases types as well like Object Oriented databases e.g.
+                                DB4O and ZopeDB, Graph Databases e.g. Neo4J and InfiniteGraph etc. Relational databases
+                                are the most widely used database in the current times. In this course we will focus on
+                                Relational Databases.</li>
+                            <img src="img/db5.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+
+                            <h4>Relational Model</h4>
+                            <ul>
+                                <li>Relational Databases store data in relations i.e. tables. Each relation must have a
+                                    name.</li>
+                                <li>An attribute is a named column of a relation. It stores a specific information about
+                                    an object e.g. salary.</li>
+                                <li>A tuple is a row in a relation. It represents relationship between attributes that
+                                    can contain single value.</li>
+                                <li>Cardinality of relation is the number of rows it contains. e.g. Cardinality of
+                                    relation below is 4.</li>
+                                <li>Degree of relation is the number of attributes it contains. e.g. Degree of relation
+                                    below is 5.</li>
+                                <li>NULL represents the value of an attribute that is currently unknown or not
+                                    applicable.</li>
+                                <li>A domain is the set of allowable values for one or more attributes.</li>
+                                <li>A collection of relations with distinct relation names is called as Relational
+                                    Model.</li>
+
+                            </ul>
+                            <img src="img/db6.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4>Data Integrity and Constraints</h4>
+                            <p>Data integrity refers to maintaining and assuring the accuracy and consistency of data
+                                over its entire life-cycle. Database Systems ensure data integrity through constraints
+                                which are used to restrict data that can be entered or modified in the database.
+                                Database Systems offer three types of integrity constraints:</p>
+                            <img src="img/db7.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/db8.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h5>Candidate Key</h5>
+                            <p>A Candidate Key is a minimal set of columns/attributes that can be used to uniquely
+                                identify a single row/tuple in a relation. Candidate Keys are identified during database
+                                design, considering the basic business rules of the database. Consider the following
+                                relation with regards to a business firm:</p>
+                            <p>Employee(EmployeeNo, Name, AadharNo, Salary, DateOfBirth)</p>
+                            <p>Let us try to identify some candidate keys for this relation</p>
+                            <img src="img/db9.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Thus the choice of candidate key depends upon the business context.</p>
+                            <p>Note:
+
+                                Aadhaar number is a 12-digit random number issued by the UIDAI (“Authority”) to the
+                                residents of India after satisfying the verification process laid down by the Authority.
+                                Any individual, irrespective of age and gender, who is a resident of India, may
+                                voluntarily enrol to obtain Aadhaar number.</p>
+                            <h5>Primary Key</h5>
+                            <p>A Primary Key is the candidate key that is chosen to uniquely identify a row in a
+                                relation. The mandatory and desired attributes for a primary key are:</p>
+                            <img src="img/db10.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Let us identify the primary key from the previous example:</p>
+                            <p>Employee(EmployeeNo, Name, AadharNo, Salary, DateofBirth)</p>
+                            <img src="img/db11.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>When two or more columns together identify the unique row then it's referred to as
+                                Composite Primary Key. If the combination of Name and DateOfBirth is chosen as primary
+                                key, that would be considered as composite primary key.</p>
+                            <h5>Foreign Key</h5>
+                            <p>A Foreign Key is a set of one or more columns in the child table whose values are
+                                required to match with corresponding columns in the parent table. Foreign key
+                                establishes a relationship between these two tables. Foreign key columns identified in
+                                child tables must refer to the primary key or unique key of the parent table. The child
+                                table can contain NULL values. Let us take an example of Employee and Computer tables as
+                                given below:</p>
+                            <img src="img/db12.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Computer is the parent table with COMPID as the primary key. Employee is the child table
+                                with ID as the primary key. If we need to assign a limit of one computer to an employee,
+                                then COMPID should be made the foreign key in the Employee table. It can just contain
+                                values that are available in Computer table COMPID column or no values at all(NULL). We
+                                cannot allocate a computer that does not exist to an employee.</p>
+                            <p>Additionally, numerous rows in the child table can connect to the same row of the parent
+                                table depending upon the type of relationship.</p>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                            ER Diagram
+                        </button>
+                    </h2>
+                    <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Entity and Relationships</h4>
+                            <h5>Entity Relationship (ER) Model</h5>
+                            <p>Jack is a part of the database team and he needs to present the database design to
+                                business users. The business users are non-technical and it is hard for them to read a
+                                verbose design document. How can Jack respond? Jack needs to use an Entity Relation (ER)
+                                Model.</p>
+                            <p>ER model is a graphical portrayal of entities and their relationships which helps in
+                                understanding data independent of the actual database implementation. Let us understand
+                                some of the key terms used in ER Modelling.</p>
+                            <img src="img/db13.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>A sample ER Diagram representing the Employee entity along with its attributes is
+                                presented below:</p>
+                            <img src="img/db14.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h5>Relationships</h5>
+                            <p>Relationships are associations of one entity with another entity through a foreign key.
+                                Each relationship has a name e.g. a Computer is allocated to an Employee.</p>
+                            <img src="img/db15.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>There can be more than one relationship between entities, e.g. an Employee works in a
+                                Department while the head of the department (also an employee) manages a Department.</p>
+                            <img src="img/db16.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>A relationship can also exist between instances of the same entity, e.g. an Employee
+                                reports to a manager (also an Employee)</p>
+                            <img src="img/db17.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h5>Cardinality of Relationships</h5>
+                            <p>Cardinality of relationship is the number of instances in one entity which is associated
+                                to the number of instances in another. For the relationship between Employee and
+                                Computer, it helps us answer questions like how many computers can be allocated to an
+                                employee, can computers be shared between employees, can employees exist without being
+                                allocated a computer etc. e.g. if 0 or 1 computer can be allocated to 0 or 1 employee
+                                then the cardinality of relationship between these two entities will be 1:1.</p>
+                            <p>Cardinality of relationships are of three types: 1:1, 1:N and M:N.</p>
+                            <img src="img/db18.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>A relationship with cardinality 1:1 is also called as one-to-one relationship or 1:1
+                                relationship.</p>
+                            <p>Some entities in the context of Infosys are Employee, Computer, Project, Salaried
+                                Account.</p>
+                            <h5>Crow Foot Notation</h5>
+                            <p>Crow foot notation is one of the approaches to represent the cardinality of relationship
+                                in an ER Model. The notation comprises of four symbols and one of them needs to be used
+                                for each entity in a relationship.</p>
+                            <img src="img/db19.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Let us say the relationship between employee and computer is such that a computer must be
+                                allocated to one and only one employee but an employee can be allocated with zero or any
+                                number of computers. Such a relationship is represented by the diagram below:</p>
+                            <img src="img/db20.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h5>Relationships and Foreign Keys</h5>
+                            <p>Foreign keys has to be created in tables in order to establish the relationship between
+                                entities.</p>
+                            <img src="img/db21.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/db22.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/db23.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>The relation in which a foreign key will be created depends upon the cardinality of the
+                                relationship. Let us now discuss the types of cardinalities and how it impacts the
+                                creation of the foreign key.</p>
+                            <h5>1:1 Relationship</h5>
+                            <p>1:1 relationship represents the relationship between a single occurrence of one entity
+                                and a single occurrence of the second entity. For e.g. consider a company where each
+                                employee can be allocated a maximum of 1 computer and computers are not shared between
+                                employees.</p>
+                            <img src="img/db24.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>The Allot_Dt attribute is not a property of employee or computer. It belongs to the
+                                relationship and is hence represented differently in the ER Model.</p>
+                            <p>We can see that the employee table has two additional attributes - CompId and Allot_Dt.
+                                CompId is a foreign key to establish the link between these two tables. Allot_Dt which
+                                is the attribute of the relationship is always stored in the table that has the foreign
+                                key.</p>
+                            <p>Alternatively we could also have added Id and Allot_Dt attributes in computer table to
+                                establish the link.</p>
+                            <h5>1:N Relationship</h5>
+                            <p>1 : N relationship represents the relationship between the single occurrence of one
+                                entity and multiple occurrences of the second entity. For e.g. consider a company where
+                                each employee can be allocated with many computers but still, computers cannot be shared
+                                between employees.</p>
+                            <img src="img/db25.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In 1 : N relationships, the foreign key and relationship attributes are always added to
+                                the many (N) side of the relationship. Hence these attributes are added to the computer
+                                table. The reverse solution will not work.</p>
+                            <h5>M:N Relationship</h5>
+                            <p>M:N relationship represents the relationship between multiple occurrences of both
+                                entities. For e.g. consider a company where each employee can be allocated with many
+                                computers and computers can be shared between employees.</p>
+                            <img src="img/db26.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In M : N relationships, the relationship is represented by a completely new table that
+                                has a composite primary key. Such a design requires two foreign keys on the new table
+                                linking to the primary keys of each of the parent tables. The attribute of the
+                                relationship resides on this new table.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                            Normalization
+                        </button>
+                    </h2>
+                    <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Introduction to normalization</h4>
+
+                            <p>In order to maintain the transactions in the retail outlet, the management employed an IT
+                                team that has created a relational schema designed based on the E-R modelling technique.
+                                One such relation is shown for your reference.</p>
+                            <p>This is represented in a relational notation as follows:</p>
+                            <p>retailoutletstock (retailoutletid, itemcode, description, retailoutletlocation (street,
+                                city, zipcode), qtyavailable, retailunitprice, itemclass)</p>
+                            <p>When databases are designed and used, they need to be checked for the possibility of
+                                several issues such as inconsistency, redundancy and uncertainty. Let us understand the
+                                inconsistency and redundancy of data with examples from the case study given.</p>
+                            <h5>Data redundancy</h5>
+                            <p>Data redundancy occurs when the same data is multiplied across the database and can be
+                                found repeated in an unnecessary form. Consider the data stored for a retailoutletstock
+                                as per the relation given earlier.</p>
+                            <img src="img/db27.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>You can notice in the data stored that the retailoutletid and retailoutletlocation are
+                                repeating for every item available in the retail outlet store. This is an example of
+                                redundant information. Redundant information will lead to more disk space to store the
+                                data than actually required.</p>
+                            <h5>Data inconsistency</h5>
+                            <p>Data inconsistency results from anything that affects data integrity. This can cause the
+                                data to be correct in one place and wrong elsewhere it is stored. This can lead to
+                                unreliable and meaningless information.</p>
+                            <p>Consider the following relations for the case study:</p>
+                            <p>retailoutletstock (retailoutletid, itemcode, description, retailoutletlocation (street,
+                                city, zipcode), qtyavailable, retailunitprice, itemclass)</p>
+                            <p>itemavailability (itemcode, description, retailoutletid, retailoutletaddress (street,
+                                city, zipcode), qtyavailable)</p>
+                            <p>The retailoutletlocation in the retailoutletstock table and retailoutletaddress in
+                                itemavailability relations refer to the address of a retail outlet but present in
+                                different forms. This may lead to an inconsistent address stored for a retail outlet .To
+                                retrieve the correct address or update it , both these relations need to be considered.
+                            </p>
+                            <p>The issues mentioned arise due to poorly designed/structured databases or when they are
+                                expanded without much planning to include newer elements over a period. These issues can
+                                cause huge business failures and hence must be addressed. Data redundancies can be
+                                avoided by using normalization during design of databases, inconsistency can be avoided
+                                using database constraints.</p>
+
+
+                            <h4>Functional Dependency</h4>
+                            <p>Normalization is the process of reorganizing data in a database to ensure that there is
+                                no redundancy of data and data dependencies are logical (all related data items are
+                                stored together).</p>
+                            <p>The different stages of normalization are known as “normal forms”. To accomplish
+                                normalization, we need to understand the concept of Functional Dependencies.</p>
+                            <p>FUNCTIONAL DEPENDENCY</p>
+                            <p>Functional Dependencies in DBMS is a relation between two or more attributes. It can be
+                                categorized as -</p>
+                            <ul>
+                                <li>Fully Functional Dependency</li>
+                                <li>Partial Dependency</li>
+                                <li>Transitive Dependency</li>
+                            </ul>
+                            <p>DEPENDENCY IN A RELATION:</p>
+                            <ul>
+                                <li>An attribute of a relation can be determined by knowing one/more attributes of the
+                                    same relation</li>
+                                <li>The attribute which determines the value of other attributes is known as
+                                    “Determinant”</li>
+                            </ul>
+                            <p>retailoutletstock (retailoutletid, itemcode, description, retailoutletlocation(street,
+                                city, zipcode), qtyavailable, retailunitprice, itemclass)</p>
+                            <p>The following are the functional dependencies in the relation:</p>
+                            <img src="img/db28.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <ul>
+                                <li>In a relation R, A and B are attributes</li>
+                                <li>Attribute B is functionally dependent on attribute A if each value of A determines
+                                    EXACTLY ONE value of B, which is represented as A -> B (A can be composite in
+                                    nature)</li>
+                                <li>A is called determinant and B is called dependent</li>
+
+                            </ul>
+
+                            <p>To explain these dependencies, we will use the following relation that has been described
+                                in the earlier sections.
+                            </p>
+                            <p>retailoutletstock (retailoutletid, itemcode, retailoutletlocation, qtyavailable,
+                                description, retailunitprice, itemclass)</p>
+                            <p>{retailoutletid, itemcode} is the candidate key of the above relation.
+
+                                The three types of dependencies are illustrated below.
+
+                            </p>
+                            <img src="img/db29.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <p>In retailoutletstock, we have identified {retailoutletid, itemcode} as the candidate key.
+                                The attribute, qtyavailable is fully dependent on {retailoutletid, itemcode}. The
+                                attribute, description is dependent on itemcode(a part of candidate key). Hence
+                                description is partially dependent on {retailoutletid, itemcode}. The attribute,
+                                retailunitprice is dependent on {retailoutletid, itemcode}, itemclass is dependent on
+                                retailunitprice, which creates a transitive dependency among them.</p>
+                            <p>If functional dependencies are not properly defined, the databases may suffer from the
+                                following anomalies.</p>
+                            <ul>
+                                <li>Update/Modification anomalies – if data is inconsistently stored, it can lead to
+                                    update anomalies</li>
+                                <li>Deletion anomalies – when a row is deleted that may contain attributes that
+                                    shouldn't be deleted</li>
+                                <li>Insert anomalies – when a data is inserted that does not exist at all</li>
+                            </ul>
+                            <p>Normalization is a method to remove all these anomalies and bring the database to a
+                                consistent state.</p>
+                            <p>Let us see these anomalies in detail with an example from the above case study.</p>
+                            <p>An anomaly is an unexpected side effect from trying to insert, update, or delete a row.
+                                Essentially more data must be provided to accomplish an operation than would be
+                                expected.
+
+                                Consider the table retailoutletstock:</p>
+                            <img src="img/db30.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>What happens if we try to insert(add) the details of a new retail outlet that currently
+                                has no items in its stock?</p>
+                            <p>* NULL values would be inserted into the itemdetails columns, which is not preferable.
+                            </p>
+                            <p>What happens if we try to delete the item of an itemcode I1005?</p>
+                            <p>* The details of the retail outlet R1003 will also be deleted from the database.</p>
+                            <p>How many rows will be updated if the retail outlet location of R1002 is changed from
+                                Victoria Street to Saint John Street?</p>
+                            <p>* 3 Rows will be updated</p>
+                            <p>What are the details we need to insert when new items are supplied to a retail outlet?
+                            </p>
+                            <p>* Apart from all necessary details, retailoutletlocation will also be inserted which is
+                                redundant</p>
+                            <p>We have seen insert, delete, update anomalies, and data redundancy in the above given
+                                example. Functional dependencies may lead to anomalies. To minimize anomalies there is a
+                                need to refine functional dependencies using Normalization.</p>
+
+
+                            <h4>Normal Forms</h4>
+                            <p>To revisit, Database normalization is the process of structuring a relational database in
+                                accordance with a series of so-called normal forms in order to reduce data redundancy
+                                and improve data integrity. Normalization was first proposed by Edgar F. Codd.</p>
+                            <p>“Normal Forms” (NF) are the different stages of normalization</p>
+                            <ul>
+                                <li>1 NF (First Normal Form)</li>
+                                <li>2 NF (Second Normal Form)</li>
+                                <li>3 NF (Third Normal Form)</li>
+                                <li>BCNF (Boyce -Codd Normal Form)</li>
+                                <li>4 NF (Fourth Normal Form)</li>
+                                <li>5 NF (Fifth Normal Form)</li>
+                                <li>6 NF (Sixth Normal Form)</li>
+
+
+                            </ul>
+                            <p>4NF- 6NF is applicable to multivalued dependencies and complex table scenarios. Based on
+                                our course scope, we will discuss 1NF,2NF and 3NF in this module.</p>
+                            <p>The retailoutletstock table has an attribute, retailoutletlocation which has the data for
+                                street, city and zipcode. Any insertion/deletion/modification performed on
+                                retailoutletlocation affects efficiency and performance. </p>
+                            <p>For example:
+
+                                If the requirement is to fetch records based on the city, we need to perform string
+                                operations on the column retailoutletlocation, which will be simpler if we have a
+                                single-valued column for the city.</p>
+                            <h5>First Normal Form: 1 NF</h5>
+                            <p>A relation R is said to be in 1 NF (First Normal) if and only if:</p>
+                            <p>1)All the attributes of R are atomic in nature</p>
+                            <p>2)There should not be any multi-valued attribute</p>
+
+                            <p>How do we achieve 1 NF?</p>
+                            <p>So, we will split the non-atomic attribute, retailoutletlocation into three different
+                                attributes- street, city and zipcode all of them being atomic, the resulting relation
+                                will be in First Normal Form.
+
+                                The resulting retailoutletstock table in First Normal Form(1 NF) is:</p>
+                            <img src="img/db31.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Note:- A multi-valued attribute is an attribute which can have more than one value at a
+                                time which is not the case in the above relation. </p>
+                            <p>Advantage:</p>
+                            <p>1 NF allows users to use the database queries effectively as it removes ambiguity by
+                                removing the non-atomic and multi-valued attributes which creates the major issues in
+                                the future while updating and extracting the data from the database.</p>
+                            <p>Limitation:</p>
+                            <p>As we can see in the retailoutletstock relation above, the attribute description is
+                                dependent only on itemcode (I1001->Britannia Marie Gold Cookies). Hence, we have the
+                                redundant data in the table which can be eliminated by having a separate table for item
+                                details which leads us to the next normal form.</p>
+                            <h5>Second Normal Form: 2 NF</h5>
+                            <p>A relation R is said to be in 2 NF (Second Normal) form if and only if:
+                            <p>1)R is already in 1 NF</p>
+                            <p>2)There is no partial dependency in R which exists between non-key attributes and key
+                                attributes</p>
+                            </p>
+                            <p>How do we achieve 2 NF?</p>
+                            <p>To make a table 2 NF compliant, remove all such partial dependencies and decompose the
+                                relation.</p>
+                            <p>The retailoutletstock is already in 1 NF, but we have the following partial dependencies
+                                which must be removed in order to make the relation in 2 NF.</p>
+                            <img src="img/db32.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Since the description is dependent only on itemcode, we can create a separate table item
+                                with itemcode and description as its attributes, so that the partial dependencies are
+                                eliminated. Similarly, retail outlet details like retailoutletid, street, city and
+                                zipcode attributes must be in a separate table retailoutlet. Also, the attributes
+                                qtyavailable, retailunitprice, itemclass are dependent on both itemcode and
+                                retailoutletid. Hence, we will have another table retailstockdetails with those
+                                attributes.</p>
+                            <p>After removing the partial dependencies, we have three tables item, retailoutlet and
+                                retailstockdetails, each of them in 2 NF.</p>
+                            <img src="img/db33.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/db34.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Are all the anomalies eliminated?</p>
+                            <p>What will happen if we try to delete the record containing itemcode I1002 from
+                                retailstockdetails?</p>
+                            <p>* The definition of itemclass C will also be lost from the database.</p>
+                            <p>What if there is a change in the business rule for the itemclass, say the retailunitprice
+                                range has been increased by 1000 for every itemclass?</p>
+                            <img src="img/db35.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Multiple rows have to be updated.</p>
+                            <p>Insert, delete and update anomalies still exist which needs to be eliminated. This
+                                necessitates further normalization.</p>
+                            <p>The root cause of these anomalies is the transitive dependency between retailoutletid,
+                                itemcode, retailunitprice and itemclass. This needs to be eliminated.</p>
+
+                            <p>Advantage:</p>
+                            <p>2 NF attempts to reduce the amount of redundant data in a table by extracting it, placing
+                                it in a new table(s) and creating relationships between those tables.</p>
+                            <p>Limitation:</p>
+                            <p>Still, in the case study, we can see that itemclass attribute is completely dependent on
+                                retailunitprice and it is repeated whenever two items have the same retailunitprice. So,
+                                we still have data redundancy.</p>
+                            <p>If the itemclass is changed for a range of retailunitprice, we will have to update all
+                                the records in the retailstockdetails. Which leads us to the third normal form.</p>
+
+                            <h5>Third Normal Form: 3 NF</h5>
+                            <p>A relation R is said to be in 3 NF (Third Normal Form) if and only if:</p>
+                            <p>1)R is already in 2 NF</p>
+                            <p>There is no transitive dependency which exists between key attributes and non-key
+                                attributes through other non-key attributes</p>
+                            <p>A transitive dependency in a database is an indirect relationship between attributes in
+                                the same table that causes a functional dependency.</p>
+                            <p>X -> Z is a transitive dependency if the following three functional dependencies hold
+                                true:</p>
+                            <ul>
+                                <li>X->Y</li>
+                                <li>Y does not ->X</li>
+                                <li>Y->Z</li>
+                            </ul>
+                            <p>How do we achieve 3 NF?</p>
+                            <p>To make retailstockdetails 3 NF compliant, we must remove all such transitive
+                                dependencies by decomposing the relation.</p>
+                            <img src="img/db36.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Note:- The item and retailoulet tables are not having any transitive dependency.</p>
+                            <img src="img/db37.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>After removing the transitive dependency from retailstockdetails, it will result in the
+                                following tables.</p>
+                            <img src="img/db38.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Even after converting to 3 NF, we can see that storing itemclass for every
+                                retailunitprice is not an efficient way. So, it is more appropriate to store it in the
+                                following way:</p>
+                            <p>Advantage:</p>
+                            <p>3 NF ensures data integrity. It also reduces the amount of data duplication.</p>
+
+                            <h5>Diagrammatic Representation</h5>
+                            <p>Let us summarize the learning through the diagram given below.</p>
+                            <img src="img/db39.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+
+                            <h5>Guidelines</h5>
+                            <p>Guidelines for using normalization:</p>
+                            <ul>
+                                <li>Depending on the business requirements, the tables can be normalized up to 2nd
+                                    normal form or 3rd normal form</li>
+                                <li>Tables in 3 NF are preferred in applications with extensive data modifications</li>
+                                <li>Tables in 2 NF are preferred in applications with extensive data retrieval</li>
+                                <li>Reason: retrieving data from multiple tables is a costly operation</li>
+                                <li>Converting the tables from higher normal form to lower normal form is called
+                                    “Denormalization”</li>
+
+                            </ul>
+                            <h5>Summary</h5>
+                            <p>Database design is critical to a database management system that meets the data
+                                requirements of an enterprise system. We have explained the need for normalization,
+                                functional dependencies and normal forms in this module. The image given below
+                                summarizes the conversion of relation from an unnormalized form to third normal form:
+                            </p>
+                            <img src="img/db40.JPG" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4>Normalization : A Quick Guide</h4>
+                            <p>Find out the candidate key(s) and the highest normal form in the given relation:</p>
+                            <p>trainee (traineeid, traineename, classroomid, pcid)</p>
+                            <p>Consider the following functional dependencies:</p>
+                            <img src="img/db55.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Solution: candidate key</p>
+                            <p>Step 1: Identify the candidate key, with the help of given functional dependencies.</p>
+                            <p>As per the first functional dependency, let us assume traineeid is a candidate key. To
+                                confirm that traineeid is a candidate key, it should determine rest of the attributes.
+                            </p>
+                            <p>The given two functional dependencies show that we can determine the rest of the
+                                attributes (i.e. traineename, classroomid and pcid) with the help of traineeid.</p>
+                            <img src="img/db56.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>
+                                Hence, traineeid is a candidate key. But as we know, a relation can have more than one
+                                candidate key. Let’s check if we have another candidate key in the given relation.</p>
+                            <p>As per the second functional dependency, let us assume {classroomid, pcid} is a composite
+                                candidate key. Again if {classroomid, pcid} is a composite candidate key, it should
+                                determine {traineename and traineeid}.</p>
+                            <p>The given two functional dependencies illustrate that we can determine {traineename and
+                                traineeid} with the help of {classroomid, pcid}.</p>
+                            <img src="img/db57.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Hence, {classroomid, pcid} is a composite candidate key in a given relation.</p>
+                            <p>But, to prove that it is a candidate key, the subset of {classroomid, pcid} should not
+                                determine the rest of the attributes independently. In a given relation, it is not
+                                possible.</p>
+                            <p>Hence, we have two candidate keys:</p>
+                            <p>a) traineeid</p>
+                            <p>b) {classroomid, pcid}</p>
+
+                            <h5>Solution: Highest normal form</h5>
+                            <p>a) Identify the key attributes and non-key attributes.</p>
+                            <p>As we know, attributes that are the part of the candidate key is/are called key
+                                attribute(s) and others is/are non-key attributes.
+
+                                In our case,</p>
+                            <p>Key attributes are { traineeid }, {classroomid, pcid }</p>
+                            <p>Non-key attribute is { traineename }</p>
+
+                            <p>b) Check for 1NF:</p>
+                            <p>As per the definition of 1NF, all the attributes should be atomic in nature. Since
+                                nowhere it is mentioned that an attribute of a given relation is non-atomic or
+                                multi-valued. So, it holds for a given trainee relation.</p>
+                            <p>c) Check for 2NF:</p>
+                            <p>As per the definition of 2NF, there should not be any partial dependency between non-key
+                                and key-attributes.</p>
+                            <p>It means we should not have a dependency like:</p>
+                            <img src="img/db58.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>In our case, the composite candidate key is {classroomid and pcid}.</p>
+                            <p>Let’s check, do we have any dependency like:</p>
+                            <img src="img/db59.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>After looking at the given functional dependencies, we can conclude that there is no
+                                partial dependency existing. Hence the given relation is in 2NF.</p>
+                            <p>d) Check for 3NF:</p>
+
+                            <p>Again, as per the definition of 3NF, the relation should not have any transitive
+                                dependency between the key and non-key attributes via another non-key attribute.</p>
+                            <p>In simple words, we should not have any dependency among non-key attributes. If
+                                Non-key-attribute -> Non-key-attribute, then there is a transitive dependency and the
+                                relation will not be in 3NF.</p>
+                            <p>In our case, we have only one non-key attribute, so there is no chance of having
+                                transitive dependency in a relation. Hence, our trainee relation is in 3NF.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                            SQL Commands and Data Types
+                        </button>
+                    </h2>
+                    <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <p>Structured Query Language (SQL) is used to manage data in all relational databases like
+                                DB2, Oracle, SQL Server etc. SQL standards are maintained by ISO. While most database
+                                products comply with the ISO standard, they also offer additional proprietary features.
+                                In this course we will restrict ourselves to feature set offered by Oracle database.</p>
+                            <ul>
+                                <li>Data Definition Language is used to specify the structure i.e. schema of a
+                                    relational database. DDL provides commands for creation, modification and deletion
+                                    of various database objects like tables, views, stored procedures, indexes,
+                                    constraints etc. The output of DDL is placed in data dictionary which contains
+                                    metadata i.e. data about data.</li>
+                                <li>Data Manipulation Language enables users to access or manipulate data in a
+                                    relational database. DML provides commands for retrieval, creation, deletion and
+                                    modification of information in a database. DML requires a user to specify what data
+                                    is needed without specifying how to get it. The database engine is left to figure
+                                    out effective means of retrieving data.</li>
+                                <li>Data Control Language enables users to provide access to various database objects
+                                    like views, tables, stored procedures etc. in a relational database. Typically only
+                                    DBAs have access to grant and revoke privileges. Whenever a user submits a query,
+                                    the database checks against the granted privileges and rejects the query if it is
+                                    not authorized.</li>
+                                <li>Transaction Control Language specifies commands for beginning and ending a
+                                    transaction. A transaction consists of a sequence of SQL statements that are applied
+                                    in an atomic (all or none) manner. A commit makes all the changes applied by the
+                                    transaction permanent on the database while a rollback undoes all the changed
+                                    applied by the transaction.</li>
+
+                            </ul>
+                            <p>To summarize, Structured Query Language (SQL) provides four types of languages based on
+                                type of operation to be performed on a database. These languages can be considered as
+                                subsets of SQL and logical groups only. Physically commands for all these languages are
+                                executed from the same interface provided by the database.</p>
+                            <img src="img/db41.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4>Introduction to Data Types and Operators</h4>
+                            <p>Data types :</p>
+                            <ul>
+                                <li>Character data types</li>
+                                <li>Integral data types </li>
+                                <li>Non-Integral data types</li>
+                                <li>Miscellaneous data types</li>
+
+                            </ul>
+                            <p>Operators :</p>
+                            <ul>
+                                <li>Arithmetic operators</li>
+                                <li>Comparison operators</li>
+                                <li>Logical operators</li>
+                            </ul>
+
+                            <h5>SQL Character Data Types</h5>
+                            <p>SQL supports two character data types for storing printable and displayable characters.
+                                They are used for storing information like name, city, description etc.</p>
+                            <img src="img/db42.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h5>SQL Integral Data Types</h5>
+                            <img src="img/db43.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>SQL, unlike programming languages, does not provide support for arbitrary length numbers
+                                i.e. numbers not bound by size limits. For e.g. Python supports bignum and Java supports
+                                BigInteger data types.</p>
+
+                            <h1>SQL Nonintegral Data Types</h1>
+                            <p>Nonintegral data types have an integer part and a fractional part. Either NUMERIC,
+                                DECIMAL or NUMBER data types can be used to store nonintegral numbers.</p>
+                            <img src="img/db44.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Scale is the number of digits allowed after the decimal point. Precision is the total
+                                number of significant digits i.e. digits both before and after the decimal point. If
+                                Scale is not provided then NUMBER datatype can be used to store integral values.</p>
+                            <p>Precision and Scale of non-integral data type determines the maximum value that can be
+                                stored. It also determines, how input data will be modified before storing the value. We
+                                can use the following logic to determine the value that will be stored:</p>
+                            <img src="img/db45.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Let us see some examples of how input data is changed before storage.</p>
+                            <img src="img/db46.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h5>Miscellaneous Data Types</h5>
+                            <p>For storing date and large objects, SQL supports the following data types:</p>
+                            <img src="img/db47.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Here are some key events and their dates from history:</p>
+                            <img src="img/db48.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h5>Operators and Expressions</h5>
+                            <p>Arithmetic Operators </p>
+                            <img src="img/db49.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Comparison Operators</p>
+                            <img src="img/db50.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>There is one important difference between Equal To comparison operator in programming
+                                languages and SQL. While SQL uses a single '=', programming languages typically use
+                                double '=' to distinguish it from the assignment operator.</p>
+                            <img src="img/db51.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Note - SQL also supports operators similar to those in programming languages</p>
+                            <p>An arithmetic operation involving a NULL returns NULL </p>
+                            <p> The Java operator specified here is applicable for other programming languages like
+                                Python, C, C++ etc</p>
+                            <h5>Other Comparison Operators</h5>
+                            <img src="img/db52.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h5>Logical Operators</h5>
+                            <img src="img/db53.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h5>Expressions</h5>
+                            <p>Similar to arithmetic expressions in programming languages, SQL expressions are created
+                                from constant values, operators and brackets. They evaluate to a single value and are
+                                used in SELECT and WHERE clauses. Some examples are given below:</p>
+                            <img src="img/db54.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                            DDL Statements
+                        </button>
+                    </h2>
+                    <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h4>Create and Drop Table</h4>
+                            <p>CREATE TABLE statement is used to create a table in a database. Database tables are
+                                organized into rows and columns. Each table must have a name and can have any number of
+                                columns (minimum 1 column is required). Each column must have a data type which
+                                determines the type of values that can be stored. CREATE TABLE command will fail if a
+                                table is already existing in the database with the same name. All tables must have a
+                                unique name.</p>
+                            <p>DROP TABLE statement is used to remove an existing table from the database.</p>
+                            <img src="img/db60.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <strong>
+                                CREATE TABLE Student (
+                                StudentId INTEGER,
+                                FName VARCHAR2(10),
+                                Gender CHAR(1),
+                                DOJ DATE);
+                            </strong>
+                            <h5>Drop Table</h5>
+                            <p>DROP TABLE statement is used to drop an existing table from the database.
+
+                                The syntax for DROP statement:</p>
+
+                            <p>DROP TABLE &ltTable name>;</p>
+                            <p>Note:- Tables without any reference with the child table can be dropped using the DROP
+                                statement given above.</p>
+                            <p>The values of the primary/unique key column(s) from the parent table are referred to in
+                                the foreign key column of the child table (referential integrity). This reference will
+                                not allow the master table to be dropped prior to the child table.</p>
+                            <p>When the child table is dropped first, the values that are referred to are removed. So,
+                                now the parent table can be dropped from the database without any error.</p>
+                            <p>Conclusion: Drop all the child tables first, then drop all the parent tables.</p>
+                            <p>An alternate method to drop table is given below:</p>
+                            <p>DROP TABLE &ltTable name> CASCADE CONSTRAINTS;</p>
+                            <p>CASCADE CONSTRAINTS clause should be added to the DROP statement to drop all the
+                                referential integrity constraints that refer to primary and unique keys in the table.
+                            </p>
+                            <p>Since the referential integrity constraint is dropped from the parent table, the parent
+                                table can be dropped first, followed by the child table.</p>
+                            <p>Conclusion: CASCADE CONSTRAINTS clause will drop all the referential integrity
+                                constraints that refer to the primary or unique keys in the table. Hence all the parent
+                                tables can be dropped before the child tables.</p>
+                            <strong>
+                                DROP TABLE Student;
+                                DROP TABLE Student CASCADE CONSTRAINTS;
+                            </strong>
+
+
+                            <h4>Constraints</h4>
+                            <p>We have learnt that data integrity in database systems is enforced through constraints.
+                                These constraints are typically specified along with the CREATE TABLE statement.
+                                Constraints are classified into different types based on the number of columns they act
+                                upon as well as on the way they are specified.</p>
+                            <img src="img/db61.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Table level constraint can be specified after all columns used in the constraint have
+                                been defined. It is not necessary to specify them after all columns in the table are
+                                defined. Composite constraints can only be specified as table level constraints.
+                            </p>
+                            <p>Various constraints that can be created on database tables are:</p>
+                            <p>NOT NULL, PRIMARY KEY, CHECK, UNIQUE, FOREIGN KEY</p>
+                            <p>We can also specify DEFAULT value for a column. Oracle database does not consider DEFAULT
+                                as a constraint.</p>
+
+                            <h5>Not Null Constraint</h5>
+                            <p>NOT NULL Constraint prevents a column from accepting NULL values. NOT NULL can only be
+                                applied as a column level constraint. Constraint name is optional and it can be
+                                specified by using CONSTRAINT keyword.</p>
+                            <strong>
+                                CREATE TABLE Student (
+                                StudentId INTEGER CONSTRAINT Stud_SId_nn NOT NULL,
+                                FName VARCHAR2(10) NOT NULL,
+                                LName VARCHAR2(10));
+                            </strong>
+                            <p>Space(' ') is not treated as NULL and is successfully inserted.</p>
+                            <p>Oracle treats Empty String('') as NULL and hence record could not be inserted.</p>
+
+                            <h5>DEFAULT</h5>
+                            <p>A column can be given the default value by using DEFAULT option. The data type of column
+                                and default expression must be the same. DEFAULT option can be provided for nullable as
+                                well as NOT NULL attributes. Oracle database does not consider DEFAULT as a constraint.
+                            </p>
+                            <strong>
+                                CREATE TABLE Student (
+                                StudentId INTEGER,
+                                FName VARCHAR2(10),
+                                DOJ DATE DEFAULT SYSDATE);
+                            </strong>
+                            <p>Default value is not used if you provide a NULL value.</p>
+                            <p>Default value is not used if you provide a value.</p>
+
+                            <h5>PRIMARY KEY Constraint</h5>
+                            <p>PRIMARY KEY constraint on a column ensures that the column cannot contain NULL and
+                                duplicate values. We can have only one PRIMARY KEY in a table.</p>
+                            <strong>
+                                CREATE TABLE Student (
+                                StudentId INTEGER CONSTRAINT stud_sid_pk PRIMARY KEY,
+                                FName VARCHAR2(10),
+                                ContactNo NUMBER(10));
+                            </strong>
+
+                            <h5>CHECK Constraint</h5>
+                            <p>CHECK constraint is used to limit the values that can be specified for a column.</p>
+                            <strong>
+                                CREATE TABLE Student (
+                                StudentId INTEGER,
+                                FName VARCHAR2(10),
+                                Gender CHAR(1) CONSTRAINT Stud_gender_ck1 CHECK(Gender IN('M', 'F')));
+                            </strong>
+
+                            <h5>UNIQUE Constraint</h5>
+                            <p>UNIQUE constraint on a column ensures that two rows in a table cannnot have same value in
+                                that column. Unlike Primary Key, UNIQUE constraint allows NULL values. A table can have
+                                many UNIQUE constraints.</p>
+                            <strong>
+                                CREATE TABLE Student (
+                                StudentId INTEGER,
+                                FName VARCHAR2(10),
+                                ContactNo NUMBER(10) CONSTRAINT Stud_cno_uk UNIQUE);
+                            </strong>
+
+                            <h5>FOREIGN KEY Constraint</h5>
+                            <p>The student with id 2001 is not a valid value as it is not present in the student table.
+                                To avoid this problem, the relationship has to be built between the Student and Marks
+                                table. This can be achieved by using FOREIGN KEY.</p>
+                            <p>Student Table has already been created and inserted with few records in the database.</p>
+                            <p>Let us now create a table Marks which stores marks scored by each Student in each Course
+                            </p>
+                            <strong>
+                                CREATE TABLE Marks(
+                                CourseId INTEGER,
+                                StudentId INTEGER CONSTRAINT marks_sid_fk REFERENCES Student(StudentId),
+                                MarksScored DECIMAL(5,2));
+                            </strong>
+
+                            <h5>Composite PRIMARY KEY</h5>
+                            <p>Students are not able to register for a course which is already registered by another
+                                Student e.g. Student 1002 could not register for course 801 as it is already registerd
+                                by student 1001. Students should be able to register for many courses. This problem can
+                                be solved by using composite primary key with columns (CourseId, StudentId).
+                            </p>
+                            <strong>
+                                CREATE TABLE Marks(
+                                CourseId INTEGER,
+                                StudentId INTEGER CONSTRAINT marks_sid_fk REFERENCES Student(StudentId),
+                                MarksScored DECIMAL(5,2),
+                                CONSTRAINT marks_cid_pk PRIMARY KEY(CourseId, StudentId));
+                            </strong>
+
+                            <h5>Create Table Syntax Errors</h5>
+                            <p>You cannot specify column names in bracket for column level constraint except CHECK
+                                constraint</p>
+                            <p>StudentId INTEGER PRIMARY KEY (StudentId)</p>
+                            <p>Corrected: StudentId INTEGER PRIMARY KEY</p>
+                            <p>Constraint name must be provided if the CONSTRAINT keyword is used</p>
+                            <p>FName VARCHAR2(10) CONSTRAINT NOT NULL</p>
+                            <p>Corrected: FName VARCHAR2(10) CONSTRAINT Stud_FName_NN NOT NULL</p>
+                            <p>Composite constraints cannot be specified as column level constraint</p>
+                            <p> LName VARCHAR2(10) CHECK (FName &lt> LName)</p>
+                            <p>Corrected: LName VARCHAR2(10), CHECK (FName &lt> LName)</p>
+                            <p>We have resolved this error by specifying the composite constraint as a table level
+                                constraint.</p>
+                            <p>The default value must be provided</p>
+                            <p>DOJ DATE DEFAULT</p>
+                            <p>Corrected: DOJ DATE DEFAULT SYSDATE</p>
+                            <p>The condition for CHECK constraint must always be enclosed within brackets</p>
+                            <p> Gender CHAR(1) CONSTRAINT Student_Gender_Ck CHECK Gender IN('M', 'F')</p>
+                            <p>Corrected: Gender CHAR(1) CONSTRAINT Student_Gender_Ck CHECK (Gender IN('M', 'F'))</p>
+                            <p>FOREIGN KEY keyword must not be used during column level constraint specification</p>
+                            <p>PersonId INTEGER FOREIGN KEY REFERENCES Person(PersonId))</p>
+                            <p>Corrected: PersonId INTEGER REFERENCES Person(PersonId))</p>
+
+                            <h5>Constraints Summary</h5>
+                            <img src="img/db63.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h4>Alter Table</h4>
+                            <p>According to changing requirements, we may need to modify the existing table structure.
+                                For example, If we want to make any changes to the student table created like adding a
+                                new column- address, one option is to drop the table which will delete all the existing
+                                data and then create it again.</p>
+                            <p>What if the table has a lot of data and we do not want to lose existing data?</p>
+                            <p>The table cannot be dropped now. One option is to take a backup of data, then drop and
+                                recreate the table and finally load the data from backup into the modified table. This
+                                approach might work but if the number of rows is large, then this process would consume
+                                a lot of time.</p>
+                            <p>Is there an easier way to avoid all these troubles?</p>
+                            <p>We need to use ALTER TABLE command through which the structure of the existing table can
+                                be changed without any loss of data. It can also be used to rename a column, change the
+                                data type of a column and to add or remove constraints.</p>
+                            <p>Syntax for ALTER TABLE command is provided below:</p>
+                            <img src="img/db62.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>Drop one column</p>
+                            <p>The column can be removed from the table with DROP clause. The column dropped cannot be
+                                recovered back. At least one column should be present in the table after dropping the
+                                columns.</p>
+                            <strong>
+                                ALTER TABLE Student DROP (DOB);
+                            </strong>
+                            <p>ALTER statement can also be used to drop multiple columns.</p>
+                            <strong>
+                                ALTER TABLE Student DROP (GNDR, MobNo);
+                            </strong>
+                            <p>Add one column</p>
+                            <p>The Address column can be added to the existing student table with ADD clause. The new
+                                Address column will become the last column in the table. The existing rows contain NULL
+                                value for the newly added column.</p>
+                            <strong>
+                                ALTER TABLE Student ADD Address VARCHAR2 (20);
+                            </strong>
+                            <p>ALTER statement can also be used to add multiple columns. The columns should be placed
+                                with in the parentheses.</p>
+                            <strong>
+                                ALTER TABLE Student ADD (Course VARCHAR2 (20), Marks NUMBER (10));
+                            </strong>
+                            <p>Modify</p>
+                            <p>The data type of the column can be modified with the MODIFY clause. The size of the data
+                                type can be increased or decreased. The column should be empty for decreasing the size
+                                or for changing the data type from one type to another.</p>
+                            <strong>
+                                ALTER TABLE Student MODIFY Name VARCHAR2(50);
+                            </strong>
+                            <p>The default value can be added to a column with the MODIFY clause and DEFAULT option. If
+                                no value is inserted in a column then default value will be inserted. The data type of
+                                the column and default expression must be same.</p>
+                            <strong>
+                                ALTER TABLE Student MODIFY DOJ DEFAULT SYSDATE;
+                            </strong>
+                            <p>The name of the column can be changed with RENAME COLUMN clause.</p>
+                            <strong>
+                                ALTER TABLE Student RENAME COLUMN Id TO SID;
+                            </strong>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                            DML Statementsd
+                        </button>
+                    </h2>
+                    <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h4>Insert Statement Syntax</h4>
+                            <p>Insert statement is used to add tuples (records) to the table. It supports three
+                                alternate syntaxes as shown below:</p>
+                            <img src="img/db64.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>If column names are not used then values must be provided for all columns in the order of
+                                their specification during table creation.</p>
+                            <p>If column names are used then the data provided in the values clause must have the same
+                                data type of column at same position.</p>
+                            <p>Multiple rows can be inserted through a single INSERT statement only when it is used with
+                                SELECT statement. You will learn about SELECT QUERY shortly.</p>
+                            <p>While inserting data, column values should match column type definition(e.g., you can’t
+                                insert a textual value into the numerical column/attribute). If the column is of strings
+                                or date time or characters, they need to be enclosed in single quotes(You cannot use
+                                double quotes). String data is case sensitive and will be stored as given within quotes.
+                                If the data is numeric, you don't need the quotes. NULL also should not be enclosed with
+                                quotes.</p>
+
+                            <p>without columns</p>
+                            <p>The simplest syntax for insert statement uses value clause without column names. All the
+                                column values must be specified in the same order as they appear in the table.The NULL
+                                keyword needs to be used if any attribute expects a null value.</p>
+                            <strong>
+                                INSERT INTO Employee VALUES (6, 'James Potter', '01-Jun-2014', 75000.00, 1000.00, 'ETA',
+                                'PM', NULL, 1004);
+                            </strong>
+                            <p>without column names incorrect order</p>
+                            <p>Any attempt to insert data by specifying values in an incorrect order will result in an
+                                error.</p>
+                            <p>without column names missing values</p>
+                            <p>Value must be specified for all columns of the table. Any missing value will result in
+                                failure</p>
+                            <p>Note: Alphanumeric values must be enclosed in quotes.</p>
+
+                            <p>columns in correct order</p>
+                            <strong>
+                                INSERT INTO Employee (Id, Ename, DOJ, Salary, Bonus, Dept, Designation, Manager, Compid)
+                                VALUES (7, 'Ethan McCarty', '01-Feb-2014', 90000.00, 1200.00, 'ETA', 'PM', NULL, NULL);
+                            </strong>
+                            <p>collumns in any order</p>
+                            <p>Column names need not be supplied in the same order as they appear in the table. However,
+                                the values should be supplied in the same order as the column names in the Insert
+                                statement.</p>
+                            <strong>
+                                INSERT INTO Employee (Id, Compid, Ename, DOJ, Salary, Bonus, Dept, Designation, Manager)
+                                VALUES (8, 1004, 'Emily Rayner', '01-Jan-2014', 25000.00, 100.0, 'ETA', 'SE', NULL);
+                            </strong>
+                            <p>Note: 1)If values are supplied in an incorrect order then insertion will fail if data
+                                type mismatch occurs.</p>
+                            <p>2)If values are supplied in an incorrect order then insertion will fail if constraint
+                                violation occurs.</p>
+
+                            <p>omitting null</p>
+                            <p>Attributes that allow null values can be omitted from the insert statement if null needs
+                                to be inserted. The omission should be from both column names and values clause.</p>
+                            <p>omitting default</p>
+                            <p>Attributes that have default values can be omitted from the insert statement if default
+                                value needs to be inserted. This works even if the attribute has NOT NULL clause.</p>
+                            <p>Any attempt to insert record that violates the primary key constraint fails. Primary key
+                                columns must have unique values.</p>
+                            <p>Any attempt to insert NULL value in primary key column fails. Primary key columns do not
+                                allow NULLs.</p>
+                            <p>Unlike Primary Key, NULL values can be entered into columns with unique constraint.</p>
+                            <p>Any attempt to insert record that violates the unique key constraint fails. Unique key
+                                columns must have unique values.</p>
+                            <p>Unique constraint does not prevent multiple NULL values on the column. This is because
+                                two NULLs are not treated equal by SQL.</p>
+                            <p>Any attempt to insert a record that violates a foreign key constraint fails. The foreign
+                                key could be due to reference to same table or a different table.</p>
+
+
+                            <h4>Select Statement Syntax</h4>
+                            <p>Select is the most commonly used statement in SQL. The SELECT Statement in SQL is used to
+                                retrieve or fetch data from a database. We can fetch either the entire table or
+                                according to some specified rules. The data returned is stored in a result table. This
+                                result table is also called the result-set.</p>
+                            <p>With the SELECT clause of a SELECT command statement, we specify the columns that we want
+                                to be displayed in the query result and, optionally, which column headings we prefer to
+                                see above the result table.
+
+                                Simple SELECT statements can be represented as:</p>
+                            <img src="img/db65.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* Use * to fetch all attributes from table. It is equivalent to specifying all columns.
+                            </p>
+                            <strong>
+                                SELECT * FROM Employee
+                            </strong>
+                            <p>* Use comma seperated attribute names to fetch specific columns from the input table.</p>
+                            <strong>
+                                SELECT Id, EName, Salary FROM Employee
+                            </strong>
+                            <p>* Aliases are used to change column names in result. They must be provided immediately
+                                after an aliased column.</p>
+                            <strong>
+                                SELECT Id EmpId, EName EmpName, Salary FROM Employee
+                            </strong>
+                            <p>* An optional AS keyword can be provided between the alias and the aliased column.</p>
+                            <strong>SELECT Id AS EmpId, EName AS EmpName, Salary FROM Employee</strong>
+                            <p>* Expressions can be used to calculate values.</p>
+                            <strong>
+                                SELECT EName, Salary * 2 AS Double_Salary FROM Employee
+                            </strong>
+                            <p>* A hardcoded value in select clause will appear as an additional column in the result
+                                with the same value on all records.</p>
+                            <strong>
+                                SELECT EName, 30 AS Value FROM Employee
+                            </strong>
+                            <p>Select clause does not remove duplicates from result even if multiple rows have same
+                                values.So we use distince</p>
+                            <p>* Use DISTINCT clause to remove duplicates. Usage of DISTINCT should be avoided as far as
+                                possible as it can lead to performance issues.</p>
+                            <strong>
+                                SELECT DISTINCT Dept FROM Employee
+                            </strong>
+                            <p>* If DISTINCT is used with multiple columns then two rows are considered equal only if
+                                all their columns match.</p>
+                            <strong>
+                                SELECT DISTINCT Dept, Manager FROM EMPLOYEE
+                            </strong>
+                            <p>* DISTINCT must be used immediately after SELECT. Any attempt to use it between columns
+                                will result in error.</p>
+                            <strong>
+                                SELECT Dept, DISTINCT Manager FROM EMPLOYEE- error
+                            </strong>
+                            <p>* Distinct can also be used with NULL columns to remove duplicate NULL values.</p>
+
+                            <h4>Where Clause</h4>
+                            <p>* Use comparison operators to restrict rows. The filter criteria can be on attributes
+                                that are not on the select clause.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE SALARY > 40000
+                            </strong>
+                            <p>* Text values need to be enclosed in single quotes.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE ENAME = 'James Potter'
+                            </strong>
+                            <p>* AND operator can be used to combine multiple conditions when all conditions must
+                                evaluate to true.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE SALARY >= 30000 AND DEPT = 'ETA'
+                            </strong>
+                            <p>* OR operator can be used to combine multiple conditions when only one of the conditions
+                                must evaluate to true.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE SALARY > 75000 OR DEPT = 'ICP'
+                            </strong>
+                            <p>* BETWEEN operator is used to check for values within a range. The result includes both
+                                the boundary values.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE SALARY BETWEEN 30000 and 50000
+                            </strong>
+                            <p>* IN operator is used to check for multiple values of an attribute. It is equivalent to
+                                OR operation on multiple equality condition on the attribute on individual values.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE ID IN (2,3)
+                            </strong>
+                            <p>* If IN clause contains duplicate values then the database server will remove duplicates
+                                before executing the query.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE DEPT IN ('ETA', 'ETA')
+                            </strong>
+                            <p>* NOT operator is used to negate the condition.</p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE ID NOT IN (2,3)
+                            </strong>
+                            <p>* Equal to operator cannot be used to check for NULL values</p>
+                            <strong>
+                                SELECT ID, EName FROM Employee WHERE BONUS = NULL - will get incorrect answer
+                            </strong>
+                            <p>* IS NULL operator is used to check NULL values in columns.</p>
+                            <strong>
+                                SELECT ID, EName FROM Employee WHERE BONUS IS NULL
+                            </strong>
+                            <p>* IS NOT NULL operator is used to check if not null values are present in a column.</p>
+                            <strong>
+                                SELECT ID, EName FROM Employee WHERE BONUS IS NOT NULL
+                            </strong>
+                            <p>* If NULL is used with IN clause then the condition behavior is similar to = NULL (not is
+                                NULL)
+                            </p>
+                            <strong>
+                                SELECT ID, ENAME FROM Employee WHERE BONUS IN (NULL) - incorrect answer as above.
+                            </strong>
+
+                            <p>* CHAR data types are stored with trailing spaces. While filtering them using equality
+                                operator you need not provide trailing spaces.</p>
+                            <strong>
+                                SELECT Id, EName, Designation FROM Employee WHERE Designation = 'PM'
+                            </strong>
+                            <p>All Employee who are project manager as fetched even though trailing space was not
+                                provided in query</p>
+
+                            <p> * Trailing spaces are ignored for CHAR data type.</p>
+                            <strong>
+                                SELECT Id, EName, Designation FROM Employee WHERE Designation = 'PM '
+                            </strong>
+                            <p>Even through query had two trailing spaces and database had 1, still all project managers
+                                are fetched.</p>
+
+                            <p> * Leading spaces are not ignored for CHAR data type. If you use them you will not fetch
+                                any records.</p>
+                            <strong>SELECT Id, EName, Designation FROM Employee WHERE Designation = ' PM'</strong>
+
+                            <p>* You can also filter for VARCHAR2 columns using equality operator.</p>
+                            <strong>SELECT Id, EName, Designation FROM Employee WHERE EName = 'James Potter'</strong>
+                            <p>* Trailing spaces are not ignored for VARCHAR2 data type.</p>
+                            <p>* Leading spaces are not ignored for VARCHAR2 data type.</p>
+
+
+                            <h4>LIKE</h4>
+                            <p>LIKE operator is used to match a character pattern. It allows us to use wild cards. SQL
+                                supports two wild cards: '%' which matches with any number of characters and '_' which
+                                matches with exactly one character.
+                                Employee Table</p>
+                            <p>start pattern</p>
+                            <strong>SELECT ID, ENAME FROM Employee WHERE ENAME LIKE 'E%'</strong>
+                            <p>end pattern</p>
+                            <strong>SELECT ID, ENAME FROM Employee WHERE ENAME LIKE '%r'</strong>
+                            <p>Any where pattern</p>
+                            <strong>SELECT ID, ENAME FROM Employee WHERE ENAME LIKE '%m%'
+                            </strong>
+                            <p>Dates end pattern</p>
+                            <strong>SELECT ID, ENAME, DOJ FROM Employee WHERE DOJ LIKE '%14'</strong>
+                            <p>fixed pattern</p>
+                            <strong>SELECT ID, ENAME, DOJ FROM Employee WHERE DOJ LIKE '__-___-__'</strong>
+                            <p>mixed pattern</p>
+                            <strong>SELECT ID, ENAME FROM Employee WHERE ENAME LIKE '_a%'</strong>
+
+                            <h5>errors:</h5>
+                            <p>If the WHERE clause has multiple conditions on the same column name then it has to be
+                                specified in each condition. Shortcut version allowed by some languages is not
+                                permitted.</p>
+                            <p>SELECT ID, EName FROM Employee WHERE Designation = 'PM' OR 'SE' - error</p>
+                            <p>If WHERE clause has multiple conditions on same column then the column name must be
+                                specified in all the conditions.</p>
+                            <strong>SELECT ID, EName FROM Employee WHERE Designation = 'PM' OR Designation =
+                                'SE'</strong>
+
+                            <h4>Order of Query Execution</h4>
+                            <p>A SELECT statement can have many clauses so it is important to understand the order in
+                                which these are executed to provide the result. However, for ease of understanding we
+                                can refer to the execution order by FJWGHSDO.</p>
+                            <img src="img/db66.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>A quick way to remember this is to use the mnemonic "Frank John's Wicked Grave Haunts
+                                Several Dull Owls". In this section we will focus on FROM, WHERE, SELECT and DISTINCT
+                                keywords.</p>
+                            <p>The first step is always the FROM clause as we need to identify the tables from which
+                                data has to be fetched.</p>
+                            <p>SELECT must be always be executed after the WHERE clause,</p>
+                            <p>DISTINCT removes duplicates based on all columns of the SELECT clause. These columns
+                                could be a subset of all columns of the table OR may even contain derived columns
+                                through the use of an expression. Thus DISTINCT is dependent on SELECT clause and it's
+                                execution must happen after SELECT clause.</p>
+
+                            <h4>Update Statement Syntax</h4>
+                            <p>Update statement is used to modify existing rows in a single table in a relational
+                                database. Update statement can be represented as:</p>
+                            <img src="img/db67.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>The database system ensures that no constraints are violated during execution of an
+                                update statement. Any violation of constraints results in failure of the statement.</p>
+                            <p>* The UPDATE statement without the WHERE clause is used to UPDATE all rows in a table.
+                                This is rarely used in real life scenarios.</p>
+                            <strong>UPDATE Employee SET SALARY = SALARY * 1.10</strong>
+                            <p>* The UPDATE statement with the WHERE clause is used to UPDATE only those rows that
+                                satisfy the filter criteria.</p>
+                            <strong>UPDATE Employee SET SALARY = SALARY * 1.20 WHERE ID = 2
+                            </strong>
+                            <p>* Multiple columns can be updated in a single UPDATE statement.</p>
+                            <strong>UPDATE Employee SET SALARY = SALARY * 1.3, BONUS = SALARY * 0.30 WHERE ID =
+                                1</strong>
+                            <p>* The UPDATE statement fails if the same column is updated multiple times in the same
+                                statement.</p>
+                            <strong>UPDATE Employee SET SALARY = 100, SALARY = 200 WHERE ID = 1</strong>
+                            <p>UPDATE fails as salary is being updated with 2 values in the same statement.\",</p>
+                            <p>* Just like a SELECT query, there is no limit to filter conditions that can be provided
+                                in the WHERE clause.</p>
+                            <strong>UPDATE Employee SET SALARY = SALARY * 1.40 WHERE DESIGNATION = 'SE' OR DEPT =
+                                'ETA'</strong>
+                            <p>* Value of a column with a NOT NULL constraint cannot be updated to NULL.</p>
+                            <p>UPDATE Employee SET ENAME = NULL WHERE ID = 1 - error</p>
+                            <p>* All columns in a table including the PRIMARY KEY can be updated using UPDATE statement.
+                            </p>
+                            <strong>UPDATE Employee SET ID = 6 WHERE ID = 5</strong>
+                            <p>* The UPDATE statement fails when the primary key constraint is violated.</p>
+                            <p>* The UPDATE statement fails when the check constraint is violated.</p>
+                            <p>* The UPDATE statement fails when the unique constraint is violated.</p>
+                            <p>* Any attempt to UPDATE a record with values that do not exist in the referenced table
+                                will result in a failure</p>
+                            <p>* UPDATE statement fails if any attempt is made to UPDATE a value in the master table
+                                that is referenced in child tables.</p>
+
+                            <h4>Delete Statement Syntax</h4>
+                            <p>DELETE statement is used to delete records from a single table in a relational database.
+                                The database system ensures that no constraints are violated during the execution of a
+                                delete statement. Any violation of constraints results in failure of the statement.</p>
+                            <img src="img/db68.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>TRUNCATE statement can also be used to delete data from tables. TRUNCATE statement
+                                deletes all records from the table as it does not support WHERE clause. TRUNCATE
+                                statement is a faster option compared to DELETE when you have to delete all records from
+                                the table.</p>
+
+                            <p>* Delete statement with WHERE clause is used to delete those rows that meet the filter
+                                criteria.</p>
+                            <strong>DELETE FROM Employee WHERE Id = 5;</strong>
+                            <p>* Multiple rows can be deleted using a single delete statement. multiple row filter</p>
+                            <strong>DELETE FROM Employee WHERE Dept ='ETA' and Manager = 2;</strong>
+                            <p>* Any attempt to delete a record that violates the foreign key results in a failure.</p>
+                            <p>DELETE FROM Computer WHERE COMPID=1001;</p>
+                            <p>ORA-02292: integrity constraint (WAL355923.SYS_C0010144629) violated - child record
+                                found.
+                                Delete fails as computer with id 1001 is already been assigned to employee James Potter.
+                            </p>
+                            <p>* Delete statement will remove all rows of a table if it is used without a where clause.
+                            </p>
+                            <strong>DELETE FROM Employee;</strong>
+
+                            <h4>Error Codes</h4>
+                            <p>Whenever you perform a database operation for e.g. insert, update etc. you get a status
+                                code from the server indicating whether the operation was successful or not and the
+                                reason for the failure if any. In addition a descriptive message is also provided. Let
+                                us quickly recap on some of the codes you have encountered so far.</p>
+                            <img src="img/db69.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>These status codes and messages are published in a reference document.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                            Functions
+                        </button>
+                    </h2>
+                    <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>SQL provides many built-in functions in order to accomplish many tasks. Some of the
+                                commonly used built-in functions are:</p>
+                            <p>Numeric functions,Character functions,Conversion functions,Date functions,Aggregate
+                                functions,Miscellaneous functions</p>
+                            <p>While multi-row functions are common across databases, each database provides a set of
+                                single-row functions to operate on the data. In this course, you will learn about some
+                                of the single-row functions provided in Oracle database.</p>
+                            <p>SQL functions are built in modules provided by a database. You can use them in data
+                                manipulation statements to perform calculations on data.</p>
+                            <p>All functions return a single value. They are categorized into two types based on number
+                                of rows they operate upon.</p>
+                            <img src="img/db70.jfif" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/db71.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <h5>Numeric Functions</h5>
+                            <img src="img/db72.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <strong>SELECT City, MinTemp, CEIL(MinTemp) AS "Ceiling", FLOOR(MinTemp) AS "Floor",
+                                ABS(MinTemp) as "Absolute" FROM Weather;</strong>
+                            <strong>SELECT City, MinTemp, ROUND(MinTemp) as "Round", ROUND(MinTemp,1) as "RoundTo1Digit"
+                                FROM Weather;</strong>
+                            <h5>Character Functions</h5>
+                            <img src="img/db73.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <strong>SELECT City, LENGTH(City) "LENGTH", LOWER(City) "LOWERCASE", UPPER(City) "UPPERCASE"
+                                FROM Weather;</strong>
+                            <strong>SELECT City, Country, CONCAT(City, Country) "CONCAT", City || Country
+                                "ConcatByOperator", CONCAT(CONCAT(City, ', '), Country) "NestedConcat" FROM
+                                Weather;</strong>
+                            <img src="img/db74.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <img src="img/db75.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <strong>SELECT City, SUBSTR(City,1,4) FIRST4, SUBSTR(City,2,10) TEN_FROM_2, SUBSTR(City,3)
+                                ALL_FROM_3, SUBSTR(City,7, 2) TWO_FROM_7 FROM Weather;</strong>
+                            <strong>SELECT RecordDate, SUBSTR(RecordDate,1,2) "DAY", SUBSTR(RecordDate,4,3) "MONTH",
+                                SUBSTR(RecordDate,8) "YEAR" FROM Weather;</strong>
+
+                            <h4>Conversion Functions</h4>
+                            <img src="img/db76.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* Use TO_CHAR to format a number by adding comma at specific locations, adding currency
+                                symbols, determining the number of digits before and after decimal.</p>
+                            <strong>SELECT MinTemp, TO_CHAR(MinTemp) DEF_FORMAT, TO_CHAR(MinTemp, '999.99')
+                                "FIXED_DIGITS", TO_CHAR(MinTemp, '9,9.99') "COMMA" FROM Weather;</strong>
+                            <img src="img/db77.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* Use TO_NUMBER to convert a number string into a number. The format, if provided, is
+                                used to parse the input i.e. the output is not formatted.</p>
+                            <strong>SELECT '1000.98' "ORIG_NOFORMAT", TO_NUMBER('1000.98') "CONV_NOFORMAT", '1,000.98'
+                                "ORIG_FORMAT", TO_NUMBER('1,000.98', '9,999.99') "CONV_FORMAT" FROM DUAL;</strong>
+                            <img src="img/db78.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* You can use TO_CHAR with dates to extract date parts like Date, Month, Year.</p>
+                            <strong>SELECT RecordDate, TO_CHAR(RecordDate, 'MON') "MONTH", TO_CHAR(RecordDate, 'Month')
+                                "FULL_MONTH", TO_CHAR(RecordDate, 'Dy') "DAY", TO_CHAR(RecordDate, 'Day') "FULL_DAY"
+                                FROM Weather;</strong>
+                            <img src="img/db79.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* TO_CHAR can also be used to format dates in your desired format.</p>
+                            <strong>SELECT TO_CHAR(RecordDate) DEF_FORMAT, TO_CHAR(RecordDate, 'DD/MM/CCYY') INDIAN,
+                                TO_CHAR(RecordDate, 'MM/DD/YY') AMERICAN FROM Weather;</strong>
+                            <img src="img/db80.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* Use TO_DATE to convert a formatted date string to a date. The format is used only for
+                                parsing the input. Format string is not required if date string is in valid Oracle
+                                format.</p>
+                            <strong>SELECT '01-Jan-2014' DATE_STRING, TO_DATE('01-Jan-2014') CONV_NOFORMAT,
+                                TO_DATE('01-Jan-2014', 'DD-Mon-YYYY') CONV_FORMAT FROM DUAL</strong>
+                            <img src="img/db81.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* Format string must be used with TO_DATE if date string is not in default Oracle format.
+                            </p>
+                            <strong>SELECT 'Jan-01-2014' DATE_STRING, TO_DATE('Jan-01-2014', 'Mon-DD-YYYY') CONV_FORMAT
+                                FROM DUAL</strong>
+                            <img src="img/db82.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* If date string is not in default Oracle format then TO_DATE function will give error if
+                                used without format string.</p>
+                            <p>SELECT 'Jan-01-2014' DATE_STRING, TO_DATE('Jan-01-2014') CONV_NOFORMAT FROM DUAL - error
+                            </p>
+
+
+                            <h4>Date Functions</h4>
+                            <img src="img/db83.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* SYSDATE</p>
+                            <strong>SELECT SYSDATE, SYSTIMESTAMP FROM DUAL;</strong>
+                            <p>* Add months</p>
+                            <strong>SELECT RECORDDATE, ADD_MONTHS(RECORDDATE, 1) "NEXT_MONTH" FROM Weather;</strong>
+                            <img src="img/db84.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <p>* months difference</p>
+                            <strong>SELECT MONTHS_BETWEEN('01-Feb-2014', '01-Jan-2014') "MONTH_DIFF1",
+                                MONTHS_BETWEEN('10-Jan-2014', '01-Jan-2014') "MONTH_DIFF2" FROM DUAL;</strong>
+
+
+                            <h4>Aggregate Functions</h4>
+                            <p>Aggregate functions operate on multiple rows to return a single row. Some aggregate
+                                functions like SUM (total), AVG (average) operates only on numeric columns while others
+                                like MIN (lowest value), MAX (highest value) and COUNT (number of rows) operate on all
+                                data types. All aggregate functions ignore NULL values except COUNT(*).</p>
+                            <p>* Use MIN, MAX and SUM functions to calculate lowest, highest and total of a set of
+                                values.</p>
+                            <strong>SELECT MIN(Salary), MAX(Salary), SUM(Salary) FROM Employee</strong>
+                            <p>* Use COUNT function to calculate the number of rows returned by a query.</p>
+                            <strong>SELECT COUNT(ID) COUNT_ID, COUNT(*) COUNT_STAR, COUNT(Bonus) COUNT_BONUS FROM
+                                Employee</strong>
+                            <p>* Use DISTINCT with COUNT function to get a count of unique values for a column. Similary
+                                DISTINCT can also be used with other aggregate functions.</p>
+                            <strong>SELECT COUNT(Dept) Count1, COUNT(DISTINCT Dept) Count2 FROM Employee</strong>
+                            <p>* AVG function can be treated as SUM / COUNT. It does not consider rows with null values
+                                for calculation.</p>
+                            <strong>SELECT AVG(Salary) AvgSalary, AVG(Bonus) AvgBonus1, SUM(Bonus) / Count(Bonus)
+                                AvgBonus2 FROM Employee</strong>
+
+
+                            <h4>Miscellaneous Functions</h4>
+                            <img src="img/db85.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* Use NVL to replace missing data with default value.</p>
+                            <strong>SELECT CITY, NVL(CITY, 'Not Available') NVL_CITY, MINTEMP, NVL(MINTEMP, 0.0)
+                                NVL_MINTEMP, NVL(TO_CHAR(MINTEMP), 'Not Available') NVL_MINTEMP2 from Weather;</strong>
+                            <img src="img/db86.jpg" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>* Use USER function to determine the current logged in user.</p>
+                            <strong>SELECT USER FROM DUAL;</strong>
+
+
+                            <h1>Case Statement Syntax</h1>
+                            <p>CASE statement can be used in SELECT clause to conditionally assign values to a computed
+                                attribute. It can also be used with WHERE, GROUP BY etc. CASE statement has two
+                                different syntax styles: Simple CASE expression and Searched CASE expression. Both of
+                                them are similar to if else statement in Java.</p>
+                            <p>(1) Simple CASE expression :</p>
+                            <img src="img/db87.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <pre>
+<code>
+    Pseudo code:
+
+    if designation == 'SE'
+        salary = salary * 1.2
+    else if designation == 'SSE'
+        salary = salary * 1.1
+    else
+        salary = salary * 1.05
+</code>
+</pre>
+                            <p>The CASE statement goes through conditions and returns a value when the first condition
+                                is met (like an IF-THEN-ELSE statement). So, once a condition is true, it will stop
+                                reading and return the result. If no conditions are true, it returns the value in the
+                                ELSE clause.</p>
+                            <p>We can use the first syntax form when all conditions check for equality against a single
+                                column.</p>
+                            <p>(2) Searched CASE expression :</p>
+                            <img src="img/db88.PNG" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <pre>
+<code>
+    Pseudo code:
+
+    if marks >= 85
+        grade = 'Excellent'
+    else if marks >= 65
+        grade = 'Good'
+    else
+        grade = 'Poor'
+</code>
+</pre>
+                            <p>We can use the second syntax form to compare different conditions.</p>
+                            <p>NOTE: ELSE is optional. If ELSE is omitted and no condition is true, then NULL is
+                                returned by CASE.</p>
+
+                            <p>* equality</p>
+                            <p>The query below displays the new salary after applying different salary hikes to
+                                employees based on their designation.</p>
+                            <pre>
+<code>
+<strong>
+    SELECT Id, EName, Designation, Salary, 
+    CASE Designation 
+        WHEN 'SE' THEN Salary * 1.2 
+        WHEN 'SSE' THEN Salary * 1.1 
+        ELSE Salary * 1.05 
+    END New_Salary 
+    FROM Employee;
+</strong>
+</code>
+</pre>
+                            <p>*Expression</p>
+                            <p>The query below displays the bonus of employees based on their designations.</p>
+                            <pre>
+<code>
+<strong>
+    SELECT EName, Designation, Bonus, 
+    CASE  
+        WHEN Designation = 'SE' THEN Bonus + 500 
+        WHEN Designation = 'SSE' THEN Bonus + 1000  
+        WHEN Designation = 'PM' THEN Bonus + 2000 
+        ELSE  Bonus 
+    END AS NewBonus 
+    FROM Employee;
+</strong>
+</code>
+</pre>
+
+                            <p>* Multiple Conditions</p>
+                            <p>Any comparison operator can be used to compare the conditions and any logical operators
+                                can be used to combine the conditions.</p>
+                            <pre>
+<code>
+<strong>
+    SELECT Id, EName, Designation, Salary, 
+    CASE 
+        WHEN Designation = 'SE' OR Designation = 'SSE' THEN TO_CHAR(Salary * 1.2) 
+        WHEN Designation = 'PM' AND Salary >= 90000 THEN 'No hike' 
+        ELSE TO_CHAR(Salary * 1.05 ) 
+    END New_Salary 
+    FROM Employee;
+</strong>
+</code>
+</pre>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                            Sorting Data
+                        </button>
+                    </h2>
+                    <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Order By</h4>
+                            <p>When you write any select query to retrieve the information from the tables, it just
+                                retrieves the information based on the defined select query. It does not give the
+                                guarantee of the order of rows in the output. Therefore it is possible that the same
+                                query can give the same output having the different order of rows in it.</p>
+                            <p>There might be a requirement to display the output in either ascending or descending
+                                order for e.g. displaying the student's details based on their decreasing marks,
+                                displaying the employee's details based on their increasing salary etc.
+
+                                In order to display the rows in sorted order, SQL has one clause called the ORDER BY
+                                clause.</p>
+                            <p>Order By clause is used to sort the result of a query in a particular order. Before we
+                                understand the syntax of ORDER BY, let us understand the sorting process on tabular
+                                data. Data in a single column can be sorted in ascending or descending order.</p>
+                            <p>We can also sort data by multiple columns. In such case data is sorted on the primary
+                                (first) column first. Sorting on the secondary column happens only when multiple rows
+                                have the same value in the primary column. The sort order can be different for the two
+                                columns i.e. primary can be sorted in ascending and secondary in descending and
+                                vice-versa. This two column sorting mechanism can be extended to any number of columns.
+                            </p>
+                            <img src="img/db89.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+
+                            <h5>ORDER BY Syntax</h5>
+                            <p>ORDER BY must be used to specify the columns on which data has to be sorted and the sort
+                                order i.e. ascending or descending. Rows are sorted in ascending order if sort order is
+                                not specified. DESC should be used to sort the rows in descending order. ORDER BY clause
+                                must be the last clause and can be used only in SELECT statement. The sort order only
+                                applies to the query result i.e. the underlying data in the table is not sorted.</p>
+                            <img src="img/db90.png" alt="" class="img-thumbnail img-fluid d-block img-size">
+                            <p>An important point to note is that sorting of rows in the result is guaranteed only on
+                                columns specified in the ORDER BY clause. If multiple rows have same value for columns
+                                in ORDER BY clause then they can appear in any order.</p>
+
+                            <p>* Data is sorted in Ascending Order if the sort order is not specified</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY
+                                SALARY</strong>
+                            <p>* You can sort the result based on any data type</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY DEPT
+                                ASC</strong>
+                            <p>* Use DESC keyword after the column name to sort result in descending order</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY DOJ
+                                DESC</strong>
+                            <p>* Provide comma separated any number of columns in Order by clause to sort on multiple
+                                columns</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY DEPT,
+                                DESIGNATION</strong>
+                            <p>* Each column in ORDER BY clause can have its own sort order, ascending or descending</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY DEPT ASC,
+                                DESIGNATION DESC</strong>
+                            <p>* Column position in the query can be used as an alternative to column name in ORDER BY
+                                clause</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, DEPT, DESIGNATION FROM Employee ORDER BY 2</strong>
+                            <p>* The column being sorted need not be present in the SELECT clause</p>
+                            <strong>Select ID, ENAME, DOJ, DEPT, DESIGNATION FROM Employee ORDER BY SALARY</strong>
+                            <p>* Order By clause must be the last clause in the query.</p>
+                            <p>* You can specify ORDER BY on columns that contain NULL values.</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, BONUS, DEPT, DESIGNATION FROM Employee ORDER BY
+                                BONUS</strong>
+                            <p>NULL is treated as highest value and appears at the end.</p>
+                            <p>* You can specify ORDER BY DESC on columns that contain NULL values.</p>
+                            <strong>Select ID, ENAME, DOJ, SALARY, BONUS, DEPT, DESIGNATION FROM Employee ORDER BY BONUS
+                                DESC</strong>
+                            <p>Since NULL is treated as highest value it now appears at the top.</p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                            Group By Having
+                        </button>
+                    </h2>
+                    <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Group By</h4>
+                            <p>We know that aggregate functions are being used to calculate min, max, avg etc. for all
+                                records of the query. What if the requirement is to calculate subtotals at Department
+                                level? In that case, we will have to run the query once for every department. Is there a
+                                better way to achieve this functionality?</p>
+                            <p>We can use GROUP BY to achieve such results using a single query. GROUP BY groups the
+                                data from the table into different groups based on the criteria provided and calculates
+                                the aggregate function for each group. Thus the result has 1 row for each group.</p>
+                            <img src="img/db91.png" alt="">
+                            <p>* Without Group By Aggregate function produces 1 row for all the rows selected by a
+                                query.</p>
+                            <strong>SELECT Count(ID) FROM Employee;</strong>
+                            <p>* Use Group By clause to get department wise employee count.</p>
+                            <strong>SELECT Dept, Count(ID) FROM Employee GROUP BY Dept;</strong>
+                            <p>* Group By converts the entire rows in a group into a single row in result. You cannot
+                                fetch details from individual rows in a category. Let us try to fetch count and names of
+                                employees in each department.</p>
+                            <p>SELECT Dept, ENAME, Count(ID) FROM Employee GROUP BY Dept; - error</p>
+                            <p>* Group By can also be used with multiple columns. In that case it treats each distinct
+                                combination of the columns as a single category. Let us display maximum salary paid to
+                                each designation, within each department.</p>
+                            <strong>SELECT Dept, Designation, MAX(Salary) FROM Employee GROUP BY Dept,
+                                Designation;</strong>
+                            <p>* You can use multiple aggregate functions in the same query as long as category for
+                                grouping is the same.</p>
+                            <strong>SELECT Dept, MIN(SALARY), MAX(Salary) FROM Employee GROUP BY Dept;</strong>
+                            <p>* You can nest aggregate functions up to maximum of 2 levels using Group By clause.</p>
+                            <strong>SELECT MAX(AVG(Salary)) FROM Employee GROUP BY dept;</strong>
+                            <p>* You can use GROUP BY with columns that contain NULL values.</p>
+                            <strong>SELECT Bonus, Count(*) FROM Employee GROUP BY Bonus</strong>
+                            <p>Aggregate function for NULL value is also computed along with aggregates for other
+                                values.</p>
+
+                            <h4>Having</h4>
+                            <p>We saw how to use GROUP BY in conjunction with aggregate functions to get summary of data
+                                category wise. What if we want to filter this summary? For e.g. if we want to fetch only
+                                those departments whose average salary of their employees is greater than a specific
+                                value.</p>
+                            <p>This can be achieved using HAVING clause. Having allows aggregate functions to be used as
+                                filter criteria which cannot be done using WHERE clause.</p>
+                            <strong>SELECT DEPT, SUM(Salary) FROM Employee GROUP BY DEPT HAVING SUM(Salary) >
+                                90000;</strong>
+                            <h4>Order of Query Execution</h4>
+                            <img src="img/db92.png" alt="">
+                            <p>GROUP BY must always be after the WHERE clause otherwise aggregate functions will be
+                                calculated wrongly.</p>
+                            <p>Having must always be after Group by as it filters records based on aggregate functions
+                                calculated during GROUP BY evaluation</p>
+                            <p>SELECT clause must be evaluated after Group By and Having because displaying attributes
+                                not used in GROUP BY are not allowed in SELECT clause. It can only filter columns from
+                                the grouped resultset</p>
+                            <p>ORDER BY must always be the last step in query execution as it depends on input from
+                                other clauses.</p>
+
+                            <h4>Group By Errors</h4>
+                            <p>* Aggregate functions cannot be used in WHERE clause.</p>
+                            <p>SELECT Id, EName, Salary, Dept FROM Employee E1 WHERE Salary = MAX(Salary) - error</p>
+                            <p>* Aggregate functions cannot be used in WHERE clause even if GROUP BY is used.</p>
+                            <p>SELECT DEPT, SUM(Salary) FROM Employee WHERE SUM(Salary) > 90000 GROUP BY DEPT -error</p>
+                            <p>* Nested aggregate function cannot be used in SELECT clause without GROUP BY clause.</p>
+                            <p>SELECT MAX(AVG(Salary)) FROM Employee - error</p>
+                            <p>** Order By cannot be used on columns on which Grouping is not being done.</p>
+                            <p>SELECT Dept, SUM(Salary) FROM Employee GROUP BY Dept ORDER BY Designation</p>
+                            <p>The query fails as Designation column is not used in GROUP BY clause.</p>
+
+
+                            <h4>Do's and Dont's for Group By Having</h4>
+                            <h5>Do’s for Group by and Having clauses:</h5>
+                            <ol>
+                                <li>GROUP BY clause should contain all non-aggregate columns that are present in SELECT
+                                    clause</li>
+                                <li>GROUP BY clause should be mandatory when there is a list of aggregate and
+                                    non-aggregate columns in SELECT statement</li>
+                                <li>Whenever nested aggregate columns appear in the SELECT clause, GROUP BY clause
+                                    should be mandatorily used</li>
+                                <li>HAVING cannot be written without the GROUP BY clause in the query</li>
+                                <li>Aggregate column condition(s) should always be written along with the HAVING clause
+                                    and not with the WHERE clause</li>
+                            </ol>
+                            <h5>Don’ts for Group by and Having clauses:</h5>
+                            <p>1)Columns from the list of the SELECT clause should not be skipped in the GROUP BY
+                                clause. However, you can add an extra non-aggregate column which is not present in the
+                                SELECT to the GROUP BY clause</p>
+                            <p>2)GROUP BY clause should not contain any aggregate columns</p>
+                            <p>3)Aliased name given for the column should not be used in GROUP BY clause</p>
+                            <p>4)HAVING clause should not contain non-aggregate columns which are not present in the
+                                GROUP BY clause</p>
+                            <p>If the query does not adhere to these points, either it gives syntax error or it may
+                                result in a wrong output.</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                            Combining Data
+                        </button>
+                    </h2>
+                    <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>What if the requirement is to fetch the details from the same or from the different
+                                tables based on some conditions. for e.g. fetch the details of the employees along with
+                                their allocated computer details or fetch the computer id from the employee as well as
+                                from the computer tables in a single output table. </p>
+                            <p>In order to get the details from multiple tables or from the same table based on some
+                                conditions in a single output table, SQL provides the concepts of Unions and Joins.</p>
+                            <h4>Union Syntax</h4>
+                            <p>Use UNION or UNION ALL clauses to combine results of two or more SELECT statements. The
+                                select statements may be on the same or different tables. They must have the same number
+                                of columns and their data types of columns at the same position in the queries must be
+                                compatible (either same or convertible through automatic conversion).
+                            </p>
+                            <p>UNION removes all duplicates from the result. Two records are considered duplicates if
+                                values at corresponding positions of all their columns match.</p>
+                            <img src="img/db93.png" alt="">
+                            <p>* Use UNION to combine data from two SELECT statements and remove duplicates.</p>
+                            <strong>SELECT CompId FROM Employee UNION SELECT CompId FROM Computer</strong>
+                            <p>* UNION ALL does not remove duplicates.</p>
+                            <strong>SELECT CompId FROM Employee UNION ALL SELECT CompId FROM Computer</strong>
+                            <p>* The number of columns in both SELECT statements must be the same.</p>
+                            <p>* Data Type of columns at same position in both SELECT statements must be the same.</p>
+                            <p>* UNION clause does not guarantee the order in which rows from both SELECT statements
+                                will appear in the final result. You can use ORDER BY to sort the final result. ORDER BY
+                                clause can be placed only once and it must be at the end of second SELECT statement.</p>
+                            <strong>SELECT CompId FROM Employee UNION SELECT CompId FROM Computer ORDER BY
+                                CompId</strong>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc11" aria-expanded="false" aria-controls="fc11">
+                            Joins
+                        </button>
+                    </h2>
+                    <div id="fc11" class="accordion-collapse collapse" aria-labelledby="fh11"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Join Introduction</h4>
+                            <p>How to fetch data from multiple tables in a single query? Let us say we have a
+                                requirement to display employee id, employee name along with computer id, model of the
+                                computer allocated to the employee in a single tabular format. The input tables and
+                                sample output is provided below:</p>
+                            <img src="img/db94.png" alt="">
+                            <p>These requirements can be met using JOINS which can combine data from multiple tables.
+                                JOINs are of multiple types:</p>
+                            <img src="img/db95.png" alt="">
+                            <p>In addition, we also have Cross Join also called Cartesian product which is of academic
+                                interest only and is rarely used.
+
+                                Let us understand these joins one by one.</p>
+
+                            <h4>Cross Join</h4>
+                            <p>CROSS Join is also referred to as Cartesian Product. A CROSS join with m rows in table A
+                                and n rows in table B will always produce m * n rows. Essentially it combines each row
+                                from the first table with each row of the second table. A cross join is rarely used as
+                                it mostly produces lot of meaningless data.</p>
+                            <strong>SELECT E.ID, E.ENAME, E.COMPID AS E_COMPID, C.COMPID, C.Model
+                                FROM Employee E CROSS JOIN Computer C</strong>
+
+                            <h4>Inner Join</h4>
+                            <p>INNER Join is the most frequently used JOIN. It matches the records from both tables
+                                based on the join predicate and returns only the matched rows. For ease of understanding
+                                one can think that first a Cartesian Product is created and then all the rows that do
+                                not meet the join condition are dropped from the result. Inner join also has a short
+                                hand syntax given its wide use.</p>
+                            <strong>SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL
+                                FROM Employee E INNER JOIN Computer C ON E.COMPID = C.COMPID</strong>
+                            <h4>Inner Join with condition</h4>
+                            <p>While using Inner Joins we might have requirements to filter rows based on some condition
+                                e.g. a need to fetch all employees from ETA who are allocated a computer. The filter
+                                condition can be supplied in two ways when using ANSI syntax ( t1 INNER JOIN t2 ON
+                                condition).</p>
+                            <p>Option 1: Using a WHERE clause</p>
+                            <img src="img/db96.png" alt="">
+                            <p>The query is evaluated using a two-step process:</p>
+                            <p>Step 1. Two tables are joined using join condition and resultset is evaluated</p>
+                            <p>Step 2. Filter condition in WHERE clause is applied on all the rows of the resultset to
+                                give the final result</p>
+                            <p>Option 2: Combining with the join condition using AND operator</p>
+                            <img src="img/db97.png" alt="">
+                            <p>Here the query is evaluated in a single step as the filter condition is applied right at
+                                the time of join condition evaluation.</p>
+                            <p>Note:-Both these query versions give identical results for INNER joins.</p>
+                            <p>* inner join - where condition</p>
+                            <p>The query below displays employees from ETA department who are allocated a computer.</p>
+                            <strong>SELECT Id, EName, E.CompId AS E_CompId, C.CompId AS C_CompId, Model FROM Employee E
+                                INNER JOIN Computer C ON E.CompId = C.CompId WHERE Dept = 'ETA'</strong>
+                            <p>* inner join - and condition</p>
+                            <p>Even if the filter is provided along with join condition, the query still displays
+                                employees from ETA department who are allocated a computer.</p>
+                            <strong>SELECT Id, EName, E.CompId AS E_CompId, C.CompId AS C_CompId, Model FROM Employee E
+                                INNER JOIN Computer C ON E.CompId = C.CompId AND Dept = 'ETA'</strong>
+
+                            <h4>Self Join</h4>
+                            <p>SELF Join represents join of a table with itself. In this example we use inner self join
+                                to retrive employee's manager name. The Cartesian product of Employee table with itself
+                                will contain 5 x 5 = 25 rows. However only three rows have manager matching id and these
+                                appears on the result.</p>
+                            <strong>SELECT EMP.ID EMPID, EMP.ENAME EMPNAME, MGR.ID MGRID, MGR.ENAME MGRNAME
+                                FROM Employee EMP INNER JOIN Employee MGR ON EMP.MANAGER = MGR.ID </strong>
+                            <img src="img/db98.jpg" alt="">
+
+                            <h4>Left Outer Join</h4>
+                            <p>LEFT OUTER Join for tables A and B will always return all records from table A even if
+                                matching record is not found in table B as per the join condition. For records where
+                                match is found the result set is exactly same as the inner join result. However for non
+                                matching records all columns from table B appear as NULL in the result. Let us
+                                understand this join using Employee and Computer tables:
+                            </p>
+                            <strong>SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL
+                                FROM Employee E LEFT OUTER JOIN Computer C ON E.COMPID = C.COMPID</strong>
+
+                            <h5>Left Outer Join with condition</h5>
+                            <p>Left Outer Join is used to fetch all rows from a main table and some additional
+                                information from a lookup table using join condition. Unlike INNER JOINs additional
+                                conditions have to be supplied carefully depending upon the business requirement.</p>
+                            <p>If the objective is to filter all records from the resultset then the filter condition
+                                must be supplied through the WHERE clause, e.g. a need to show employee details and
+                                model of their allocated computer for all employees who belong to 'ETA'.</p>
+                            <img src="img/db99.png" alt="">
+                            <p>However care must be taken that this filter condition is using an attribute from the main
+                                table. Any attempt to filter (except check for NULL) using attribute from lookup table
+                                will result in wrong output as all NULL rows will get filtered and the purpose of using
+                                OUTER join will get defeated.</p>
+                            <p>If we want to conditionally fetch values from the lookup table then the additional
+                                criteria must be combined with the join condition using AND operator, e.g. a need to
+                                show details of all employees and in addition model of allocated computer for only those
+                                employees who are allocated a computer manufactured in '2014'.</p>
+                            <img src="img/db100.png" alt="">
+                            <p>Main table - where condition</p>
+                            <p>* This query fetches details of all employees from ETA. In addition it retrieves model
+                                information for employees from ETA department who have computer allocated to them.</p>
+                            <strong>SELECT Id, EName, Dept, E.CompId AS E_CompId, C.CompId AS C_CompId, Model FROM
+                                Employee E LEFT OUTER JOIN Computer C ON E.CompId = C.CompId WHERE Dept = 'ETA'</strong>
+                            <p>James Potter's computer details are not shown even though he is allocated a computer
+                                because he is not from ETA department.</p>
+
+                            <p>Main table - and condition</p>
+                            <p>* This query fetches details of all employees. In addition it retrives model information
+                                for employees from ETA department who have computer allocated to them.</p>
+                            <strong>SELECT Id, EName, Dept, E.CompId AS E_CompId, C.CompId AS C_CompId, Model FROM
+                                Employee E LEFT OUTER JOIN Computer C ON E.CompId = C.CompId AND Dept = 'ETA'</strong>
+                            <p>James Potter's computer details are not shown even through he is allocated a computer
+                                because he is not from ETA department.</p>
+
+                            <p>LookUP table - where condition</p>
+                            <p>This query uses an LEFT OUTER join and should fetch all rows from Employee table. However
+                                due to erroneous usage of WHERE clause on lookup table attribute, all rows for Employee
+                                who are not allocated any computer does not appear in the result.</p>
+                            <strong>SELECT Id, EName, E.CompId AS E_CompId, C.CompId AS C_CompId, Model, MYear FROM
+                                Employee E LEFT OUTER JOIN Computer C ON E.CompId = C.CompId WHERE MYear =
+                                '2014'</strong>
+                            <p>Ethan and Jack do not appear in the result even though LEFT OUTER JOIN is used and they
+                                are not allocated any computer.</p>
+
+                            <p>LookUP table - and condition</p>
+                            <p>This query fetches details of all employees. In addition it retrieves model information
+                                for computers that are allocated to employees and are manufactured in 2014.</p>
+                            <strong>SELECT Id, EName, E.CompId AS E_CompId, C.CompId AS C_CompId, Model, MYear FROM
+                                Employee E LEFT OUTER JOIN Computer C ON E.CompId = C.CompId AND MYear = '2014'</strong>
+                            <img src="img/db101.jpg" alt="">
+                            <img src="img/db102.jpg" alt="">
+
+                            <h4>Right Outer Join</h4>
+                            <p>RIGHT OUTER Join for tables A and B will always return all records from table B even if
+                                matching record is not found in table A as per the join condition. Right outer join is
+                                the mirror image of left join. In fact it is rarely used because the same resultset can
+                                be obtained by using a left join and reversing the order of the tables in the query.</p>
+                            <strong>SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL
+                                FROM Employee E RIGHT OUTER JOIN Computer C ON E.COMPID = C.COMPID</strong>
+                            <img src="img/db103.jpg" alt="">
+
+                            <h4>Full Outer Join</h4>
+                            <p>FULL OUTER Join combines the effect of both LEFT OUTER JOIN and the RIGHT OUTER JOIN.
+                                Full Outer Join between table A and table B returns matched as well as unmatched rows
+                                from both tables. For two tables with p and q rows, a 1:1 relationship and m matched
+                                rows the total number of rows in the resultset is m + (p - m) + (q - m) = p + q - m.
+                            </p>
+                            <strong>SELECT ID, ENAME, E.COMPID AS E_COMPID, C.COMPID AS C_COMPID, MODEL
+                                FROM Employee E FULL OUTER JOIN Computer C ON E.COMPID = C.COMPID</strong>
+                            <img src="img/db104.jpg" alt="">
+
+                            <h4>Order of Query Execution</h4>
+                            <p>Joins must be evaluated immediately after the FROM clause so that rows from multiple
+                                tables are combined into a single resultset on which various operations like filtering,
+                                grouping, ordering etc can be performed.</p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-center pt-3">Database Management System Part - 2</h2>
+                <hr class="ruler-color" size="5">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc12" aria-expanded="false" aria-controls="fc12">
+                            Subquery
+                        </button>
+                    </h2>
+                    <div id="fc12" class="accordion-collapse collapse" aria-labelledby="fh12"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <p>Subquery is a query inside a query. A subquery should be enclosed in parenthesis and can
+                                be used in SELECT, FROM, WHERE and HAVING clauses.</p>
+                            <img src="img/db105.png" alt="">
+                            <p>Subquery in SELECT and FROM clause are not used often. Subqueries in WHERE and HAVING
+                                clauses are classified into the following:-</p>
+                            <ol>
+                                <li>Independent subquery</li>
+                                <li>Correlated subquery</li>
+                            </ol>
+                            <h5>Subquery in From & Select</h5>
+                            <p>* A subquery in SELECT clause can return a single value (single row and single column).
+                                It should be provided an alias name</p>
+                            <strong>SELECT ID, ENAME, SALARY, (SELECT AVG(SALARY) FROM EMPLOYEE) AS AVGSAL FROM
+                                EMPLOYEE</strong>
+                            <p>* A subquery in FROM clause is also called an Inline View and it should be aliased in the
+                                query</p>
+                            <strong>SELECT * FROM (SELECT ID, ENAME, SALARY FROM Employee) A</strong>
+
+
+                            <h4>Independent Subquery</h4>
+                            <p>In an independent subquery, the inner queries and outer queries are independent of each
+                                other. You can run an inner query and inspect its result independent of the outer query.
+                                Independent subquery is further classified into </p>
+                            <ul>
+                                <li>single row</li>
+                                <li>multiple row</li>
+                            </ul>
+                            <p>types depending upon the number of rows returned.</p>
+                            <img src="img/db106.png" alt="">
+                            <p>* Single row - equality operator</p>
+                            <p>Fetch details of employees who are getting highest salary.</p>
+                            <strong>SELECT Id, EName, Salary, Dept FROM Employee E1 WHERE Salary = (SELECT MAX(Salary)
+                                FROM Employee E2)</strong>
+
+                            <p>* single row - nested function</p>
+                            <p>Display the department in which the maximum total salary is paid to the employees.</p>
+                            <strong>SELECT DEPT FROM Employee GROUP BY DEPT HAVING SUM(Salary) = (SELECT
+                                MAX(SUM(Salary)) FROM Employee GROUP BY Dept);</strong>
+
+                            <p>* multiple row - in operator</p>
+                            <p>Display the details of computer which are allocated to the employees.</p>
+                            <strong>SELECT CompId, Make, Model FROM Computer WHERE CompId IN (SELECT CompId FROM
+                                Employee);</strong>
+
+                            <p>* join equivalent</p>
+                            <p>Independent subquery can be replaced by join if it is used with IN clause to fetch
+                                foreign keys from another table. The JOIN solution for query in example 3 (Multiple Row-
+                                In Operator) is:</p>
+                            <strong>SELECT C.CompId, Make, Model FROM Computer C, Employee E WHERE E.CompId =
+                                C.CompId;</strong>
+
+                            <p>* no subquery equivalent</p>
+                            <p>A Join cannot be replaced by a subquery if it is using columns from both the tables in
+                                SELECT clause. Attributes from subquery tables cannot be accessed in the outer query.
+                            </p>
+                            <strong>SELECT Id, EName, E.CompId, Make FROM Computer C, Employee E WHERE E.CompId =
+                                C.CompId;</strong>
+                            <p>This query cannot be replaced by subquery because attributes from both tables are
+                                retrieved.</p>
+
+                            <p>* subquery mandatory</p>
+                            <p>A Subquery must be used if value of aggregate function is required in where clause.</p>
+                            <strong>SELECT EName,Dept FROM Employee WHERE Salary>(SELECT AVG(Salary) FROM
+                                Employee);</strong>
+                            <p>This query cannot be replaced by join because aggregate function is being used.</p>
+
+
+                            <h4>Correlated Subquery</h4>
+                            <p>A Correlated subquery is the type of query in which the inner query depends upon the
+                                outer query for its execution. Specifically, the inner query uses an attribute from one
+                                of the tables in the outer query. The inner query is executed iteratively for each
+                                selected record of the outer query. In the case of independent subquery, the inner query
+                                just executes once.</p>
+                            <p>Below is a correlated subquery is written, to fetch the details of the employee(s) who
+                                are earning salary more than or same as the average salary earned by employees of the
+                                same designation.</p>
+                            <img src="img/db107.png" alt="">
+                            <p>* single row- aggregate function</p>
+                            <p>Display the details of all employees whose salary is greater than or equal to average
+                                salary of the employees in their own department.</p>
+                            <strong>SELECT Id, EName, DEPT, Salary FROM Employee E1 WHERE Salary >=(SELECT AVG(Salary)
+                                FROM Employee E2 WHERE E1.DEPT = E2.DEPT);</strong>
+
+                            <p>* single row</p>
+                            <p>Display the details of all employees whose salary is greater than their manager’s salary.
+                            </p>
+                            <strong>SELECT Id, EName, DEPT, Salary FROM Employee E WHERE Salary > (SELECT Salary FROM
+                                Employee M WHERE E.Manager = M.ID);</strong>
+
+                            <p>* equivalent join solution</p>
+                            <p>Display the details of all employees whose salary is greater than their manager's salary
+                            </p>
+                            <strong>SELECT E.Id, E.EName, E.DEPT, E.Salary FROM Employee E JOIN Employee M ON E.Manager
+                                = M.Id AND E.Salary > M.Salary;</strong>
+
+                            <p>* exists</p>
+                            <p>EXISTS keyword is used to check presence of rows in the subquery. The main query returns
+                                the row only if at least one row exists in the subquery. EXISTS clause follows short
+                                circuit logic i.e. the query calculation is terminated as soon as criteria is met. As a
+                                result it is generally faster than equivalent join statements.</p>
+                            <strong>SELECT CompId, Make, Model FROM Computer C WHERE EXISTS (SELECT 1 FROM Employee E
+                                WHERE E.CompId = C.CompId);</strong>
+                            <p>EXISTS returns TRUE as soon as condition in WHERE clause evaluates to TRUE.</p>
+
+                            <p>* not exists</p>
+                            <p>NOT EXISTS is opposite of EXISTS i.e. it is used to check absence of rows in the
+                                subquery. The main query returns the row only if at least no row exists in the subquery.
+                                It also uses short circuit logic and is hence faster.</p>
+                            <strong>SELECT CompId, Make, Model FROM Computer C WHERE NOT EXISTS (SELECT 1 FROM Employee
+                                E WHERE E.CompId = C.CompId);</strong>
+                            <p>NOT EXISTS will returns TRUE if the condition in WHERE clause evaluates to FALSE.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--accordioin end div-->
+        </div>
+        <!--maincontent end div -->
+    </div>
+    <!--continer end div -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

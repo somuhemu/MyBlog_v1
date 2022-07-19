@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h5>Create a Context & Provider</h5>
+<p>context is a better way to store and manage  our global state, here our feedback items</p>
+<p>Context provides a way to pass data through the component tree without having to pass props down maually at every level,which we did upto this point.</p>
+<p>in source created a folder context and in it created feedbackcontext.jsx(comp) .import createContext,useState hook from react in it .</p>
+<p>we created our context via a variable see ok.We have to create a provider in app.js ,for the comps as we are no longer is going to pass in the props, so in order to get access(**) to state(**) in our context, we're going to wrap eth in a provider,much like how we wrapped eth in Router in order to use the route components.</p>
+<p>we export feedbackprovider , since we are going to wrap eth ,ie all our comps, this is going to take in children, and what we want to return from it is feedbackcontext.provide and inside here is going to be what evere we wrap,ie childern thats passed in ultimately it is all of our comps,that needs to access our context.Any values that we want to pass in ,like our state or any  functions to use, are going to passed into a prop of value,and its going to be an object {{}}   </p>
+<p>we used usestate to crate the rating state,and to pass down this state to comps that need it,  we simply put it in value prop thats it.And we export the feedback context</p>
+<p>we then bring it to app.js,first bring feedback provider,its not default exported thats why we're having curly braces around ok...And then in app.js we surround eth with that provider,</p>
+
+
+<h5>Get Global State with the useContext</h5>
+<p>lastly we created our feedback context, & we have our provider here with our state(feedback),& we are providing that feedback(state) through the value prop in our provider,And our provider is wrapped around all of our comps in app.js, now lets see how we're going to get that state from our context. </p>
+<p>go to feedbacklist comp and bring in useContext hook,and we also bring in our feedbackcontext which we crated. then we go to our feedbacklist comp function .</p>
+<p>we can extract whatever we want from our feedback context by using the usesate hook, and passing in whatever context we want to use, to it(herer feedbackcontext).</p>
+<p>before we did via props passing now no need and also we removed the protypes created. </p>
+<pre>
+<code>
+const {feedback} = useContext(FeedbackContext)
+</code>
+</pre>
+<p>sllr for stats comp,</p>
+
+
+<h5>Moving Functions To Context</h5>
+<p>delete those functions created in app.js and paste in feedbackcontext.js above the return,.And in order to use this in our comp,we have to pass it in the value just like we did our feedback state ok...</p>
+<p>go to feedbacklist remove the destructues given , and remove the prop of handledelete given to feedbackitem, Now go to feedbackitem and bring useContext,feedbackcontext.then we go wihtin to the function and we pull out what we want ,with same name given in feedbackcontext okk..</p>
+<p>sllr for addfeback ok</p>
+
+
+
+<h5>Edit Feedback Event</h5>
+<p>we bring in edit icon in feedbackitem,use it there,then go to feedbackcontext, add another state feedbackedit , it has an obj which ever one we are editing ok,by defalut its empty, when we click edit icon that state gets updated ok...</p>
+<p>we created thae edit function in feedbackcontext and to use it, we pass it in value as you know,okk...go to feedbackitem bring usecontext,and feedbackcontext and bring that function and onclick just call that function it works thats it....</p>
+
+
+<h5>Side Effects with useEffect</h5>
+<p>now we want to bring that contents to the form ok..</p>
+<p>note editfeedback is the function that runs when clicked on that icon , but feedbackedit is the state okk...so have them in value...to use them</p>
+<p>go to feedbackform, get feedbackedit(state/obj) </p>
+<p>so basically whenever any changes happen,ie here on click of edit icon we want the contents to be brought into the form,that's called an effect or side effect .The way we deal with the side effects with functional comps and hooks is with a specific hook called useEffect() .so bring it in.</p>
+<p>the way we use it is: we basically call it a function & it takes in a callback and as a second arg it takes in an array of dependencies,means if you put sth in here & if it changes,this is going to run ok.And if you leave this empty,[] ,it's just going to run when the component loads, </p>
+<p>used in http requests,suppose if a page loads(blog comp) loads then if we need to fetch data from an api when a page loads, we do our fetch req in this useeffect() function and mostly leave an empty arr so to be executed only ones ie when the comop loads ..okk...</p>
+<p>here we don't want to run ones, we want them to run when ever we click that edit icon okk so,add feedbackedit as a dependency...not any time you click on it , it has that sideeffect ok,so write your logic there what needs to be done when edit is clicked okk</p>
+<p>sllr do proper imports and do necessary things  in ratingselect comp as well okk</p>
+
+
+<h5>Update Feedback Item</h5>
+<p>upto know we brought the contents into from and are able to edit it and if you send it , a new card is created inseted of update ok so lets just do update okk</p>
+<p>so lets create a function to actually update the date  in context file ok...do all necessary things to work its simple observe the code  som okkk....yes</p>
+
+
+
+<h5>Deploy to Netlify</h5>
+<p>write down later okk</p>
+
+
+
+
+
+<h5>APIs & Requests</h5>
+<p>now we have our complete client side application.upto know all of our feedback items are hardcoded, and displayed .we are not storing them anywhere aside from memory </p>
+<p>we can add,update,delete from ui,and this what react does, its a ui library a front end framework.But in many case our react app will work with some kind of api(a backend).here we use sth called json server, which acts as our backendapi,that way we can make req and get response back.</p>
+<p>data is kept in a db on a server,could be msql,postgrss,mongodb etc,then we build some kind of backend api, that api will interact with the db and then we will be able to get data,add data etc.they typically return json.the api can be written in any language like nodejs,js,python,php,c#,backend frameworks like express,larvel,django etc.</p>
+<p>when you create this api, you'll have some kind of endpoints or special urls that we can hit,with specific http methods from the client.And we do this from our react application,& there are diff ways we can do this like using fetch api,which is built into the browser,can use ftp client like axios etc</p>
+<p>now we fetch the data and bring into our react app,& since we're using context api to manage our state,we're going to make our request from here and put the data into our global state.and then it hands down to the comps that need it.we already set all these yes ok.</p>
+<p>pic1</p>
+<p>pic2</p>
+<p>usually our backend api will be whats called restAPI, rest stands for reprsentational state transfer and this is a specific architecture style that we use for client-server communicatio.when we make a req to the server from the client we use a specific http methods for respective tasks. see in pic</p>
+<p>try to follow the neat url pattern okk</p>
+<p>when we make a req to a server , we get back a status code that says abt the kind of response we're getting.</p>
+
+
+
+
+<h5>Setting up json-server mock backend</h5>
+<p>install json server , which acts as a backend server.we create json files and that works like an api with a db.</p>
+<p>install in npm ok see for docs..npm i json-server,nxt add script to package.json to run json server, lets call "serveranyname":"json-server --watch db.json(json file to be watchd) --port 5000", nxt create db.json(any name) file,this is where we put our data ie to db.type your data in that file ok.</p>
+<p>note for real apis the ids get added automatically ok..</p>
+<p>now npm run serveranyname , now its watching on localhost 5000 .now lets use a tool called postman to check or we can also use browser for this okk.</p>
+<p>chek in postman you know ok how to post,get , type in url and send & check what you get etc...tryout</p>
+
+
+<h5>Run Client & Server with concurrently</h5>
+<p>now we want to make just one cmd to run our backend and frontend,right now we have to open two terminal and run,npm run start (to run react app) npm run server(to run our json server).so we use package called concurrently to run multiple scripts with one command.we do it by creating a script in the package.json and put there what ever two commends we want to run okkk thats it..</p>
+<p>npm i concurrently, "dev":"concurrently \"npm run server\" \"npm start\"" -bckend , react okkk now just npm run dev is enough...so now it runs at 5000 our backend and also runs our frontend at respective port okkk</p>
+
+
+
+<h5>Fetch Data from json-server backend</h5>
+<p>now we have our data being served at localhost 5000 okk..</p>
+<p>go to our context file, clear hardcoded array, have empty array.we need to bring in the useeffect,bcz we want to run this as soon as the page loads.</p>
+<p>call useeffect and takes in a callback and dependencies here empty since need to run only once.</p>
+<p>nxt we need a function to fetch our data..we use async and await ,we're using fetch api okkk js course...can also add query params along with the url ok..eg sortig,order,</p>
+<p>refer for this topic in modern js okkk</p>
+
+
+<h5>spinner component</h5>
+<p>we will get the isLoading state from context to feedbacklist and show the spinner comp(returns a img ok thats it) okkk thats it...also observe the logic and folder structures,imports okk..</p>
+
+
+<h5>add Feedback & Setting Proxy</h5>
+<p>go to package .json and add proxy:"http://localhost:5000", ok you know why need proxy instead of specifing the url all the time, in simple way we can do it thats it...</p>
+<p>for post req ,we need to add additional arguments as a second arg okk see in code....</p>
+
+
+<h5>update & delete from json-server</h5>
+<p>we modifed the respective methods thats it ok sllr for above for add,here for delete,updatefeedbacks okk</p>
+
+
+
+
+<h5>Github Finder project intro</h5>
+<p>here we use github api to search,fetch,display users okk</p>
+<p>takeaways- dealing with 3rd party api,use reducers they are basically pure functions that are used to manipulate parts of your state...</p>
+
+<h5>setup tailwind & daisy ui</h5>
+<p>tailwind css, it is a low level css framework,it gives us a bunch of utility classes,in addition to it we are going to use daisy ui,which is a tailwind plugin that gives us a bunch of component classes like button,alerts etc.</p>
+<p>follow guide tailwindcss.com/docs/guides/create-react-app </p>
+<p>create your react app, npx create-react-app githubfinder --use-npm ,nxt install tailwind dependencies in githubfinder folder only via cmd okk do as in docs okk</p>
+
+
+<h5>navbar component</h5>
+<p>install routers,icons okk to use them.</p>
+<p>think properly and add the respective classes okk just imagine and do you things done ok.</p>
+
+<h5>footer component</h5>
+<p>see the code  and observe ok</p>
+
+<h5>pages & routes</h5>
+<p>all sllr ok just  go through the code properly.</p>
+
+
+<hr>
+<h5>github api & getting token</h5>
+<p>go through the respective docs to know about the respective end points, and see what you get in return ok..check with postman before getting started okk</p>
+<p>note different end points will have diff rate limits, ~ the amount of requests you can make during a specific amount of time.see in headers ok 10 per min here and you can increase it by creating a personal token or an api token,and you can use this api wihout any kind of authentication,</p>
+<p>go to github,settings,developer settings,personal access token,generate new token,genetate and copy the link given,-- go to postman,in authorization put that token , now if you send the req &see the rate limit will be increased ok...</p>
+<p>created environment variables okk..</p>
+
+<h5>userlist component</h5>
+<p>created proper folders and respective file(comp)userResults, useEffect,see through the async,await,headers given,.json,logic of seting states etc okk etc..</p>
+
+
+<h5>loading spinner</h5>
+<p>created spinner comp in layout ok.and brought spinner img form assets okk check it out.</p>
+
+<h5>display users</h5>
+<p>created useritem.jsx Note som all same concepts only okk just go through the code and logics properly ok....</p>
+<p>in styling go one by one ok , div(apply styles) go to nxt div(do respective styles) go to next div ,next div etch likewise improve your stylings okk just imagine things properly and in a well manner.</p>
+
+
+<h5>setup github context</h5>
+<p>moved states(users),few functions(fetching) from userresults comp to a context okk</p>
+<p>note if you have a lot of states and you plan on scaling your application,then we should go for reducers ok.also we can use 3rd party redux which also uses reducers ok..</p>
+<p>but mostly context,reducers are enough then redux unless its a large project ok.</p>
+<p>created a contex comp,import creatContext,export provider function which takes in props ie childern to wrap things, you know it returns the gihubcontext provider ,children wrapped in it ok.states and functions are above this return ok som..finally export the context,.and in app.js wrap the comps with the provider import it first okk</p>
+<p>bring necessary imports and do your thing ok we just moved eth to context ok</p>
+
+<h5>Reducers & useReducer Hook</h5>
+<p>Redux is a 3rd party state manager & popular in react,but now with useContext,useReducer it is less used or popular.</p>
+<p>a reducer is a function which takes two arguments -- the current state and an action(it is typically an object,that has a type,typically a string) -- and returns based on both arguments a new state.</p>
+<p>created githubreducer.jsx and created the function there ,export it.we go to github context, so now instead of useState we're going to use useReducer,import githubreducer ok</p>
+<p>we remove the useStates and create an initial state and set an obj with users in it with empty array,loading set to true,. slr the useReducer function will return an arrray ok,and it takes in two things ie the reducer we are using ie githubreducer,initial state.and we get from it the state,dispatch mehtod/fun it is used to dispatch an action to our reducer, so instead of setusers,setloading as we are not usestate hook so instead we dispatch and it takes in the action object see the obj how it is passsed and the respective logic in reducer written okk ...state(spread across ath ie is already in the state) thats going to return the current state </p>
+<p>note initial state in empty arr ok ,we need to fill the user array with data from api and set the loading to flase, so in dispatch along with type we send the payload(any name) thats the data we get from the api</p>
+<pre>
+<code>
+return{
+    ...state,                   -what ever is already is in the state
+    users:action.payload,       -update users to action.payload/.users 
+    loading:flase,              -set false
+}
+</code>
+</pre>
+<p>and in gihubcontext in value instead of just users,loading we write state.users,state.loading, </p>
+<p>ie think som we can see the we're using the state,dispatch separately when ever necessary okk state to get data,dispath to updating that stae sth okk</p>
+
+<h5>Clean up fetch users</h5>
+<p>cleaned up a little.</p>
+<p>made it such that we dont get users directly ok so after search only we get them..</p>
+
+<h5>user Search component</h5>
+<p>add proper classes,note we also added the state for the input field,ie form inputs are going to have their own state,ie their component level state.</p>
+<p>note since its a form submit we do e.preventdefault okk</p>
+<p>Anoter note is that when you import sth,know for what you have imported it and see how you have used it in your code,for what purpose,where you used it ok som so just backtrack.</p>
+
+<h5>search users</h5>
+<p>api.github.com/search/users?q=som   - so this is the end point we want to hit ok.</p>
+<p>so what ever we search in ,we want to put it in the end points query parameter as above ok som also see how we created the search param ok</p>
+
+
+<h5>clear users</h5>
+<p>when we hit the clear button we need to clear all of our state ok</p>
+<p>hint: - have a function in the context that dispatches an action to your reducer,that just clears the users out of the state.remember in our state we have users which is an array,so when we make a search that array is full,but we want here to dispatch an action that sets it back to an empty array ok som.then you want to bring that function into your comp,into the user search comp from the context,and you want to call it when you click and fire that off.</p>
+
+
+<hr>
+<h5>Alert Context & Reducer</h5>
+<p>all familiar things only.</p>
+<p>note som reducers and contexts is where our functions,states,some kind of logics are present .i think ie don't think of them as a comp even though they are created with .js or .jsx extension okk</p>
+
+
+<h5>Alert component</h5>
+<p>check it..</p>
+
+
+<h5>Get single user</h5>
+<p>in context.js we will have the function and in it we will have the dispath which is thus connecting to reducer.js,and from the respective comps we call the function which is presentin context.js okk see this is how all 3 ie comp,context,reducer are related ok som</p>
+<p>so we have the different and respective routes in app.js with its respective comps okk,,,,so according to your events or clicks ,the routes in search bar gets changed by the context.js okk check it we have specified the respective route to be hit on searchbar on a event or click , so when searchbar has that addr/route in it, then that comp gets loaded ok (ie which comps or comp should be loaded for a route ,is been set by us in the app.js ok refer som)</p>
+
+
+<h5>user profile top</h5>
+<p>destructured things from user obj okk</p>
+<p>in user.jsx we styled and displayed what we want ok..</p>
+
+<h5>user profile stats</h5>
+<p>go through the code ok thats it...</p>
+
+<h5>get user repos</h5>
+<p>in context add code to hit that endpoint ok som getusersrepos,also lets have separate comp for repos ok ...</p>
+
+<h5>repo items</h5>
+<p>check where and how the repo items are used okk  check how repolist,repoitem is communicating via prop ok you know go through it ok ....</p>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

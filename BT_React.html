@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>React Front To Back 2022</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container bg-light my-5 border border-light rounded-3">
+        <h2 class="text-center pt-3">React Front To Back 2022</h2>
+        <hr class="ruler-color" size="5">
+        <div class="padding-l-r main-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc1" aria-expanded="false" aria-controls="fc1">
+                            Introduction
+                        </button>
+                    </h2>
+                    <div id="fc1" class="accordion-collapse collapse" aria-labelledby="fh1"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h5>what is React?</h5>
+                            <p>React is a javascript library/framework created and maintained by facebook that is used
+                                for building user interfaces.So its technicallya UI library.</p>
+                            <p>The diff bw react and angular is that react at its core is only responsible for creating
+                                user interfaces, it doesn't have things like router or an http client built in, but we
+                                have popular packages corresponding to it.</p>
+                            <p>React gives us a way to build websites & UIs with organized and reusable Components.</p>
+                            <p>The components can include the output,which is basically the html in react to use sth
+                                called jsx, the logic or the javascript, and can also include the css within your
+                                components.so the htmlI(jsx),css,js all are integrated ok.</p>
+                            <p>so with react and other frontend frameworks we look at our UI as different components
+                                like the searchbar,header,footer,blogpost so eth we look at as a component.</p>
+                            <p>pic 1,2</p>
+                            <strong>why learn react?</strong>
+                            <p>organization - it made much easier to organize our UIs and our frontends.</p>
+                            <p>Reusable components.And it is also more flexible to be used in different ways.</p>
+                            <p>React is very declarative, means we write the code that we want and react is incharge of
+                                taking our declared code and performing all the javascript and dom steps to us the
+                                result that we want.</p>
+                            <p>pic- declare code</p>
+                            <p>if you see each one of these tags here is a component.we have app itself and then we have
+                                header,employeesearch,employeelist,footer component.and this is how we embed components
+                                .And components can also have props passed in which is basically attributes or arguments
+                                that can be passed to that component.here we see a title prop passed into a header
+                                component,it could be ath a string,any datatype also a function.employeelist takes a
+                                prop ie employees which is a employees variable , which would most likely be an arry of
+                                employee objects, and then in employee list component we can iterate through that obj
+                                and output each one in its own component. </p>
+                            <p>state is basically just data,you can have component level state ,app level state (data
+                                used by multiple components)</p>
+                            <p>event-wkt the buttons and ip fields fire off some kind of event to make sth happen.</p>
+                            <h5>Environment setup</h5>
+                            <p>install nodejs reason is we need npm which inturn used to create react app.Also we
+                                install some 3rd party packages with npm.here text editor used is vscode- settings
+                                semicolon false,single quotes (es7 reat/redux..snippets, bracket pair clorizer,github
+                                theme,js es6 code snippets,prettier to format code, etc.install git,gitbash for windows
+                                best ok.install react
+                                developer tools.postman an http client.</p>
+                            <strong>For all the projects code is in github repo ok </strong>
+                            <p>later attach that document links v-5</p>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                            React Basics & JSX
+                        </button>
+                    </h2>
+                    <div id="fc2" class="accordion-collapse collapse" aria-labelledby="fh2"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>reactjs.org for docs- under installation we see the command to create the react app.</p>
+                            <p>make sure node js installed.so open terminal cmd run - npx create-react-app appname
+                                --use-npm / now it creates new folder appname it adds all the files and folders and
+                                dependencies that we need to create a react application.</p>
+                            <p>then change your directory to your project folder ok . npm start to start the development
+                                server,npm run build which bundles all the js and creates the static assets for
+                                production when you are ready to deploy.</p>
+                            <p>we open the react folder from the vs code and .now we run the dev server from the
+                                integrated terminal in vs code.you know.npm start will start our server in our localhost
+                                3000.</p>
+                            <p>package.json - here we have all of our dependencies.</p>
+                            <p>(as we are creating a single page application) in public folder we have index.html, this
+                                is the single page that is being loaded in the browser.it has some basic meta tages and
+                                in body all it has is a div with with the id as root. </p>
+                            <p>The reason for that is , when we build a single page application eth we do including all
+                                our components ,any routes that we have, eth is done within javascript.its done within
+                                react and then it is basically inserted into this div.so we can think this div as a
+                                placeholder for our entire front end, our entire ui. </p>
+                            <p>lets see how react knows to put it here in this div the whole thing.</p>
+                            <p>also we can put the cdns eg fontawesome in head and use it.</p>
+                            <p>nxt is a favicon so any static assets you want to put in here like images,you can do it
+                                ok.</p>
+                            <p>Source folder is where all the magic happens.thats where we create all of our
+                                components,all of our context, ath that we do is really going to go in this source
+                                folder.</p>
+                            <p>lets delete all files then if we run we get error that index.js folder is not found in
+                                source folder .. ok som</p>
+                            <p>lets recreate the files and later see how the react had initialized ok..</p>
+                            <p>first create index.js bcz thats what its been looked for, (shift f5 for hard refresh the
+                                browser ok)Now if we run server we see the index page of publics ok.as we said that we
+                                insert our react app or front end application into that div of id root.So that happens
+                                in the index.js so this basically the entry point to react.</p>
+                            <p>include imports ok react, react-dom (this lib allows us to interact with the document
+                                object model in the browser.ReactDom has a method onit called render and it takes in two
+                                things first is what ever we want to insert,which is going to be our main app component
+                                , and the second argument is going to be where we want to put this and we want to put it
+                                in the div with id of root ok so doc.getElid('root') ok then if we reload we see what
+                                ever is put as a first argument, if is a h1 tag it will be displayed in browser or if an
+                                app the all it will be displayed ok likewise.
+                            </p>
+                            <p>as a first argument we want our main app component displayed here not just h1 etc ok.So
+                                react is made up of componetns and you have root component called app.and any other
+                                components that we create ,whatever it might be , that's going to be embedded into that
+                                main app component.</p>
+                            <p>(in source folder)now lets create App.js which is our main app component .As far as
+                                components, they can be either classes(old way of creating react comp) or
+                                functions(modern way).with more modern react, we see functional components using sth
+                                called hooks.</p>
+                            <p>the function returns the jsx(ie javascript xml) its a syntactic sugar to basically put
+                                our html directly into our js.</p>
+                            <p>the function is returning jsx but it looks like an html ok.And we do have to export it
+                                ok.And we go to index.js(sourec) we import and put it as first arg like an xml like
+                                syntax ok.run it and see ok.</p>
+                            <p>so index.html is loaded in browser and it looks for index.js(source folder where we bring
+                                the react and react dom) here is where we call reactdom dender passing in our main app
+                                comp, and thats being output into that div of id root.check in dev tools of crome ok .in
+                                id root div we find all the code rendered ok. </p>
+                            <p>there is sth called strict mode that react offers this adds additional checks and
+                                warnings within our application.so we just rap of app comp in that respective tag ok
+                                thats it.(react.strictmode) no difference in output but adds aditional check thats it.
+                            </p>
+                            <p>now lastly lets create global css file(index.css)and import this in index.js(source ok)
+                                import ./index.css thats it.</p>
+                            <h5>intro to jsx</h5>
+                            <p>jsx is what is retured by all of our react components.its basically an html ,however its
+                                syntactic sugar, its really js under the hood.</p>
+                            <p>it just allows us to write html within our components,which makes it much more convinient
+                                .rules - rap in parenthesis() ,But note what we return has to be just one main or parent
+                                element ok you know.so h1,p,h2 etch is not possible only one is possible ok.so put it in
+                                a div ok simple.so all three now is rapped in one parent element .so remember always one
+                                parent element. OR fragment empty angle bracketss &lt>...&lt/>.</p>
+                            <p>Note there are some differences bw html and jsx,ie theres some attributes that you can't
+                                use. eg: class='contaitner' an invalid dom property so in jsx we use
+                                className='container' ,also we don't use for attribute in jsx,in jsx htmlFor instead of
+                                for ok</p>
+                            <p>Note we can also create the tags in regular js like {return
+                                React.createElement('div',{className:'container'},React .createElement('h1',{},'My
+                                contents'))}.But note somu using as regualr html is ok ok ie by jsx much easier.</p>
+                            <h5>Dynamic values & Lists in jsx</h5>
+                            <p>Note above the return ie before return(of jsx) we can create variables and functions and
+                                so on.But these variable created like this will be actually the part or your state And
+                                this is not how you set state in react. in functional components there is a hook called
+                                usestate ok </p>
+                            <p>to output sth dynamic like a variable or an expression,we just use curly
+                                braces.&lth1>{title}&lt/h1></p>
+                            <p>in ul { comments.map((com,index)=>(
+                                &ltli>{com.text}&lt/li>)) } - observe ok comments is an array and we output jsx(html)
+                                via arrow function and map ok thats it.</p>
+                            <p>note each child in a list should have a unique "key" prop ok.so make sure when you create
+                                a list using map you have to add key onto to lis ok &ltli key={index(any unique value
+                                ok)}>{com.text}&lt/li></p>
+                            <p>this is how we output variables,expressions,create lists</p>
+                            <h5>conditionals in jsx</h5>
+                            <p>lad=true;
+                                if(lad) return(jsx) <br>
+                                return(jsx)
+                            </p>
+                            <p>another is by ternary operators ok :/p>
+                            <pre>
+    <code>
+
+        App.js
+
+        lad=true;
+        if(lad) return(jsx) 
+        return(jsx)
+        --------------------------
+        const shc = false;
+        return(
+            {shc? 'yes' : 'no'}
+        )
+        -------------------------
+        return(
+            {shc? (some html) : (some html)}
+        )
+
+        ---------------------------
+        return(
+            {shc && (some html ie if shc is true then display this here ok)}
+        )
+
+        ---------------------------or
+        const cmtbl= (jsx ite the html codes) --we have put our jsx in an variable thats it.
+        return(
+            {shc && cmtbl}
+        )
+
+
+    </code>
+</pre>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                            Components, Props & State
+                        </button>
+                    </h2>
+                    <div id="fc3" class="accordion-collapse collapse" aria-labelledby="fh3"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h5>creating your first component & props</h5>
+                            <p>try to put every component that you create in a separate folder.Note react components can
+                                either have a js or jsx extension ok</p>
+                            <p>After creating the Header.jsx(component) in it we create a functional component es7
+                                react/redux install so without typing you can do like this ok .. rfce/_rfce for
+                                functional
+                                component ok thats it it createa comp for us.</p>
+                            <p>we no longer need to import React ok for all componets </p>
+                            <p>what ever components we create we need to bring it in App.js ok(so we just import that
+                                header comp and use it as a tag &ltHeader/> in main comp app.js thats it)</p>
+                            <strong>Props</strong>
+                            <p>props can be passed into a component.they are essentially the properties of that
+                                component.</p>
+                            <pre>
+    <code>
+    &ltHeader text='Subramanyam'/>  app.js
+
+    //when you pass a prop you need to catch it in that componet ok(here catch this title in Header comp)
+    //we do it via a parameter, Header(props) that props is going to be an object with and props that are passed in,
+    //then we can output it (it is also sth like we are outputting sth dynamically so use{ }).
+
+    Header(props)
+    &lth2>{props.text}&lt/h2> in header comp
+
+    //Or instead of props lets destructure with curly braces as long as you know what props are passed in here(text prop is passed in ok)
+    Header({text}) header cmp
+    &lth2>{text}&lt/h2> in header comp
+
+    //can also set default props
+    &ltHeader/>  app.js -ntg is explicitly passed ok
+
+    Header({text}) header cmp
+    &lth2>{text}&lt/h2> in header comp
+
+    //below ok
+    Header.defaultProps={
+        text:'Feedback UI',
+    }
+    //no prop is being passed in so its going to use the default ok
+    //we also have prop types its basically a type checking for the props
+    //import the proptypes
+
+    //below
+    Header.propTypes={
+        text:PropTypes.string,
+    }
+    
+
+    </code>
+</pre>
+
+
+
+
+
+
+
+
+
+                            <h5>Adding styles to a component</h5>
+                            <p>we can createa all our styles in global css ie index.css </p>
+                            <p>for inline we do like this (in header tag ok you know abt inline ok som)
+                                style={{backgroundColor:'red',color:'blue'}} observe property
+                                it is css in jsx</p>
+                            <p>or you can put your styles in a varable like</p>
+                            <pre>
+<code>
+const headerstyles = {
+    backgroundColor:'red',
+    color:'blue',
+}
+
+&ltheader style={headerstyles}>....&/header>  -single cruly braces no doulble as of for inline 
+</code>
+</pre>
+
+
+
+
+
+                            <h5>State & useState Hook</h5>
+                            <p>state is basically just data.we have component level state(data that is associated with
+                                that one specific component eg: you set a state in a comp (navigation comp having open
+                                and closed state and no other use or access it ok), then no other comp can use this
+                                data) and app level or global state(here the state is used in multiple components , to
+                                share a state among multiple components).</p>
+                            <p>we set state in react using a hook called useState.note hooks always start with u's</p>
+                            <p>so import useState hook.to set a piece of state we go above return and do as below</p>
+                            <pre>
+    <code>
+       const [rating,setRating] = useSteate(7)  -so useState is a function , then we destructure it via array to get the values retured by this function
+                            -it takes in what ever the default you want for this piece of state eg default of 7 here
+                            -we put 2 things in arr one is name of this piece of state(rating here),second is the function to update this piece of state(setRating)
+                            -and we use it like {rating} ok.
+            - to change a piece of state we call the respective method ok
+        //suppose on button click..  onClick={handleClick} on firing of this event we call that function observe- you know functions written above return 
+
+        const handleClick=(){
+            setRating(10)
+            //we simply can't change like this rating = 10 we can only reset as above ok som..
+
+            //another way by passing a fun so as to know the prev state and return our new state based on it
+
+            setRating((prev)=>{
+                console.log(prev)
+                return prev+1
+            })
+        }
+    </code>
+</pre>
+
+
+                            <h5>Managing Global State</h5>
+                            <p>now lets pass things from our app.js to all other components </p>
+                            <p>import usestate in app.js</p>
+                            <pre>
+    <code>
+app.js
+
+const [feedback,setFeedback]=useState(
+    [ {sth},
+      {sth},
+      {sth}
+    ]
+ )
+or
+data.js
+
+const feedbackdata = [
+      {sth},
+      {sth},
+      {sth}
+
+]
+export it
+
+app.js
+
+bring it here(ie bring that arrary) ie import 
+
+const [feedback1,setFeedback]=useState(feedbackdata)
+//now we pass this feedback as a prop to feedbacklist ok
+&ltFeedbackList feedback=feedback1
+
+//and in feedbacklist we destructure it and use as prop ok its basically a kind of prop 
+//observe the project code properly abt map,feedbackitem,feedbacklist how we have used
+//so we get data from app.js to feedbacklist and we iterate and generate that many no of feedbackitems by passing in the respective data to each feedbackitem..
+...just observe how we are using props.
+
+
+
+    </code>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <h5>Card Component & Conditional Styles</h5>
+                            <p>now lets create a card component where we can pass in ath we want and have ,the
+                                respective styles like bgd,rounded corners, ie card design etc.So for proper ordering
+                                purpose lets create a shared(as we're going to use this card comp in multiple places)
+                                folder in components folder .And inside shared lets create Card.jsx(ie card comp) .later
+                                import it where ever you want to use it.now insted of div tag we use the Card tag and
+                                pass the respective things as need ok.so we use props( any elemet or tags etc) and
+                                destructure(children just a name here or check it later eg ok) ok</p>
+                            <p>.car.reverse{} means any class of card that also has reverse.</p>
+                            <pre>
+    <code>
+conditional class:
+
+destructuring ok function Card({childer,reverse})
+{
+    return (&ltdiv className='card reverse'>{children}&lt/div>)
+}
+export 
+
+~ card is always there but reverse class is conditional
+
+return &ltdiv className={`card ${reverse && 'reverse'}`}>{children}&lt/div>
+
+conditional style;
+
+return &ltdiv className='card' style={{backgroundColor:reverse?'rgb(0,0,0,0.4)' : '#fff' , color:reverse? '#fff' : '#000',}}>{children}&lt/div>
+
+    </code>
+</pre>
+                            <p>You also can do like this, you dont pass revese as a prop then you have to use default
+                                props ok and if needed or you want to use proptypes you can.</p>
+                            <p>its your wish to use default props and also the proptypes </p>
+
+
+
+                            <h5>Event & Prop Drilling</h5>
+                            <p>creating a little icon to delete ok-</p>
+                            <p>we can use fontawesome for this we can include the cdn in the public/index.html but there
+                                is other cool pkg called react icons. so in vs terminal stop the server and install it
+                                ie
+                                npm i react-icons now start server and use it by importing the respective icons ok </p>
+                            <p>events: can use named functions onClick={handleClick} or can write a function there
+                                itself ok onClick={()=cl{iteml.id }}</p>
+                            <pre>
+<code>
+const handleClick=(id)=>{
+    cl(id)
+}
+
+return(
+    ...
+    onClick={()=>handleClick(item.id)}
+)
+
+</code>
+</pre>
+
+                            <p>Now to delete here scenario is the feedbackitems are in app.js so when clicked delete
+                                there should be change in items in app.js so we need to go upwards. we do this by prop
+                                lets see it.
+                            </p>
+                            <pre>
+<code>
+fdList:1
+&ltfditem key={item.id} item={item} handleDelete={(id)=>cl(id)}/> handleDelete is a prop passed to fditem ok here is cl
+
+fditem:2
+function fditem({item,handleDelete})
+{
+    return(
+        ...
+        onClick={()=>handleDelete(item.id)}   now above fun of handleDelete will get executed ok som.. ie that cl will be shown
+    )
+}
+
+//so we are passing in handleDelete as a prop into fditem and in fditem we're catching that handleDelete,And we're calling it on that click and we're able to pass in the id in
+
+
+
+app.js:0
+const [fd,setFd] = useState(fedDAta)
+const deleteFeedback=(id)=>{
+    cl('app',id) - this is here bcz here is where we can call the setFd function.
+}
+return(
+    &ltfdList fd={fd} handleDelete={deleteFeedback}/>
+)
+
+fdList:1
+function fdList({fd,handleDelete})
+{
+    return(
+        ...
+        &ltfditem key={item.id} item={item} handleDelete={handleDelete}/>  - we are then forwarding this Ecall to app.js ok we do like this via a prop
+    )
+}
+
+
+fditem:2
+function fditem({item,handleDelete})
+{
+    return(
+        ...
+        onClick={()=>handleDelete(item.id)}   event is fireing of here ....now above fun of handleDelete will get executed ok som.. 
+    )
+}
+
+</code>
+</pre>
+                            <p>here we're passing in props so this is prop drilling.this approach is kind of a messy
+                                ,but later on we're going to use the context API.where instead of prop drill we can
+                                bring our state(data) directly into any component we want.</p>
+
+
+
+                            <h5>FeedbackStats Component & Reactivity</h5>
+                            <p>in components create a feedbackstats.jsx(a comp), and bring it to app.js. And to this
+                                comp from app.js we pass in feedback as a prop.since feedback is our state(**) ,so
+                                whenever that state(data) changes(by any other comp also ),it will automatically change
+                                within feedbackstats comp also.</p>
+                            <p>so thats why you want your state to be a single source of truth,so that whenever that
+                                changes,, ath that is connected to it ,it will also change.</p>
+                            <p>for reduce function it takes in two parameter one is accumultor default set to 0 here
+                                (observe), and current value.ok</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                            Forms, Validation & Simple Animation
+                        </button>
+                    </h2>
+                    <div id="fc4" class="accordion-collapse collapse" aria-labelledby="fh4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h5>Form Input & State</h5>
+                            <p>we created feedbackform.jsx and then we create the react component in it ie that
+                                functional comp ok.and we bring it into our app.js, </p>
+                            <p>then we created the form which is wrapped inside the card comp ok..observe</p>
+                            <p>whatever we type in the input field it should go to that state created above ok. so we
+                                use onChange event handler to handle it ok(so a fun is created above to handle whenever
+                                this event is fired off.),e is event parameter so as to get what evere is typed in
+                                there.</p>
+
+
+                            <h5>Custom Buttom Component</h5>
+                            <p>so that we can then use this button comp all around the application,and we can also pass
+                                in certain props for styling,ok, so create it in shared folder,button.jsx, props are
+                                children(which goes inside of button),version(primary or secondary etc),type,isDisabled
+                            </p>
+
+                            <h5>Real-Time Validation</h5>
+                            <p>so to do this we add couple of new states to this form comp ok.,ie btnDisabled,message
+                                (states).</p>
+
+                            <h5>Rating Select Component</h5>
+                            <p>created a rating state in feedbackform comp,and we want to put the rating comp above that
+                                input ok..</p>
+                            <p>by default its going to be of type string, we can change it to number by writing + before
+                                it ok som..</p>
+                            <p>so creating comps,states,props passing,events & functions,visualize how the things want
+                                to be,placements of comps etc these only som..</p>
+
+
+                            <h5>Add Feedback</h5>
+                            <p>onSubmit={handleSubmit},npm istall uuid( to generate unique ids),import and use it,</p>
+                            <p>wkt that a state is immutable,so we can't just push on to it,so we've to make a copy of
+                                it, so to take the current items, we use the spread operator ie basically it takes all
+                                the objects that are already in feedback and puts into this array, & in addition to it
+                                on the front of it we put the new feedback,</p>
+
+
+                            <h5>Fade Animation With Framer Motion</h5>
+                            <p>there are lot a lib,so npm install framer-motion@4.17 ,import and use it,</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc5" aria-expanded="false" aria-controls="fc5">
+                            Creating Routes & Links
+                        </button>
+                    </h2>
+                    <div id="fc5" class="accordion-collapse collapse" aria-labelledby="fh5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            <h5>Creating Routes(React Router5)</h5>
+                            <p>check in dependencies that react route dom has been updated to v6 ok, lets change to work
+                                with v5 , </p>
+                            <p>React itself doesn't havea router buitin, But there is a package called React Router Dom,
+                                npm install react-router-dom, here we need home page route,about page route,lets put it
+                                in pages folder, create aboutpage.jsx, </p>
+                            <p>(here that aboutpage) ath we want to put in a specific route ,we're going to bring into
+                                app.js , so import that aboutpage, import routers ,browserouter som/about good
+                                ok,hashrouter som/#about</p>
+                            <p>route,which is a specific comp for rendering whatever you want to render,whether its a
+                                comp or just some output in a specific route,</p>
+                            <p>inorder to use the router,we actually have to wrap eth in our app.js inside of
+                                router,(which is here we're using browserrouter) ,to create a route we simply use the
+                                route comp,</p>
+                            <p>as we're embedding about in app.js, similarly remaining comps are also embeded in app.js
+                                ok,so they are just displayed as listed, so ie all mixed,</p>
+                            <p>so only we put them wantever we want as a sep page or route, in their respective routes,
+                                ie in simple we vary the paths for them ok som...</p>
+                            <p>instead of opening and clossing tag and putting sth in them , we put the self clossing
+                                tag and then pass in a component prop to it which takes in Aboutpage(which is imported)
+                                so now on /about this page gets loaded.</p>
+                            <p>for index or home page we just give path="/" </p>
+                            <p>exact prop to match the path exactly...you know why we used it /,/about both are loaded
+                                when searched /about , so to avoid it exact is used.</p>
+
+                            <p>simply if we put a plain old a tag in about page for eg, ie &lta href='/'>back to
+                                home&lt/a> it works ok but avoid using a tag.</p>
+
+
+
+                            <h5>Upgrading To Reach Route6</h5>
+                            <p>here in addition to route we also need to bring in routes and surround all the route
+                                created in Routes tag okk..,also instead of component={Aboutpage} we use
+                                element={&ltAboutpage/>} so its going to be jsx,sllr for multiple comps we use fragments
+                                ok observe okk.</p>
+
+
+                            <h5>Creating Links(v5 & v6)</h5>
+                            <p>as we know how to create routes,now lets see how to create links to those routes/pages
+                                okkk.</p>
+                            <p>created a question mark icon comp, import in app.js, embed it in app.js, Now in about
+                                link comp if we create it via a link tag it works but the flaw is you observe it
+                                actually refreshes the page which we don't want okk.,so to all be done
+                                immediately/instantly
+                                without a refresh we do it by Link which we bring from reactrouter dom.</p>
+                            <p>a tag is ok if you go to any external websites,but for any internal links don't use a tag
+                            </p>
+                            <p>so in aboutlink comp import Link, instead of a tag use link and to instead of href,thats
+                                it</p>
+                            <pre>
+<code>
+&ltLink to='/'>Home&lt/link>
+
+insted of string here we can have obj ok, so with double curly braces
+
+&ltLink to={{
+    pathname:'/about',       - also can add opl parameters like
+    search:'?sort=name',
+    hash:'#hello',           -so likewise there are diff properties you can pass in okk
+}}>Home&lt/link>
+</code>
+</pre>
+
+
+                            <h5>NavLink & useParams</h5>
+                            <p>navlink also used to navigate ,but it can also hold a specific class for active links, so
+                                bring in navlink,</p>
+                            <pre>
+<code>
+&ltNavLink to='/' activeClassName='active'>Home&lt/NavLink>
+
+&ltNavLink to='/about' activeClassName='active'>About&lt/NavLink>
+
+- so simply ntg but just that active style you styled will be applied to (text of the link Home or About here ok) which ever page you are in.
+
+-lets see how to get params
+
+&ltRoue path='/post/:id' elemet={&ltPost/>}/>     - app.js
+&ltRoue path='/post/:id/:name' elemet={&ltPost/>}/> 
+
+import useParams a hook...                         -post.js(comp ok)
+create a state const params = useParams()
+ &lth1>post {params.id&lt/h1>}
+ &lth1>post {params.name&lt/h1>}       /home/39/somu
+
+</code>
+</pre>
+
+
+
+                            <h5>Navigate & Nested Routes</h5>
+                            <p>Redirect was present in vs , and now its changed to Navigate in v6 </p>
+                            <pre>
+<code>
+import Navigate
+
+const status = 200
+if(status===404)
+{
+    &ltNavigate to='/notfound'/>    --create notfound(comp okk)
+}
+
+
+thats one way now on button click or sth if we want to navigate to some 
+other route we can do like this
+
+import useNavigate
+
+const navigate = useNavigate()
+const onClick=()=>{
+    cl('sth to cl or update sth on server or etch and then goto new page this is how its done')
+    navigate('/about')
+}
+
+&ltbutton onClick={onClick}>Click&lt/button>
+
+
+-can also have nested routes 
+ie if you have sth that you only want to show on a specific route,you can do as below..and to work below we need to have * as shown below in app.js okk
+
+
+in post.js
+import routes,route 
+
+h1 post sth
+button on click
+sth                   -so after this 3 the below show will be rendered when we hit /show ie above 3 first then show contents ie the order you placed will be reflected...
+&ltRoutes>
+    &ltRoute path='/show' element=&lth1>helloworkd&lt/h1>
+&lt/Routes>
+
+
+app.js
+&ltRoute path='/post/*' element={&ltpost/>}/>
+
+gist is when show route is displayed post route is also there okk so now contents of both post and show is there, when we hit som/post/show 
+
+
+</code>
+</pre>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc6" aria-expanded="false" aria-controls="fc6">
+                            Context API, useContext Hook & Deployment
+                        </button>
+                    </h2>
+                    <div id="fc6" class="accordion-collapse collapse" aria-labelledby="fh6"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc7" aria-expanded="false" aria-controls="fc7">
+                            APIs & HTTP Requests
+                        </button>
+                    </h2>
+                    <div id="fc7" class="accordion-collapse collapse" aria-labelledby="fh7"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc8" aria-expanded="false" aria-controls="fc8">
+                            GitHub Finder Project Start
+                        </button>
+                    </h2>
+                    <div id="fc8" class="accordion-collapse collapse" aria-labelledby="fh8"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc9" aria-expanded="false" aria-controls="fc9">
+                            Working with The GitHub API
+                        </button>
+                    </h2>
+                    <div id="fc9" class="accordion-collapse collapse" aria-labelledby="fh9"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc10" aria-expanded="false" aria-controls="fc10">
+                            User Profile & Alerts
+                        </button>
+                    </h2>
+                    <div id="fc10" class="accordion-collapse collapse" aria-labelledby="fh10"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc11" aria-expanded="false" aria-controls="fc11">
+                            Refactoring Context & Action
+                        </button>
+                    </h2>
+                    <div id="fc11" class="accordion-collapse collapse" aria-labelledby="fh11"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc12" aria-expanded="false" aria-controls="fc12">
+                            More Advanced React Hooks
+                        </button>
+                    </h2>
+                    <div id="fc12" class="accordion-collapse collapse" aria-labelledby="fh12"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc13" aria-expanded="false" aria-controls="fc13">
+                            House MarketPlace Project Start
+                        </button>
+                    </h2>
+                    <div id="fc13" class="accordion-collapse collapse" aria-labelledby="fh13"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc14" aria-expanded="false" aria-controls="fc14">
+                            Firebase Authentication & profile
+                        </button>
+                    </h2>
+                    <div id="fc14" class="accordion-collapse collapse" aria-labelledby="fh14"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh15">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc15" aria-expanded="false" aria-controls="fc15">
+                            Get & Create Listings
+                        </button>
+                    </h2>
+                    <div id="fc15" class="accordion-collapse collapse" aria-labelledby="fh15"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh16">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc16" aria-expanded="false" aria-controls="fc16">
+                            Single Listings, Map, Sliders & Edit
+                        </button>
+                    </h2>
+                    <div id="fc16" class="accordion-collapse collapse" aria-labelledby="fh16"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh17">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc17" aria-expanded="false" aria-controls="fc17">
+                            MERN Project Start, API & Backend Authentication
+                        </button>
+                    </h2>
+                    <div id="fc17" class="accordion-collapse collapse" aria-labelledby="fh17"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh18">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc18" aria-expanded="false" aria-controls="fc18">
+                            Frontend Authentication
+                        </button>
+                    </h2>
+                    <div id="fc18" class="accordion-collapse collapse" aria-labelledby="fh18"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh19">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc19" aria-expanded="false" aria-controls="fc19">
+                            Tickets Functionality
+                        </button>
+                    </h2>
+                    <div id="fc19" class="accordion-collapse collapse" aria-labelledby="fh19"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="fh20">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#fc20" aria-expanded="false" aria-controls="fc20">
+                            Notes Functionality & Deploy
+                        </button>
+                    </h2>
+                    <div id="fc20" class="accordion-collapse collapse" aria-labelledby="fh20"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+
+                            Place your code here.
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--accordioin end div-->
+        </div>
+        <!--maincontent end div -->
+    </div>
+    <!--continer end div -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
